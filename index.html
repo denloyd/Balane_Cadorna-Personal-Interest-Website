@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Hero</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="start-container" id="start-screen">
+    <h1>Who's your Favorite Hero?</h1>
+    <button class="btn" onclick="startSelection()">Get Started</button>
+</div>
+
+<div class="select-container" id="hero-selection">
+    <h2>Select Your Favorite Hero</h2>
+
+    <div class="hero-container">
+        <!-- Fighter Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Fighter</div>
+            <div class="hero" onclick="selectHero('Fighter', 'Hero1', 'hero1.jpg', 'This is a Fighter Hero.')">
+                <img src="hero1.jpg" alt="Hero1">
+                <p>Hero1</p>
+            </div>
+            <div class="hero" onclick="selectHero('Fighter', 'Hero2', 'hero2.jpg', 'This is another Fighter Hero.')">
+                <img src="hero2.jpg" alt="Hero2">
+                <p>Hero2</p>
+            </div>
+            <!-- Add more Fighter heroes here -->
+        </div>
+
+        <!-- Mage Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Mage</div>
+            <div class="hero" onclick="selectHero('Mage', 'Hero3', 'hero3.jpg', 'This is a Mage Hero.')">
+                <img src="hero3.jpg" alt="Hero3">
+                <p>Hero3</p>
+            </div>
+            <div class="hero" onclick="selectHero('Mage', 'Hero4', 'hero4.jpg', 'This is another Mage Hero.')">
+                <img src="hero4.jpg" alt="Hero4">
+                <p>Hero4</p>
+            </div>
+            <!-- Add more Mage heroes here -->
+        </div>
+
+        <!-- Assassin Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Assassin</div>
+            <div class="hero" onclick="selectHero('Assassin', 'Hero5', 'hero5.jpg', 'This is an Assassin Hero.')">
+                <img src="hero5.jpg" alt="Hero5">
+                <p>Hero5</p>
+            </div>
+            <div class="hero" onclick="selectHero('Assassin', 'Hero6', 'hero6.jpg', 'This is another Assassin Hero.')">
+                <img src="hero6.jpg" alt="Hero6">
+                <p>Hero6</p>
+            </div>
+            <!-- Add more Assassin heroes here -->
+        </div>
+
+        <!-- Marksman Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Marksman</div>
+            <div class="hero" onclick="selectHero('Marksman', 'Hero7', 'hero7.jpg', 'This is a Marksman Hero.')">
+                <img src="hero7.jpg" alt="Hero7">
+                <p>Hero7</p>
+            </div>
+            <div class="hero" onclick="selectHero('Marksman', 'Hero8', 'hero8.jpg', 'This is another Marksman Hero.')">
+                <img src="hero8.jpg" alt="Hero8">
+                <p>Hero8</p>
+            </div>
+            <!-- Add more Marksman heroes here -->
+        </div>
+
+        <!-- Tank Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Tank</div>
+            <div class="hero" onclick="selectHero('Tank', 'Hero9', 'hero9.jpg', 'This is a Tank Hero.')">
+                <img src="hero9.jpg" alt="Hero9">
+                <p>Hero9</p>
+            </div>
+            <div class="hero" onclick="selectHero('Tank', 'Hero10', 'hero10.jpg', 'This is another Tank Hero.')">
+                <img src="hero10.jpg" alt="Hero10">
+                <p>Hero10</p>
+            </div>
+            <!-- Add more Tank heroes here -->
+        </div>
+
+        <!-- Support Category -->
+        <div class="hero-column">
+            <div class="hero-category-title">Support</div>
+            <div class="hero" onclick="selectHero('Support', 'Hero11', 'hero11.jpg', 'This is a Support Hero.')">
+                <img src="hero11.jpg" alt="Hero11">
+                <p>Hero11</p>
+            </div>
+            <div class="hero" onclick="selectHero('Support', 'Hero12', 'hero12.jpg', 'This is another Support Hero.')">
+                <img src="hero12.jpg" alt="Hero12">
+                <p>Hero12</p>
+            </div>
+            <!-- Add more Support heroes here -->
+        </div>
+    </div>
+</div>
+
+<div class="last-container" id="selected-hero">
+    <h2>Your Favorite Hero</h2>
+    <img id="hero-image" src="" alt="Hero Image">
+    <h3 id="hero-name"></h3>
+    <p id="hero-info"></p>
+    <!-- Back Button -->
+    <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+</div>
+
+<script src="script.js"></script> </script>
+
+</body>
+</html>
