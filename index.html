@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorite Hero</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
+<!-- Video Intro Section -->
+<div id="video-intro">
+    <video id="intro-video" autoplay muted>
+        <source src="Assets/Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Start Screen Section -->
 <div class="start-container" id="start-screen">
     <h1>Who's your Favorite Hero?</h1>
     <button class="btn" onclick="startSelection()">Get Started</button>
 </div>
 
-<div class="select-container" id="hero-selection">
+<!-- Hero Selection Section -->
+<div class="select-container" id="hero-selection" style="display:none;">
     <h2>Select Your Favorite Hero</h2>
 
     <div class="hero-container">
@@ -104,6 +113,7 @@
     </div>
 </div>
 
+<!-- Selected Hero Section -->
 <div class="last-container" id="selected-hero">
     <h2>Your Favorite Hero</h2>
     <img id="hero-image" src="" alt="Hero Image">
@@ -113,7 +123,6 @@
     <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
 </div>
 
-<script src="script.js"></script> </script>
-
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,49 +1,67 @@
+/* Apply a background image and make sure the text is highly visible */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: url('Assets/Backpic3.webp') no-repeat center center fixed; /* Set your background image */
+    background-size: cover; /* Ensure the background covers the full viewport */
+    color: #FFFFFF; /* White text for high visibility */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Ensures the body takes up the full viewport height */
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+    display: flex; /* Flexbox for centering content */
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
+/* Add a stronger text shadow for enhanced visibility */
+h1, h2, h3, p {
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for contrast */
+}
+
+/* Start Container */
 .start-container {
     margin-top: 20rem;
-    text-align: center;
     margin: 20px;
 }
 
+/* Select Container */
 .select-container {
     display: block;
-    text-align: center;
-    margin: 20px;
-}.last-container {
-    text-align: center;
     margin: 20px;
 }
 
+/* Last container for selected hero */
+.last-container {
+    margin: 20px;
+}
+
+/* Hide sections initially */
 #hero-selection, #selected-hero {
     display: none;
 }
 
+/* Button Styling */
 .btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #FFFFFF; /* White button for visibility */
+    color: black; /* Black text for contrast */
     border: none;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #F0F0F0; /* Slightly darker white for hover effect */
 }
 
+/* Back Button */
 .back-btn {
-    background-color: #ff4f4f;
+    background-color: #FF4F4F;
+    color: white;
 }
 
+/* Hero Container */
 .hero-container {
     display: flex;
     flex-wrap: wrap;
@@ -55,7 +73,8 @@ body {
     flex: 1;
     min-width: 250px;
     margin: 10px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background for better contrast */
+    color: #FFFFFF; /* White text for clarity */
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,7 +99,35 @@ body {
 }
 
 #selected-hero img {
-    width: 200px;
-    height: 200px;
+    width: 600px;
+    height: 500px;
     border-radius: 15px;
+}
+
+/* Video Intro Section */
+#video-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide content initially */
+#hero-selection {
+    display: none;
+}
+
+#start-screen {
+    text-align: center;
+    position: relative;
+    z-index: 5;
 }
