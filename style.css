@@ -1,15 +1,9 @@
 /* Apply a background image and make sure the text is highly visible */
 body {
     font-family: Arial, sans-serif;
-    background: url('Assets/Backpic3.webp') no-repeat center center fixed; /* Set your background image */
-    background-size: cover; /* Ensure the background covers the full viewport */
     color: #FFFFFF; /* White text for high visibility */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Ensure the body takes up the full viewport height */
-    display: flex; /* Flexbox for centering content */
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
@@ -20,9 +14,18 @@ h1, h2, h3, p {
 
 /* Start Container */
 .start-container {
-    margin-top: 20rem;
-    margin: 20px;
+    background: url('Assets/background.jpg') no-repeat center center fixed; /* Set your background image */
+    background-size: cover; /* Ensure the background covers the full viewport */
+    height: 100vh; /* Make the container cover the full viewport height */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Vertically center content */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
 }
+
 
 /* Select Container */
 .select-container {
@@ -93,8 +96,8 @@ h1, h2, h3, p {
 }
 
 .hero img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 90px;
     border-radius: 10px;
 }
 
