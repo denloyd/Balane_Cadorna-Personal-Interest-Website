@@ -4,6 +4,11 @@ function startSelection() {
     document.getElementById('hero-selection').style.display = 'block';
 }
 
+function showCategory(category) {
+    const categories = document.querySelectorAll(".hero-category");
+    categories.forEach(cat => cat.style.display = "none");
+    document.getElementById(category).style.display = "block";
+}
 // Function to select a hero and show the selected hero's details
 function selectHero(category, name, image, info) {
     document.getElementById('hero-selection').style.display = 'none';
@@ -30,3 +35,5 @@ video.addEventListener('ended', function() {
     videoIntro.style.display = 'none';  // Hide the video intro
     startScreen.style.display = 'block'; // Show the start screen
 });
+
+
