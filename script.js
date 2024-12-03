@@ -4,35 +4,63 @@ function startSelection() {
     document.getElementById('hero-selection').style.display = 'block';
 }
 
+// Function to show a category of heroes
 function showCategory(category) {
-    const categories = document.querySelectorAll(".hero-category");
-    categories.forEach(cat => cat.style.display = "none");
-    document.getElementById(category).style.display = "block";
+    const selectText = document.getElementById('select-text');
+    if (selectText) selectText.style.display = 'none';
+
+    const categories = document.querySelectorAll('.hero-category');
+    categories.forEach(cat => cat.style.display = 'none');
+
+    const selectedCategory = document.getElementById(category);
+    if (selectedCategory) selectedCategory.style.display = 'block';
+
+    const backButton = document.getElementById('back-button');
+    backButton.style.display = 'inline-block';
+
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(btn => btn.style.display = 'none');
 }
-// Function to select a hero and show the selected hero's details
+
+// Function to select a hero and show details
 function selectHero(category, name, image, info) {
     document.getElementById('hero-selection').style.display = 'none';
     document.getElementById('selected-hero').style.display = 'block';
 
-    document.getElementById('hero-name').innerText = name + " (" + category + ")";
+    document.getElementById('hero-name').innerText = `${name} (${category})`;
     document.getElementById('hero-image').src = image;
     document.getElementById('hero-info').innerText = info;
 }
 
-// Function to go back to the hero selection screen
+// Function to go back to hero selection
 function goBack() {
-    document.getElementById('selected-hero').style.display = 'none';
+    const selectText = document.getElementById('select-text');
+    if (selectText) selectText.style.display = 'block';
+
+    const categories = document.querySelectorAll('.hero-category');
+    categories.forEach(cat => cat.style.display = 'none');
+
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(btn => btn.style.display = 'inline-block');
+
+    const backButton = document.getElementById('back-button');
+    backButton.style.display = 'none';
+
     document.getElementById('hero-selection').style.display = 'block';
+    document.getElementById('selected-hero').style.display = 'none';
 }
 
-// Wait until the video ends, then hide the video intro and show the start screen
-const video = document.getElementById('intro-video');
-const startScreen = document.getElementById('start-screen');
-const videoIntro = document.getElementById('video-intro');
+// Video end event to show start screen
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('intro-video');
+    const videoIntro = document.getElementById('video-intro');
+    const startScreen = document.getElementById('start-screen');
 
-// Video ends event listener
-video.addEventListener('ended', function() {
-    videoIntro.style.display = 'none';  // Hide the video intro
-    startScreen.style.display = 'block'; // Show the start screen
+    if (video && videoIntro && startScreen) {
+        video.addEventListener('ended', function() {
+            videoIntro.style.display = 'none';
+            startScreen.style.display = 'block';
+        });
+    }
 });
 

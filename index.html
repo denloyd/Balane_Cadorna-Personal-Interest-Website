@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who's your Favorite Hero</title>
+    <title>Favorite Hero</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,92 +19,48 @@
 
     <!-- Start Screen Section -->
     <div class="start-container" id="start-screen">
-        <h1>Who's your Favorite Hero?</h1>
+        <h1>Get to know our Favorite Hero?</h1>
         <button class="btn" onclick="startSelection()">Get Started</button>
     </div>
 
     <!-- Hero Selection Section -->
     <div class="select-container" id="hero-selection" style="display: none;">
-        <h2>Select Your Favorite Hero</h2>
+        <div id="select-text" class="select-text">
+            <h1>Select Your Favorite Hero</h1>
+        </div>
+        
         <div class="button-container">
-            <button class="category-btn" onclick="showCategory('fighter')">Fighter</button>
-            <button class="category-btn" onclick="showCategory('mage')">Mage</button>
-            <button class="category-btn" onclick="showCategory('assassin')">Assassin</button>
-            <button class="category-btn" onclick="showCategory('marksman')">Marksman</button>
-            <button class="category-btn" onclick="showCategory('tank')">Tank</button>
-            <button class="category-btn" onclick="showCategory('support')">Support</button>
+            <button class="category-btn" onclick="showCategory('fighter')">
+                <i class="fas fa-fist-raised"></i> Fighter
+            </button>
+            <button class="category-btn" onclick="showCategory('mage')">
+                <i class="fas fa-magic"></i> Mage
+            </button>
+            <button class="category-btn" onclick="showCategory('assassin')">
+                <i class="fas fa-skull-crossbones"></i> Assassin
+            </button>
+            <button class="category-btn" onclick="showCategory('marksman')">
+                <i class="fas fa-bullseye"></i> Marksman
+            </button>
+            <button class="category-btn" onclick="showCategory('tank')">
+                <i class="fas fa-shield-alt"></i> Tank
+            </button>
+            <button class="category-btn" onclick="showCategory('support')">
+                <i class="fas fa-heart"></i> Support
+            </button>
         </div>
         <div class="hero-container">
             <div id="assassin" class="hero-category" style="display: none;">
+              <div class="hero-category-title">Assassin Heroes</div>
                 <div class="hero-column">
-                    <div class="hero-category-title">Assassin Heroes</div>
-                    <div class="hero" onclick="selectHero('The Duke of Shards', 'Aamon', 'Assets/assasin/aamon.jpg', 'A master assassin wielding lethal mana shards.')">
-                        <img src="Assets/assasin/select-aamon.jpg" alt="Aamon">
-                        <p>Aamon</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Demon Hunter', 'Alucard', 'Assets/assasin/Alucard.jpg', 'A demon hunter with a deep hatred for demons.')">
-                        <img src="Assets/assasin/select-Alucard.jpg" alt="Alucard">
-                        <p>Alucard</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lone Lancer', 'Arlott', 'Assets/assasin/Arlott.jpg', 'A demon human hybrid wielding two lances with a thirst for vengeance against both the Church and demons.')">
-                        <img src="Assets/assasin/select-Arlott.jpg" alt="Arlott">
-                        <p>Arlott</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadow Ranger', 'Benedetta', 'Assets/assasin/Benedetta.jpg', 'A ranger that fights for hope.')">
-                        <img src="Assets/assasin/select-Benedetta.jpg" alt="Benedetta">
-                        <p>Benedetta</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Blade Dancer', 'Fanny', 'Assets/assasin/Fanny.jpg', 'The female assassin who can fly across the sky.')">
-                        <img src="Assets/assasin/select-Fanny.jpg" alt="Fanny">
-                        <p>Fanny</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Holy Blade', 'Gusion', 'Assets/assasin/Gusion.jpg', 'A rebellious noble prefers using blades over magic.')">
-                        <img src="Assets/assasin/select-Gusion.jpg" alt="Gusion">
-                        <p>Gusion</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Akuma Ninja', 'Hanzo', 'Assets/assasin/Hanzo.jpg', 'Ninja who devours souls to practice forbidden ninja arts.')">
-                        <img src="Assets/assasin/select-Hanzo.jpg" alt="Hanzo">
-                        <p>Hanzo</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Mage Genius', 'Harley', 'Assets/assasin/Harley.jpg', 'A mage Blessed by the Magic Goddess.')">
-                        <img src="Assets/assasin/select-Harley.jpg" alt="Harley">
-                        <p>Harley</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Crimson Shadow', 'Hayabusa', 'Assets/assasin/Hayabusa.jpg', 'Assassin hero with excellent burst damage.')">
-                        <img src="Assets/assasin/select-Hayabusa.jpg" alt="Hayabusa">
-                        <p>Hayabusa</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadowbringer', 'Helcurt', 'Assets/assasin/Helcurt.jpg', 'A member of a mysterious race with light-swallowing ability.')">
-                        <img src="Assets/assasin/select-Helcurt.jpg" alt="Helcurt">
-                        <p>Helcurt</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Flash of Miracle', 'Joy', 'Assets/assasin/Joy.jpg', 'The “Child Miracle” who returned to the Leonins after years of wandering.')">
-                        <img src="Assets/assasin/select-Joy.jpg" alt="Joy">
-                        <p>Joy</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Ocean Goddess', 'Kadita', 'Assets/assasin/Kadita.jpg', 'The Fair Queen of the Southern Seas.')">
-                        <img src="Assets/assasin/select-Kadita.jpg" alt="Kadita">
-                        <p>Kadita</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadow Blade', 'Karina', 'Assets/assasin/Karina.jpg', 'The assassin who dances upon blades.')">
-                        <img src="Assets/assasin/select-Karina.jpg" alt="Karina">
-                        <p>Karina</p>
-                    </div>
+                    <div><h3>Denloyd's Pick</h3></div>
                     <div class="hero" onclick="selectHero('The Blade of Roses', 'Lancelot', 'Assets/assasin/Lancelot.jpg', 'A gifted young man who infuses the power of magic into his swordsmanship.')">
                         <img src="Assets/assasin/select-Lancelot.jpg" alt="Lancelot">
                         <p>Lancelot</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Deadly Sniper', 'Lesley', 'Assets/assasin/Lesley.jpg', 'Harleys guardian and a talented sniper.')">
-                        <img src="Assets/assasin/select-lesley.jpg" alt="Lesley">
-                        <p>Lesley</p>
-                    </div>
                     <div class="hero" onclick="selectHero('The Cyan Finch', 'Ling', 'Assets/assasin/Ling.jpg', 'A great assassin who can take out his target from above.')">
                         <img src="Assets/assasin/select-Ling.jpg" alt="Ling">
                         <p>Ling</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Swift Plume', 'Mathilda', 'Assets/assasin/Mathilda.jpg', 'A tribal girl who has potential to carry her teammates.')">
-                        <img src="Assets/assasin/select-Mathilda.jpg" alt="Mathilda">
-                        <p>Mathilda</p>
                     </div>
                     <div class="hero" onclick="selectHero('The Bright Claw', 'Natalia', 'Assets/assasin/Natalia.jpg', 'The Church of Lights top assassin.')">
                         <img src="Assets/assasin/select-Natalia.jpg" alt="Natalia">
@@ -112,43 +70,40 @@
                         <img src="Assets/assasin/select-Nolan.jpg" alt="Nolan">
                         <p>Nolan</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Heavenly Fist', 'Paquito', 'Assets/assasin/Paquito.jpg', 'A firm and righteous champion.')">
-                        <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito">
-                        <p>Paquito</p>
+                  
+                    <div class="hero" onclick="selectHero('The Mask of the Immortal', 'Suyou', 'Assets/assasin/Suyou.jpg', 'An exorcist from Zhu an who has inherited the power of the Immortal Nuo.')">
+                        <img src="Assets/assasin/select-Suyou.jpg" alt="Suyou">
+                        <p>Suyou</p>
+                    </div>
+                </div>
+                <div class="hero-column">
+                    <div><h3>Ferdinand's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('The Lone Lancer', 'Arlott', 'Assets/assasin/Arlott.jpg', 'A demon human hybrid wielding two lances with a thirst for vengeance against both the Church and demons.')">
+                        <img src="Assets/assasin/select-Arlott.jpg" alt="Arlott">
+                        <p>Arlott</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Shadow Ranger', 'Benedetta', 'Assets/assasin/Benedetta.jpg', 'A ranger that fights for hope.')">
+                        <img src="Assets/assasin/select-Benedetta.jpg" alt="Benedetta">
+                        <p>Benedetta</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Shadowbringer', 'Helcurt', 'Assets/assasin/Helcurt.jpg', 'A member of a mysterious race with light-swallowing ability.')">
+                        <img src="Assets/assasin/select-Helcurt.jpg" alt="Helcurt">
+                        <p>Helcurt</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Shadow Blade', 'Karina', 'Assets/assasin/Karina.jpg', 'The assassin who dances upon blades.')">
+                        <img src="Assets/assasin/select-Karina.jpg" alt="Karina">
+                        <p>Karina</p>
                     </div>
                     <div class="hero" onclick="selectHero('The Wandering Sword', 'Saber', 'Assets/assasin/Saber.jpg', 'A master swordsman in search of his true self.')">
                         <img src="Assets/assasin/select-Saber.jpg" alt="Saber">
                         <p>Saber</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Abyssal Witch', 'Selena', 'Assets/assasin/Selena.jpg', 'A deceiving young Dark Elf.')">
-                        <img src="Assets/assasin/select-Selena.jpg" alt="Selena">
-                        <p>Selena</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Mask of the Immortal', 'Suyou', 'Assets/assasin/Suyou.jpg', 'An exorcist from Zhu an who has inherited the power of the Immortal Nuo.')">
-                        <img src="Assets/assasin/select-Suyou.jpg" alt="Suyou">
-                        <p>Suyou</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Paenlong Legend', 'Yi Sun-shin', 'Assets/assasin/Yi Sun-shin.jpg', 'The famous admiral.')">
-                        <img src="Assets/assasin/select-Yi Sun-shin.jpg" alt="Yi Sun-shin">
-                        <p>Yi Sun-shin</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Martial Genius', 'Yin', 'Assets/assasin/Yin.jpg', 'A gifted Kungfu boy possessed by an Evil God.')">
-                        <img src="Assets/assasin/select-Yin.jpg" alt="Yin">
-                        <p>Yin</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Spear of Dragon', 'Zilong', 'Assets/assasin/Zilong.jpg', 'The spear master known as the Spear of Dragon.')">
-                        <img src="Assets/assasin/select-Zilong.jpg" alt="Zilong">
-                        <p>Zilong</p>
-                    </div>
                 </div>
             </div>
             <div id="marksman" class="hero-category" style="display: none;">
+                <div class="hero-category-title">Marksman Heroes</div>
                 <div class="hero-column">
-                    <div class="hero-category-title">Marksman Heroes</div>
-                    <div class="hero" onclick="selectHero('Dawnbreak Soldier', 'Beatrix', 'Assets/marksaman/Beatrix.jpg', 'A young inventor girl born with a silver spoon in her mouth. But she is a genius in more than just science: she excels in battle too, and joined forced with the Eruditio Rangers to shut down the 1718 Labs plot.')">
-                        <img src="Assets/marksaman/select-beatrix.jpg" alt="Beatrix">
-                        <p>Beatrix</p>
-                    </div>
+                    <div><h3>Denloyd's Pick</h3></div>
                     <div class="hero" onclick="selectHero('The Lone Star', 'Brody', 'Assets/marksaman/brody.jpg', 'A solitary youth bearing the corruption of the Abyss.')">
                         <img src="Assets/marksaman/select-brody.jpg" alt="Brody">
                         <p>Brody</p>
@@ -157,69 +112,9 @@
                         <img src="Assets/marksaman/select-bruno.jpg" alt="Bruno">
                         <p>Bruno</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Master Thief', 'Claude', 'Asset/marksaman/claude.jpg', 'A legendary thief known for his craftiness.')">
-                        <img src="Assets/marksaman/select-claude.jpg" alt="Claude">
-                        <p>Claude</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The West Justice', 'Clint', 'Assets/marksaman/clint.jpg', 'Righteous gunslinger of the wasteland.')">
-                        <img src="Assets/marksaman/select-clint.jpg" alt="Clint">
-                        <p>Clint</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Ancient Guard', 'Edith', 'Assets/marksaman/edith.jpg', 'Primal warden that watched over the sealed Evil Gods on Sanctum Island.')">
-                        <img src="Assets/marksaman/select-edith.jpg" alt="Edith">
-                        <p>Edith</p>
-                    </div>
                     <div class="hero" onclick="selectHero('Death Chanter', 'Granger', 'Assets/marksaman/Granger.jpg', 'A mysterious demon hunter that operates outside the conventions of the Church of Light. Always seen with a violin case in hand, he hunts down demons with his two soul-devouring weapons.')">
                         <img src="Assets/marksaman/select-Granger.jpg" alt="Granger">
                         <p>Granger</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Scarlet Flower', 'Hanabi', 'Assets/marksaman/hanabi.jpg', 'A ninja who holds the coveted Scarlet techniques.')">
-                        <img src="Assets/marksaman/select-hanabi.jpg" alt="Hanabi">
-                        <p>Hanabi</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Jungle Heart', 'Irithel', 'Assets/marksaman/irithel.jpg', 'The best friend of Leo the Sabertooth.')">
-                        <img src="Assets/marksaman/select-irithel.jpg" alt="irithel">
-                        <p>Irithel</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Arclight Outlaw', 'Ixia', 'Assets/marksaman/ixia.jpg', 'The leader of Bad Soul and self-proclaimed inventor, she wields a homemade weapon powered by a Starlium reactor.')">
-                        <img src="Assets/marksaman/select-ixia.jpg" alt="Ixia">
-                        <p>Ixia</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lost Star', 'Karrie', 'Assets/marksaman/karrie.jpg', 'A lone Yasson warrior.')">
-                        <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie">
-                        <p>Karrie</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Jetpack Rebel', 'Kimmy', 'Assets/marksaman/kimmy.jpg', 'A chemist with a creative mind.')">
-                        <img src="Assets/marksaman/select-kimmy.jpg" alt="Kimmy">
-                        <p>Kimmy</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Energy Gunner', 'Layla', 'Assets/marksaman/layla.jpg', 'A skilled marksman who carries a Malefic Gun.')">
-                        <img src="Assets/marksaman/select-layla.jpg" alt="Layla">
-                        <p>Layla</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Deadly Sniper', 'Lesley', 'Assets/marksaman/lesley.jpg', 'Harleys guardian and a talented sniper.')">
-                        <img src="Assets/marksaman/select-lesley.jpg" alt="Lesley">
-                        <p>Lesley</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Deadly Sniper', 'Melissa', 'Assets/marksaman/melissa.jpg', 'Harleys guardian and a talented sniper.')">
-                        <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa">
-                        <p>Melissa</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Moonlight Archer', 'Miya', 'Assets/marksaman/miya.jpg', 'An archer blessed by the Moon God.')">
-                        <img src="Assets/marksaman/select-miya.jpg" alt="Miya">
-                        <p>Miya</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Spear of Quiescence', 'Moskov', 'Assets/marksaman/moskov.jpg', 'The spearman who craves for vengeance.')">
-                        <img src="Assets/marksaman/select-moskov.jpg" alt="Moskov">
-                        <p>Moskov</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Spacetime Walker', 'Natan', 'Assets/marksaman/natan.jpg', 'A time-traveler with a masterful grasp on all things scientific and magical.')">
-                        <img src="Assets/marksaman/select-natan.jpg" alt="Natan">
-                        <p>Natan</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Icefield Companions', 'Popol and kupa', 'Assets/marksaman/pnk.jpg', 'The strongest duo from the northern land of ice.')">
-                        <img src="Assets/marksaman/select-pnk.jpg" alt="Popol and kupa">
-                        <p>Popol and kupa</p>
                     </div>
                     <div class="hero" onclick="selectHero('The Dire Wolf Hunter', 'Roger', 'Assets/marksaman/roger.jpg', 'A hunter who walks the line Between good and evil.')">
                         <img src="Assets/marksaman/select-roger.jpg" alt="Roger">
@@ -229,130 +124,63 @@
                         <img src="Assets/marksaman/select-wanwan.jpg" alt="Wanwan">
                         <p>Wanwan</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Paenlong Legend', 'Yi Sun-shin', 'Assets/marksaman/yss.jpg', 'The famous admiral.')">
-                        <img src="Assets/marksaman/select-yss.jpg" alt="Yi Sun-shin">
-                        <p>Yi Sun-shin</p>
+                </div>
+
+                    <div class="hero-column">
+                    <div><h3>Ferdinand's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('Dawnbreak Soldier', 'Beatrix', 'Assets/marksaman/Beatrix.jpg', 'A young inventor girl born with a silver spoon in her mouth. But she is a genius in more than just science: she excels in battle too, and joined forced with the Eruditio Rangers to shut down the 1718 Labs plot.')">
+                        <img src="Assets/marksaman/select-beatrix.jpg" alt="Beatrix">
+                        <p>Beatrix</p>
                     </div>
+                    <div class="hero" onclick="selectHero('The Arclight Outlaw', 'Ixia', 'Assets/marksaman/ixia.jpg', 'The leader of Bad Soul and self-proclaimed inventor, she wields a homemade weapon powered by a Starlium reactor.')">
+                        <img src="Assets/marksaman/select-ixia.jpg" alt="Ixia">
+                        <p>Ixia</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Lost Star', 'Karrie', 'Assets/marksaman/karrie.jpg', 'A lone Yasson warrior.')">
+                        <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie">
+                        <p>Karrie</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Deadly Sniper', 'Melissa', 'Assets/marksaman/melissa.jpg', 'Harleys guardian and a talented sniper.')">
+                        <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa">
+                        <p>Melissa</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Spacetime Walker', 'Natan', 'Assets/marksaman/natan.jpg', 'A time-traveler with a masterful grasp on all things scientific and magical.')">
+                        <img src="Assets/marksaman/select-natan.jpg" alt="Natan">
+                        <p>Natan</p>
+                    </div>
+                    
                 </div>
             </div>
             <div id="fighter" class="hero-category" style="display: none;">
+            <div class="hero-category-title">Fighter Heroes</div>
               <div class="hero-column">
-                <div class="hero-category-title">Fighter Heroes</div>
-                    <div class="hero" onclick="selectHero('The Soul Contractor', 'Aldous', 'Assets/fighter/Aldous.jpg', 'The Soul Contractor With monstrous strength.')">
-                        <img src="Assets/fighter/select-Aldous.jpg" alt="Aldous">
-                        <p>Aldous</p>
-                    </div>
+                <div><h3>Denloyd's Pick</h3></div>
                     <div class="hero" onclick="selectHero('The Blade of Enmity', 'Alpha', 'Assets/fighter/Alpha.jpg', 'Blade of Enmity,')">
                         <img src="Assets/fighter/select-Alpha.jpg" alt="Alpha">
                         <p>Alpha</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Demon Hunter', 'Alucard', 'Assets/assasin/Alucard.jpg', 'A demon hunter with a deep hatred for demons.')">
-                        <img src="Assets/assasin/select-Alucard.jpg" alt="Alucard">
-                        <p>Alucard</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Dark Angel', 'Argus', 'Assets/fighter/Argus.jpg', 'An angel with a blade that taints souls.')">
-                        <img src="Assets/fighter/select-Argus.jpg" alt="Argus">
-                        <p>Argus</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lone Lancer', 'Arlott', 'Assets/assasin/Arlott.jpg', 'A demon human hybrid wielding two lances with a thirst for vengeance against both the Church and demons.')">
-                        <img src="Assets/assasin/select-Arlott.jpg" alt="Arlott">
-                        <p>Arlott</p>
                     </div>
                     <div class="hero" onclick="selectHero('The Warrior of Ferocity', 'Aulus', 'Assets/fighter/Aulus.jpg', 'A ferocious warrior who gets stronger as he fights.')">
                         <img src="Assets/fighter/select-Aulus.jpg" alt="Aulus">
                         <p>Aulus</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Tribal Warrior', 'Badang', 'Assets/fighter/Badang.jpg', 'The fearless fighter who can split the enemies before taking them down one by one.')">
-                        <img src="Assets/fighter/select-Badang.jpg" alt="Badang">
-                        <p>Badang</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Bloody Beast', 'Balmond', 'Assets/fighter/Balmond.jpg', 'Leader of the orc legion.')">
-                        <img src="Assets/fighter/select-Balmond.jpg" alt="Balmond">
-                        <p>Balmond</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Frozen King', 'Bane', 'Assets/fighter/Bane.jpg', 'The ghost captain who roams the Frozen Sea.')">
-                        <img src="Assets/fighter/select-Bane.jpg" alt="Bane">
-                        <p>Bane</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Dino Rider', 'Barats', 'Assets/fighter/Barats.jpg', 'The Desert King who can absorb energy and become bigger.')">
-                        <img src="Assets/fighter/select-Barats.jpg" alt="Barats">
-                        <p>Barats</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadow Ranger', 'Benedetta', 'Assets/assasin/Benedetta.jpg', 'A ranger that fights for hope.')">
-                        <img src="Assets/assasin/select-Benedetta.jpg" alt="Benedetta">
-                        <p>Benedetta</p>
-                    </div>
                     <div class="hero" onclick="selectHero('The Kung Fu Boy', 'Chou', 'Assets/fighter/Chou.jpg', 'A kind and passionate Kung-Fu boy.')">
                         <img src="Assets/fighter/select-Chou.jpg" alt="Chou">
                         <p>Chou</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Buoyant Performer', 'Cici', 'Assets/fighter/Cici.jpg', 'A cheerful performer who spreads fun and wonderment wherever she goes.')">
-                        <img src="Assets/fighter/select-Cici.jpg" alt="Cici">
-                        <p>Cici</p>
+                    <div class="hero" onclick="selectHero('The Lord Lava', 'Thamuz', 'Assets/fighter/Thamuz.jpg', 'The mighty Lord Lava.')">
+                        <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz">
+                        <p>Thamuz</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Prince of the Abyss', 'Dyrroth', 'Assets/fighter/Dyrroth.jpg', 'The Prince of Abyss with wisdom and power.')">
-                        <img src="Assets/fighter/select-Dyrroth.jpg" alt="Dyrroth">
-                        <p>Dyrroth</p>
+                    <div class="hero" onclick="selectHero('The Executioner', 'Terizla', 'Assets/fighter/Terizla.jpg', 'A smith with a great hatred for the empire.')">
+                        <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla">
+                        <p>Terizla</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Rogue Appraiser', 'Fredrinn', 'Assets/fighter/Fredrinn.jpg', 'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.')">
-                        <img src="Assets/fighter/select-Fredrinn.jpg" alt="Fredrinn">
-                        <p>Fredrinn</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Valkyrie', 'Freya', 'Assets/fighter/Freya.jpg', 'Powerful melee heroine!')">
-                        <img src="Assets/fighter/select-Freya.jpg" alt="Freya">
-                        <p>Freya</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Mighty Legend', 'Gatotkaca', 'Assets/fighter/Gatotkaca.jpg', 'A holy fighter with bones of steel.')">
-                        <img src="Assets/fighter/select-Gatotkaca.jpg" alt="Gatotkaca">
-                        <p>Gatotkaca</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Fortress Titan', 'Grock', 'Assets/fighter/Grock.jpg', 'A Stone Titan who once served the Ancient Ones.')">
-                        <img src="Assets/fighter/select-Grock.jpg" alt="Grock">
-                        <p>Grock</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Ms. Violet', 'Guinevere', 'Assets/fighter/Guinevere.jpg', 'Ms. Violet will obliterate the enemies with her powerful magic!')">
-                        <img src="Assets/fighter/select-Guinevere.jpg" alt="Guinevere">
-                        <p>Guinevere</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Power of Megalith', 'Hilda', 'Assets/fighter/Hilda.jpg', 'The champion of absolute force.')">
-                        <img src="Assets/fighter/select-Hilda.jpg" alt="Hilda">
-                        <p>Hilda</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Steel Sweetheart', 'Jawhead', 'Assets/fighter/Jawhead.jpg', 'A prototype robot built to protect his creators little girl.')">
-                        <img src="Assets/fighter/select-Jawhead.jpg" alt="Jawhead">
-                        <p>Jawhead</p>
-                    </div>
+                </div>
+                <div class="hero-column">
+                    <div><h3>Ferdinand's Pick</h3></div>
                     <div class="hero" onclick="selectHero('The Scarlet Raven', 'Julian', 'Assets/fighter/Julian.jpg', 'A Raven assassin of the Church of Light, a young boy who is in search of his home...')">
                         <img src="Assets/fighter/select-Julian.jpg" alt="Julian">
                         <p>Julian</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Nazar King', 'Kaja', 'Assets/fighter/Kaja.jpg', 'Leader of Nazar.')">
-                        <img src="Assets/fighter/select-Kaja.jpg" alt="Kaja">
-                        <p>Kaja</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Desert Scimitar', 'Khaleed', 'Assets/fighter/Khaleed.jpg', 'A dauntless warrior who takes command of desert power.')">
-                        <img src="Assets/fighter/select-Khaleed.jpg" alt="Khaleed">
-                        <p>Khaleed</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Courageous Blade', 'Lapu-Lapu', 'Assets/fighter/Lapu-Lapu.jpg', 'The Courageous Blade comes back again!	')">
-                        <img src="Assets/fighter/select-Lapu-Lapu.jpg" alt="Lapu-Lapu">
-                        <p>Lapu-Lapu</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Sworn Sword', 'Leomord', 'Assets/fighter/Leomord.jpg', 'The fallen knight who remains true to his oath.')">
-                        <img src="Assets/fighter/select-Leomord.jpg" alt="Leomord">
-                        <p>Leomord</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Wild-oats Fist', 'Masha', 'Assets/fighter/Masha.jpg', 'A female berserker with the Beast Power granted by the Bear King.')">
-                        <img src="Assets/fighter/select-Masha.jpg" alt="Masha">
-                        <p>Masha</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Ashura King', 'Martis', 'Assets/fighter/Martis.jpg', 'A first shura to conquer the Three Thousand Worlds.')">
-                        <img src="Assets/fighter/select-Martis.jpg" alt="Martis">
-                        <p>Martis</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Courageous Warrior', 'Minsitthar', 'Assets/fighter/Minsitthar.jpg', 'A young king that led the people of Mahar Pura to victory against invaders.')">
-                        <img src="Assets/fighter/select-Minsitthar.jpg" alt="Minsitthar">
-                        <p>Minsitthar</p>
                     </div>
                     <div class="hero" onclick="selectHero('The Heavenly Fist', 'Paquito', 'Assets/assasin/Paquito.jpg', 'A firm and righteous champion.')">
                         <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito">
@@ -362,34 +190,6 @@
                         <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus">
                         <p>Phoveus</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Dire Wolf Hunter', 'Roger', 'Assets/marksaman/roger.jpg', 'A hunter who walks the line Between good and evil.')">
-                        <img src="Assets/marksaman/select-roger.jpg" alt="Roger">
-                        <p>Roger</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Little Red Hood', 'Ruby', 'Assets/fighter/Ruby.jpg', 'The little girl in the red hoodie.')">
-                        <img src="Assets/fighter/select-Ruby.jpg" alt="Ruby">
-                        <p>Ruby</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Imperial Knightess', 'Silvanna', 'Assets/fighter/Silvanna.jpg', 'The princess of the empire that is admired by her people.')">
-                        <img src="Assets/fighter/select-Silvanna.jpg" alt="Silvanna">
-                        <p>Silvanna</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Monkey King', 'Sun', 'Assets/fighter/Sun.jpg', 'The monkey king who broke the seal that bound him.')">
-                        <img src="Assets/fighter/select-Sun.jpg" alt="Sun">
-                        <p>Sun</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Mask of the Immortal', 'Suyou', 'Assets/assasin/Suyou.jpg', 'An exorcist from Zhu an who has inherited the power of the Immortal Nuo.')">
-                        <img src="Assets/assasin/select-Suyou.jpg" alt="Suyou">
-                        <p>Suyou</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Executioner', 'Terizla', 'Assets/fighter/Terizla.jpg', 'A smith with a great hatred for the empire.')">
-                        <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla">
-                        <p>Terizla</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lord Lava', 'Thamuz', 'Assets/fighter/Thamuz.jpg', 'The mighty Lord Lava.')">
-                        <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz">
-                        <p>Thamuz</p>
-                    </div>
                     <div class="hero" onclick="selectHero('The  Firaga Armor', 'X.Borg', 'Assets/fighter/X.Borg.jpg', 'A talented teenager who uses his Firaga Armor to burn everything he comes across.')">
                         <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg">
                         <p>X.Borg</p>
@@ -398,18 +198,160 @@
                         <img src="Assets/assasin/select-Yin.jpg" alt="Yin">
                         <p>Yin</p>
                     </div>
-                    <div class="hero" onclick="selectHero('The Black Dragon', 'Yu Zhong', 'Assets/fighter/Yu Zhong.jpg', 'Ancient Dragon descendant that can transform into the Black Dragon and dominate the battlefield.')">
-                        <img src="Assets/fighter/select-Yu Zhong.jpg" alt="Yu Zhong">
-                        <p>Yu Zhong</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Spear of Dragon', 'Zilong', 'Assets/assasin/Zilong.jpg', 'The spear master known as the Spear of Dragon.')">
-                        <img src="Assets/assasin/select-Zilong.jpg" alt="Zilong">
-                        <p>Zilong</p>
-                    </div>
               </div>
             </div>
-            <!-- Add other categories similarly -->
+           <div id="mage" class="hero-category" style="display: none;">
+            <div class="hero-category-title">Mage Heroes</div>
+                <div class="hero-column">
+                    <div><h3>Denloyd's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('The Embrace of Night', 'Cecilion', 'Assets/mage/Cecilion.jpg', 'An opera singer, a Blood Demon.')">
+                        <img src="Assets/mage/select-Cecilion.jpg" alt="Cecilion">
+                        <p>Cecilion</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Moon Palace Immortal', 'Change e', 'Assets/mage/Change.jpg', 'A heroine from a mysterious eastern land.')">
+                        <img src="Assets/mage/select-Change.jpg" alt="Change">
+                        <p>Chang'e</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Yin-yang Geomancer', 'Luo Yi', 'Assets/mage/Luo yi.jpg', 'A mage who roams between the binary of Yin and Yang.')">
+                        <img src="Assets/mage/select-Luo yi.jpg" alt="Luo Yi">
+                        <p>Luo Yi</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Wings of Vengeance', 'Pharsa', 'Assets/mage/Pharsa.jpg', 'A member of the Crow Clan who was born with a blood mutaion.')">
+                        <img src="Assets/mage/select-Pharsa.jpg" alt="Pharsa">
+                        <p>Pharsa</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Valentina', 'Assets/mage/Valentina.jpg', 'The unpredictable shadow predator.')">
+                        <img src="Assets/mage/select-Valentina.jpg" alt="Valentina">
+                        <p>Valentina</p>
+                    </div>
+                </div>
+                <div class="hero-column">
+                    <div><h3>Ferdinand's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('The Lightning Weaver', 'Eudora', 'Assets/mage/Eudora.jpg', 'The master of the power of lightning.')">
+                        <img src="Assets/mage/select-Eudora.jpg" alt="Eudora">
+                        <p>Eudora</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Astrologer', 'Esmeralda', 'Assets/mage/Esmeralda.jpg', 'Falling Starmoon')">
+                        <img src="Assets/mage/select-Esmeralda.jpg" alt="Esmeralda">
+                        <p>Esmeralda</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Star Rebel', 'Novaria', 'Assets/mage/Novaria.jpg', 'The young girl who seeks to rebuild the Star Atlas in order to solve the secrets of the Stars.')">
+                        <img src="Assets/mage/select-Novaria.jpg" alt="Novaria">
+                        <p>Novaria</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Defier of Light', 'Xavier', 'Assets/mage/Xavier.jpg', 'Former member of the Knights of Light who is determined to forge a path of his own.')">
+                        <img src="Assets/mage/select-Xavier.jpg" alt="Xavier">
+                        <p>Xavier</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Zhuxin', 'Assets/mage/Zhuxin.jpg', 'The unpredictable shadow predator.')">
+                        <img src="Assets/mage/select-Zhuxin.jpg" alt="Zhuxin">
+                        <p>Zhuxin</p>
+                    </div>
+                </div>
+           </div>
+           <div id="support" class="hero-category" style="display: none;">
+            <div class="hero-category-title">Support Heroes</div>
+                <div class="hero-column">
+                    <div><h3>Denloyd's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('The Bunnylove', 'Angela', 'Assets/support/Angela.jpg', 'An android with a heart full of love.')">
+                        <img src="Assets/support/select-Angela.jpg" alt="Angela ">
+                        <p>Angela </p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Timekeeper', 'Diggie', 'Assets/support/Diggie.jpg', 'A little owl with a penchant for timepieces.')">
+                        <img src="Assets/support/select-Diggie.jpg" alt="Diggie">
+                        <p>Diggie</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Moon Elf King', 'Estes', 'Assets/support/Estes.jpg', 'The Elf Guardian.')">
+                        <img src="Assets/support/select-Estes.jpg" alt="Estes">
+                        <p>Estes</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Nazar King', 'Kaja', 'Assets/support/Kaja.jpg', 'Leader of Nazar.')">
+                        <img src="Assets/support/select-Kaja.jpg" alt="Kaja">
+                        <p>Kaja</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Mathilda', 'Assets/support/Mathilda.jpg', 'The unpredictable shadow predator.')">
+                        <img src="Assets/support/select-Mathilda.jpg" alt="Mathilda">
+                        <p>Mathilda</p>
+                    </div>
+                </div>
+                <div class="hero-column">
+                    <div><h3>Ferdinand's Pick</h3></div>
+                    <div class="hero" onclick="selectHero('The Shadow of Twilight', 'Carmilla', 'Assets/support/Carmilla.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
+                        <img src="Assets/support/select-Carmilla.jpg" alt="Carmilla">
+                        <p>Carmilla</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Phase Technician', 'Chip', 'Assets/support/Chip.jpg', 'A carefree, genetically enhanced fox that wields advanced portal technology.')">
+                        <img src="Assets/support/select-Chip.jpg" alt="Chip">
+                        <p>Chip</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Soul Binder', 'Faramis', 'Assets/support/Faramis.jpg', 'A fallen imperial mage.')">
+                        <img src="Assets/support/select-Faramis.jpg" alt="Faramis">
+                        <p>Faramis</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Budding Hope', 'Floryn', 'Assets/support/Floryn.jpg', 'A kind-hearted girl who is determined to spread greenery throughout the world.')">
+                        <img src="Assets/support/select-Floryn.jpg" alt="Floryn">
+                        <p>Floryn</p>
+                    </div>
+                    <div class="hero" onclick="selectHero('The Wings of Holiness', 'Rafaela', 'Assets/support/Rafaela.jpg', 'The angel who heals everything.')">
+                        <img src="Assets/support/select-Rafaela.jpg" alt="Rafaela">
+                        <p>Rafaela</p>
+                    </div>
+                </div>
+           </div>
+           <div id="tank" class="hero-category" style="display: none;">
+            <div class="hero-category-title">Tank Heroes</div>
+            <div class="hero-column">
+                <div><h3>Denloyd's Pick</h3></div>
+                <div class="hero" onclick="selectHero('The Panda Warrior', 'Akai', 'Assets/tank/Akai.jpg', 'A panda warrior who likes rolling around.')">
+                    <img src="Assets/tank/select-Akai.jpg" alt="Akai">
+                    <p>Akai</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Guard of Nature', 'Belerick', 'Assets/tank/Belerick.jpg', 'A friendly creature of nature.')">
+                    <img src="Assets/tank/select-Belerick.jpg" alt="Belerick">
+                    <p>Belerick</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Grand Warden', 'Hylos', 'Assets/tank/Hylos.jpg', 'A Centaur Hero with the ability of convert natural magic into life force.')">
+                    <img src="Assets/tank/select-Hylos.jpg" alt="Hylos">
+                    <p>Hylos</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Wild Engine', 'Johnson', 'Assets/tank/Johnson.jpg', 'A super cyborg who can transform into a car and lead his teammates into battle.')">
+                    <img src="Assets/tank/select-Johnson.jpg" alt="Johnson">
+                    <p>Johnson</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Shadow of Twilight', 'Uranus', 'Assets/tank/Uranus.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
+                    <img src="Assets/tank/select-Uranus.jpg" alt="Uranus">
+                    <p>Uranus</p>
+                </div>
+            </div>
+            <div class="hero-column">
+                <div><h3>Ferdinand's Pick</h3></div>
+                <div class="hero" onclick="selectHero('The Ocean Gladiator', 'Atlas', 'Assets/tank/Atlas.jpg', 'An ancient creature that pilots a mecha.')">
+                    <img src="Assets/tank/select-Atlas.jpg" alt="Atlas">
+                    <p>Atlas</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Frozen Warrior', 'Franco', 'Assets/tank/Franco.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
+                    <img src="Assets/tank/select-Franco.jpg" alt="Franco">
+                    <p>Franco</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Rogue Appraiser', 'Fredrinn', 'Assets/tank/Fredrinn.jpg', 'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.')">
+                    <img src="Assets/tank/select-Fredrinn.jpg" alt="Fredrinn">
+                    <p>Fredrinn</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Desert Tyrant', 'Khufra', 'Assets/tank/Khufra.jpg', 'A cruel and greedy tyrant of the desert.')">
+                    <img src="Assets/tank/select-Khufra.jpg" alt="Khufra">
+                    <p>Khufra</p>
+                </div>
+                <div class="hero" onclick="selectHero('The Warrior of Dawn', 'Tigreal', 'Assets/tank/Tigreal.jpg', 'The holy knight loyal to the Lord of Light.')">
+                    <img src="Assets/tank/select-Tigreal.jpg" alt="Tigreal">
+                    <p>Tigreala</p>
+                </div>
+            </div>
+           </div>
         </div>
+        <div class="button-container">
+            <button id="back-button" class="back-btn" style="display: none;" onclick="goBack()">Back</button>
+        </div>
+        
     </div>
 
     <!-- Selected Hero Section -->
