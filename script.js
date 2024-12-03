@@ -24,10 +24,6 @@ function showCategory(category) {
 
 // Function to select a hero and show details
 function selectHero(category, name, image, info, skins = [], skills = [], gameplay = '') {
-    // Hide hero selection, show selected hero details
-    document.getElementById('hero-selection').style.display = 'none';
-    document.getElementById('selected-hero').style.display = 'block';
-
     // Set hero basic details
     document.getElementById('hero-name').innerText = `${name} (${category})`;
     document.getElementById('hero-image').src = image;
@@ -39,7 +35,10 @@ function selectHero(category, name, image, info, skins = [], skills = [], gamepl
     skins.forEach(skin => {
         const skinDiv = document.createElement('div');
         skinDiv.classList.add('skin-item');
-        skinDiv.innerHTML = `<img src="${skin.image}" alt="${skin.name}"><p>${skin.name}</p>`;
+        skinDiv.innerHTML = `
+            <img src="${skin.image}" alt="${skin.name}">
+            <p>${skin.name}</p>
+        `;
         skinsList.appendChild(skinDiv);
     });
 
@@ -47,14 +46,27 @@ function selectHero(category, name, image, info, skins = [], skills = [], gamepl
     const skillsList = document.getElementById('skills-list');
     skillsList.innerHTML = ''; // Clear previous skills
     skills.forEach(skill => {
-        const skillItem = document.createElement('li');
-        skillItem.innerText = `${skill.name}: ${skill.description}`;
-        skillsList.appendChild(skillItem);
+        const skillDiv = document.createElement('div');
+        skillDiv.classList.add('skill-item');
+        skillDiv.innerHTML = `
+            <img src="${skill.image}" alt="${skill.name}" class="skill-image">
+            <div>
+                <h5>${skill.name}</h5>
+                <p>${skill.description}</p>
+            </div>
+        `;
+        skillsList.appendChild(skillDiv);
     });
 
     // Set gameplay information
     document.getElementById('gameplay-info').innerText = gameplay;
+
+    // Hide hero selection, show selected hero details
+    document.getElementById('hero-selection').style.display = 'none';
+    document.getElementById('selected-hero').style.display = 'block';
 }
+
+
 
 // Function to go back to hero selection
 function goBack() {
