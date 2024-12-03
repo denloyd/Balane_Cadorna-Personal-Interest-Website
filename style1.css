@@ -26,6 +26,7 @@ h1, h2, h3, p {
    margin-top: 5rem;
 }
 
+
 .hero-container {
     display: flex;
     flex-wrap: wrap;
@@ -52,13 +53,14 @@ h1, h2, h3, p {
 }
 
 .hero-category-title {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 .hero img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -68,8 +70,8 @@ h1, h2, h3, p {
 }
 #selected-hero img {
     margin-top: 2rem;
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 500px;
     border-radius: 15px;
     border-style: double;
 }
@@ -128,4 +130,46 @@ button:hover {
     text-align: center;
     position: relative;
     z-index: 5;
+}
+
+.hero-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+.skins-gallery img {
+    max-width: 150px;
+    margin-right: 10px;
+}
+
+/* last container */ 
+
+.hero-skins, .hero-skills, .hero-gameplay {
+    margin-top: 20px;
+}
+
+.hero-skins img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.skin-item {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.hero-skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hero-skills li {
+    margin-bottom: 10px;
+}
+
+.hero-gameplay p {
+    font-size: 16px;
+    line-height: 1.5;
 }

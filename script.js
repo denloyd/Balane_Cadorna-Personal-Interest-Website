@@ -23,13 +23,37 @@ function showCategory(category) {
 }
 
 // Function to select a hero and show details
-function selectHero(category, name, image, info) {
+function selectHero(category, name, image, info, skins = [], skills = [], gameplay = '') {
+    // Hide hero selection, show selected hero details
     document.getElementById('hero-selection').style.display = 'none';
     document.getElementById('selected-hero').style.display = 'block';
 
+    // Set hero basic details
     document.getElementById('hero-name').innerText = `${name} (${category})`;
     document.getElementById('hero-image').src = image;
     document.getElementById('hero-info').innerText = info;
+
+    // Populate hero skins
+    const skinsList = document.getElementById('skins-list');
+    skinsList.innerHTML = ''; // Clear previous skins
+    skins.forEach(skin => {
+        const skinDiv = document.createElement('div');
+        skinDiv.classList.add('skin-item');
+        skinDiv.innerHTML = `<img src="${skin.image}" alt="${skin.name}"><p>${skin.name}</p>`;
+        skinsList.appendChild(skinDiv);
+    });
+
+    // Populate hero skills
+    const skillsList = document.getElementById('skills-list');
+    skillsList.innerHTML = ''; // Clear previous skills
+    skills.forEach(skill => {
+        const skillItem = document.createElement('li');
+        skillItem.innerText = `${skill.name}: ${skill.description}`;
+        skillsList.appendChild(skillItem);
+    });
+
+    // Set gameplay information
+    document.getElementById('gameplay-info').innerText = gameplay;
 }
 
 // Function to go back to hero selection
@@ -63,4 +87,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-

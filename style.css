@@ -141,3 +141,35 @@ button:hover {
     max-width: 150px;
     margin-right: 10px;
 }
+
+/* last container */ 
+
+.hero-skins, .hero-skills, .hero-gameplay {
+    margin-top: 20px;
+}
+
+.hero-skins img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.skin-item {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.hero-skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hero-skills li {
+    margin-bottom: 10px;
+}
+
+.hero-gameplay p {
+    font-size: 16px;
+    line-height: 1.5;
+}
