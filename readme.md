@@ -23,3 +23,4 @@ It is a fun and interactive website where users can select their favorite hero i
 
 
 # Ferdinand Cadorna 
+12-04-24 Add details and picture to the container.
