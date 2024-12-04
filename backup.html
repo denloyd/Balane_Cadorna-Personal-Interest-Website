@@ -6,7 +6,7 @@
     <title>Favorite Hero</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
     <!-- Video Intro Section -->
@@ -60,10 +60,17 @@
                         'Assets/assasin/Lancelot.jpg', 
                         'A gifted young man who infuses the power of magic into his swordsmanship.',
                         [
-                            { name: 'Royal Knight', image: 'Assets/skins/lancelot-royal-knight.jpg' },
-                            { name: 'Royal Knight', image: 'Assets/skins/lancelot-royal-knight.jpg' },
-                            { name: 'Royal Knight', image: 'Assets/skins/lancelot-royal-knight.jpg' },
-                            { name: 'Masked Knight', image: 'Assets/skins/lancelot-masked-knight.jpg' }
+                             { name: 'Masked Knightt', image: 'Assets/Skin/lancelotskin1.jpg' },
+        { name: 'Christmas Carnival', image: 'Assets/Skin/lancelotskin2.jpg' },
+        { name: 'Royal Matador', image: 'Assets/Skin/lancelotskin3.jpg' },
+        { name: 'Dark Earl', image: 'Assets/Skin/lancelotskin4.jpg' },
+        { name: 'Pisces', image: 'Assets/Skin/lancelotskin5.jpg' },
+        { name: 'Floral Knight', image: 'Assets/Skin/lancelotskin6.jpg' },
+        { name: 'Swordmaster', image: 'Assets/Skin/lancelotskin7.jpg' },
+        { name: 'Bren. Esports', image: 'Assets/Skin/lancelotskin8.jpg' },
+        { name: 'Empyrean Flame', image: 'Assets/Skin/lancelotskin9.jpg' },
+        { name: 'Marques of Blades', image: 'Assets/Skin/lancelotskin10.jpg' }
+
                         ],
                         [
                             { 
@@ -383,31 +390,50 @@
         
     </div>
 
-    <!-- Selected Hero Section -->
     <div class="last-container" id="selected-hero" style="display: none;">
-        <h2>Your Favorite Hero</h2>
-        <img id="hero-image" src="" alt="Hero Image">
-        <h3 id="hero-name"></h3>
-        <p id="hero-info"></p>
-        
-        <!-- New Sections for Skins, Skills, and Gameplay -->
-        <div id="hero-skins" class="hero-skins">
-            <h4>Skins</h4>
-            <div id="skins-list"></div>
+        <!-- Hero Info Section -->
+        <div class="hero-overview">
+            <h2 id="hero-name"></h2>
+            <img id="hero-image" src="" alt="Hero Image">
+            <p id="hero-info"></p>
+            <div class="hero-buttons">
+                <button class="btn" onclick="showSection('skins-section')">Skins</button>
+                <button class="btn" onclick="showSection('skills-section')">Skills</button>
+                <button class="btn" onclick="showSection('gameplay-section')">Gameplay</button>
+                <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+            </div>
         </div>
-        <div id="hero-skills" class="hero-skills">
-            <h4>Skills</h4>
-            <ul id="skills-list"></ul>
-        </div>
-        <div id="hero-gameplay" class="hero-gameplay">
-            <h4>Gameplay</h4>
+    
+        <!-- Skins Section -->
+        <section id="skins-section" class="hero-section" style="display: none;">
+            <div class="slider">
+                <button class="slider-btn prev" onclick="changeSkin(-1)">&#10094;</button>
+                <div class="slider-content">
+                    <img id="skin-image" src="" alt="Skin Image">
+                    <p id="skin-name"></p>
+                </div>
+                <button class="slider-btn next" onclick="changeSkin(1)">&#10095;</button>
+            </div>
+        </section>
+    
+        <!-- Skills Section -->
+        <section id="skills-section" class="hero-section" style="display: none;">
+            <h3>Hero Skills</h3>
+            <div id="skills-list" class="skills-container"></div>
+        </section>
+    
+        <!-- Gameplay Section -->
+        <section id="gameplay-section" class="hero-section" style="display: none;">
+            <h3>Gameplay</h3>
             <p id="gameplay-info"></p>
-        </div>
-        
-        <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+        </section>
     </div>
     
+    
 
-    <script src="script.js"></script>
+
+    
+
+    <script src="backupjs.js"></script>
 </body>
 </html>
