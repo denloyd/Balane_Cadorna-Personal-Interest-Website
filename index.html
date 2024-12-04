@@ -390,29 +390,48 @@
         
     </div>
 
-    <!-- Selected Hero Section -->
     <div class="last-container" id="selected-hero" style="display: none;">
-        <h2>Your Favorite Hero</h2>
-        <img id="hero-image" src="" alt="Hero Image">
-        <h3 id="hero-name"></h3>
-        <p id="hero-info"></p>
-        
-        <!-- New Sections for Skins, Skills, and Gameplay -->
-        <div id="hero-skins" class="hero-skins">
-            <h4>Skins</h4>
-            <div id="skins-list"></div>
+        <!-- Hero Info Section -->
+        <div class="hero-overview">
+            <h2 id="hero-name"></h2>
+            <img id="hero-image" src="" alt="Hero Image">
+            <p id="hero-info"></p>
+            <div class="hero-buttons">
+                <button class="btn" onclick="showSection('skins-section')">Skins</button>
+                <button class="btn" onclick="showSection('skills-section')">Skills</button>
+                <button class="btn" onclick="showSection('gameplay-section')">Gameplay</button>
+                <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+            </div>
         </div>
-        <div id="hero-skills" class="hero-skills">
-            <h4>Skills</h4>
-            <ul id="skills-list"></ul>
-        </div>
-        <div id="hero-gameplay" class="hero-gameplay">
-            <h4>Gameplay</h4>
+    
+        <!-- Skins Section -->
+        <section id="skins-section" class="hero-section" style="display: none;">
+            <div class="slider">
+                <button class="slider-btn prev" onclick="changeSkin(-1)">&#10094;</button>
+                <div class="slider-content">
+                    <img id="skin-image" src="" alt="Skin Image">
+                    <p id="skin-name"></p>
+                </div>
+                <button class="slider-btn next" onclick="changeSkin(1)">&#10095;</button>
+            </div>
+        </section>
+    
+        <!-- Skills Section -->
+        <section id="skills-section" class="hero-section" style="display: none;">
+            <h3>Hero Skills</h3>
+            <div id="skills-list" class="skills-container"></div>
+        </section>
+    
+        <!-- Gameplay Section -->
+        <section id="gameplay-section" class="hero-section" style="display: none;">
+            <h3>Gameplay</h3>
             <p id="gameplay-info"></p>
-        </div>
-        
-        <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+        </section>
     </div>
+    
+    
+
+
     
 
     <script src="script.js"></script>
