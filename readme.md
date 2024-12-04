@@ -5,20 +5,11 @@ It is a fun and interactive website where users can select their favorite hero i
 
 
 # Denloyd Mar C. Balane 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+12-05 
+added image slider for skins 
+remove icons from the category buttons (subject to change into img)
+put hero lists from left to right 
+added buttons on last container 
 
 
 
