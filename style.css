@@ -215,6 +215,7 @@ button:hover {
   }
   
   .gameplay-header h3 {
+    margin-top: 5rem;
     font-size: 28px;
     font-weight: bold;
     color: #333;
@@ -342,8 +343,4 @@ button:hover {
 
 
 
-/* Gameplay section styles */
-#gameplay-info {
-    font-size: 18px;
-    line-height: 1.6;
-}
+
