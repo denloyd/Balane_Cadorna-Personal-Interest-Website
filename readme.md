@@ -5,12 +5,19 @@ It is a fun and interactive website where users can select their favorite hero i
 
 
 # Denloyd Mar C. Balane 
+11-25
+Created a select-container and last container
+added heroes in marksman
+
+Nov 29 to Dec 3 
+Added all the images of of heroes in selection and last container
+
 12-05 
-added image slider for skins 
+added image slider for skins (created a script.js for that)
 remove icons from the category buttons (subject to change into img)
 put hero lists from left to right 
 added buttons on last container 
-
+added video link on gameplay section 
 
 
 # Ferdinand Cadorna 
