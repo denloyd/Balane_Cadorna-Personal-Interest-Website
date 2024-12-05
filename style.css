@@ -272,14 +272,6 @@ button:hover {
     border-radius: 50%;
 }
 
-.skill-item p {
-    position: static; /* Remove absolute positioning */
-    margin-top: 10px; /* Add spacing between the background and text */
-    font-size: 14px; /* Adjust font size for readability */
-    color: #333;
-    text-align: center;
-    line-height: 1.4; /* Ensure good line height for multi-line text */
-}
 
 
 /* Gameplay section styles */
