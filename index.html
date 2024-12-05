@@ -128,6 +128,7 @@
                                 description: 'Dashes to an area, dealing massive damage to enemies in the path.' 
                             }
                         ],
+
                         [
                                 'https://www.youtube.com/embed/eDcN2jKAMkU', 
                                 'https://www.youtube.com/embed/XR6NzSQ3hHE'
@@ -907,30 +908,137 @@
               <p>Ixia</p>
           </div>
 
-              <div
-                class="hero"
-                onclick="selectHero('The Lost Star', 'Karrie', 'Assets/marksaman/karrie.jpg', 'A lone Yasson warrior.')"
-              >
-                <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie" />
-                <p>Karrie</p>
-              </div>
+              <div class="hero" onclick="selectHero(
+    'The Lost Star',
+    'Karrie',
+    'Assets/marksaman/karrie.jpg',
+    'A lone Yasson warrior, blessed with the strength of a thousand stars.',
+    [
+        { name: 'Rising Star', image: 'Assets/Skin/karrieskin1.jpg' },
+        { name: 'Bladed Mantis', image: 'Assets/Skin/karrieskin2.jpg' },
+        { name: 'Dragon Queen', image: 'Assets/Skin/karrieskin3.jpg' },
+        { name: 'Jester', image: 'Assets/Skin/karrieskin4.jpg' },
+        { name: 'Hawkwatch', image: 'Assets/Skin/karrieskin5.jpg' },
+        { name: 'Gill-Girl', image: 'Assets/Skin/karrieskin6.jpg' },
+        { name: 'Neon Lightwheel', image: 'Assets/Skin/karrieskin7.jpg' },
+        { name: 'Wheel of Justice', image: 'Assets/Skin/karrieskin8.jpg' },
+        { name: 'Ice Talon', image: 'Assets/Skin/karrieskin9.jpg' }
+    ],
+    [
+        { 
+            name: 'Passive: Lightwheel Mark',
+            image: 'Assets/Skills/karrieskill1.webp',
+            description: 'Karrie gains energy with each attack, which is used to power her basic and special abilities.'
+        },
+        { 
+            name: 'Spinning Lightwheel',
+            image: 'Assets/Skills/karrieskill1.1.webp',
+            description: 'Karrie leaps through spacetime, dealing damage to enemies in her path.'
+        },
+        { 
+            name: 'Phantom Step',
+            image: 'Assets/Skills/karrieskill2.webp',
+            description: 'Karrie summons a massive nova that deals damage to all nearby enemies.'
+        },
+        { 
+            name: 'Speedy Lightwheel',
+            image: 'Assets/Skills/karrieskill3.webp',
+            description: 'Karrie channels cosmic energy to unleash a devastating storm of stars on her enemies.'
+        }
+    ],
+    'Karrie excels in crowd control and high-speed combat, making her an effective marksman in battle.'
+)">
+    <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie" />
+    <p>Karrie</p>
+</div>
 
-              <div
-                class="hero"
-                onclick="selectHero('The Deadly Sniper', 'Melissa', 'Assets/marksaman/melissa.jpg', 'Harleys guardian and a talented sniper.')"
-              >
-                <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa" />
-                <p>Melissa</p>
-              </div>
+<div class="hero" onclick="selectHero(
+  'The Deadly Sniper',
+  'Melissa',
+  'Assets/marksaman/melissa.jpg',
+  'Harley’s guardian and a talented sniper with unmatched precision.',
+  [
+      { name: 'Twinge Weaver', image: 'Assets/Skin/melissaskin1.jpg' },
+      { name: 'Nobara Kugisaki', image: 'Assets/Skin/melissaskin2.jpg' },
+      { name: 'Nightwalker', image: 'Assets/Skin/melissaskin3.jpg' },
+      { name: 'SPARKLE Melissa', image: 'Assets/Skin/melissaskin4.jpg' },
+      { name: 'Cursewalker', image: 'Assets/Skin/melissaskin5.jpg' },
+      { name: 'SHIMMER Melissa', image: 'Assets/Skin/melissaskin6.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Doll Buster',
+          image: 'Assets/Skills/melissaskill1.webp',
+          description: 'Melissa deals extra damage to minions and summoned units. Her attacks on them are amplified.'
+      },
+      { 
+          name: 'Falling!',
+          image: 'Assets/Skills/melissaskill1.1.webp',
+          description: 'Melissa dashes in a target direction, enhancing her basic attack for increased range and damage.'
+      },
+      { 
+          name: 'Eyes on You!',
+          image: 'Assets/Skills/melissaskill2.webp',
+          description: 'Throws Muddles to link enemies, slowing them and enabling direct attacks.'
+      },
+      { 
+          name: 'Go Away!',
+          image: 'Assets/Skills/melissaskill3.webp',
+          description: 'Summons a field that knocks back and damages enemies while boosting defense..'
+      }
+  ],
+  'Melissa specializes in long-range combat and can quickly eliminate targets with her deadly precision.'
+)">
+  <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa" />
+  <p>Melissa</p>
+</div>
 
-              <div
-                class="hero"
-                onclick="selectHero('The Spacetime Walker', 'Natan', 'Assets/marksaman/natan.jpg', 'A time-traveler with a masterful grasp on all things scientific and magical.')"
-              >
-                <img src="Assets/marksaman/select-natan.jpg" alt="Natan" />
-                <p>Natan</p>
-              </div>
+              
+<div class="hero" onclick="selectHero(
+  'The Spacetime Walker',
+  'Natan',
+  'Assets/marksaman/natan.jpg',
+  'A time-traveler with a masterful grasp on all things scientific and magical.',
+  [
+      { name: 'Time Wielder', image: 'Assets/Skin/natanskin1.jpg' },
+      { name: 'Chaos Hunter', image: 'Assets/Skin/natanskin2.jpg' },
+      { name: 'Captain Chrono', image: 'Assets/Skin/natanskin3.jpg' },
+      { name: 'Tidal Lord', image: 'Assets/Skin/natanskin4.jpg' },
+      { name: 'Temporal Vortex', image: 'Assets/Skin/natanskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Theory of Everything',
+          image: 'Assets/Skills/natanskill1.webp',
+          description: 'Gains attack speed from physical and magic lifesteal, with reverse attacks dealing bonus magic damage.'
+      },
+      { 
+          name: 'Superposition',
+          image: 'Assets/Skills/natanskill1.1.webp',
+          description: 'Fires an energy blast, damaging enemies in its path and returning for a second hit.'
+      },
+      { 
+          name: 'Interference!',
+          image: 'Assets/Skills/natanskill2.webp',
+          description: 'Creates a gravitational field, pulling enemies to the center and slowing them.'
+      },
+      { 
+          name: 'Entropy',
+          image: 'Assets/Skills/natanskill3.webp',
+          description: 'Summons a reverse clone to mimic attacks.'
+      },
 
+      { 
+          name: 'Entropy Second Phase',
+          image: 'Assets/Skills/natanskill3.1.webp',
+          description: 'The clone moves and attacks in the opposite direction to amplify damage output..'
+      }
+  ],
+  'Natan uses his mastery of time and space to deal damage and control enemies in the battlefield.'
+)">
+        <img src="Assets/marksaman/select-natan.jpg" alt="Natan" />
+        <p>Natan</p>
+    </div>
             </div>
           </div>
         </div>
@@ -940,58 +1048,358 @@
           <div class="hero-container">
             <div class="hero-column left">
               <div><h3>Denloyd's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Blade of Enmity', 'Alpha', 'Assets/fighter/Alpha.jpg', 'Blade of Enmity,')"
-              >
-                <img src="Assets/fighter/select-Alpha.jpg" alt="Alpha" />
-                <p>Alpha</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Warrior of Ferocity', 'Aulus', 'Assets/fighter/Aulus.jpg', 'A ferocious warrior who gets stronger as he fights.')"
-              >
-                <img src="Assets/fighter/select-Aulus.jpg" alt="Aulus" />
-                <p>Aulus</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Kung Fu Boy', 'Chou', 'Assets/fighter/Chou.jpg', 'A kind and passionate Kung-Fu boy.')"
-              >
-                <img src="Assets/fighter/select-Chou.jpg" alt="Chou" />
-                <p>Chou</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Lord Lava', 'Thamuz', 'Assets/fighter/Thamuz.jpg', 'The mighty Lord Lava.')"
-              >
-                <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz" />
-                <p>Thamuz</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Executioner', 'Terizla', 'Assets/fighter/Terizla.jpg', 'A smith with a great hatred for the empire.')"
-              >
-                <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla" />
-                <p>Terizla</p>
-              </div>
+
+
+
+              <div class="hero" onclick="selectHero(
+  'The Blade of Enmity',
+  'Alpha',
+  'Assets/fighter/Alpha.jpg',
+  'Alpha, a cyber-enhanced warrior, excels in dueling with strong crowd control and sustainability.',
+  [
+      { name: 'Onimusha Commander', image: 'Assets/Skin/alphaskin1.jpg' },
+      { name: 'Fierce Dragon', image: 'Assets/Skin/alphaskin2.jpg' },
+      { name: 'Sea Gladiator', image: 'Assets/Skin/alphaskin3.jpg' },
+      { name: 'Crimson Warrior', image: 'Assets/Skin/alphaskin4.jpg' },
+      { name: 'General Void', image: 'Assets/Skin/alphaskin5.jpg' },
+      { name: 'Star Enforcer', image: 'Assets/Skin/alphaskin6.jpg' },
+      { name: 'Mecha-King Perseus', image: 'Assets/Skin/alphaskin7.jpg' },
+      { name: 'Galactic Enforcer', image: 'Assets/Skin/alphaskin8.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Beta, Advance!',
+          image: 'Assets/Skills/alphaskill1.webp',
+          description: 'Alpha summons Beta to attack enemies, dealing extra magic damage.'
+      },
+      { 
+          name: 'Rotary Impact',
+          image: 'Assets/Skills/alphaskill1.1.webp',
+          description: 'Slashes forward, dealing damage and slowing enemies.'
+      },
+      { 
+          name: 'Force Swing',
+          image: 'Assets/Skills/alphaskill2.webp',
+          description: 'Deals area damage and heals Alpha based on the targets hit.'
+      },
+      { 
+          name: 'Spear of Alpha',
+          image: 'Assets/Skills/alphaskill3.webp',
+          description: 'Charges with Beta, damaging and stunning enemies in their path.'
+      }
+  ],
+  'Alpha is a durable fighter with strong dueling potential and team utility.'
+)">
+    <img src="Assets/fighter/select-Alpha.jpg" alt="Alpha" />
+    <p>Alpha</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Warrior of Ferocity',
+  'Aulus',
+  'Assets/fighter/Aulus.jpg',
+  'Aulus grows stronger as battles progress, mastering the art of combat.',
+  [
+      { name: 'Berserkert', image: 'Assets/Skin/aulusskin1.jpg' },
+      { name: 'Barren Pioneer', image: 'Assets/Skin/aulusskin2.jpg' },
+      { name: 'War Lion', image: 'Assets/Skin/aulusskin3.jpg' }
+      
+  ],
+  [
+      { 
+          name: 'Passive: Fighting Spirit',
+          image: 'Assets/Skills/aulusskill1.webp',
+          description: 'Increases attack damage and attack speed as the fight prolongs.'
+      },
+      { 
+          name: 'Aulus, Charge!',
+          image: 'Assets/Skills/aulusskill1.1.webp',
+          description: 'Slams his axe, dealing damage and reducing enemy movement speed.'
+      },
+      { 
+          name: 'The Power of Axee',
+          image: 'Assets/Skills/aulusskill2.webp',
+          description: 'Empowers his next attack to deal massive damage.'
+      },
+      { 
+          name: 'Undying Fury',
+          image: 'Assets/Skills/aulusskill3.webp',
+          description: 'Enters a berserk mode, enhancing all abilities temporarily.'
+      }
+  ],
+  'Aulus is a late-game fighter with scaling potential and high damage output.'
+)">
+    <img src="Assets/fighter/select-Aulus.jpg" alt="Aulus" />
+    <p>Aulus</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Kung Fu Boy',
+  'Chou',
+  'Assets/fighter/Chou.jpg',
+  'A martial arts master who combines agility and control to dominate the battlefield.',
+  [
+      { name: 'Hip-hop Boy', image: 'Assets/Skin/chouskin1.jpg' },
+      { name: 'Dragon Boy', image: 'Assets/Skin/chouskin2.jpg' },
+      { name: 'King of Muay Thai', image: 'Assets/Skin/chouskin3.jpg' },
+      { name: 'Furious Tiger', image: 'Assets/Skin/chouskin4.jpg' },
+      { name: 'Iori Yagami', image: 'Assets/Skin/chouskin5.jpg' },
+      { name: 'Go Ballistic', image: 'Assets/Skin/chouskin6.jpg' },
+      { name: 'Thunderfist', image: 'Assets/Skin/chouskin7.jpg' },
+      { name: 'S.T.U.N. Chou', image: 'Assets/Skin/chouskin8.jpg' },
+      { name: 'Dragon Shiryu', image: 'Assets/Skin/chouskin9.jpg' },
+      { name: 'Libra Shiryu', image: 'Assets/Skin/chouskin10.jpg' },
+      { name: 'ECHO', image: 'Assets/Skin/chouskin11.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Only Fast',
+          image: 'Assets/Skills/chouskill1.webp',
+          description: 'Enhances Chou’s next basic attack, dealing additional damage and slowing enemies.'
+      },
+      { 
+          name: 'Jeet Kune Do',
+          image: 'Assets/Skills/chouskill1.1.webp',
+          description: 'Chou strikes quickly, knocking up enemies with the third attack.'
+      },
+      { 
+          name: 'Shunpo',
+          image: 'Assets/Skills/chouskill2.webp',
+          description: 'Dashes a short distance, gaining immunity to crowd control.'
+      },
+      { 
+          name: 'The Way of Dragon',
+          image: 'Assets/Skills/chouskill3.webp',
+          description: 'Delivers a flying kick, knocking back the enemy and dealing massive damage.'
+      }
+  ],
+  'Chou excels at disrupting enemy formations and initiating team fights with his crowd control abilities.'
+)">
+    <img src="Assets/fighter/select-Chou.jpg" alt="Chou" />
+    <p>Chou</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Lord Lava',
+  'Thamuz',
+  'Assets/fighter/Thamuz.jpg',
+  'Thamuz is a melee fighter who wields a scythe engulfed in flames to punish his enemies.',
+  [
+      { name: 'Lord of Wraith', image: 'Assets/Skin/thamuzskin1.jpg' },
+      { name: 'Liquid Fire', image: 'Assets/Skin/thamuzskin2.jpg' },
+      { name: 'Abyssal Reaper', image: 'Assets/Skin/thamuzskin3.jpg' },
+      { name: 'General Kai', image: 'Assets/Skin/thamuzskin4.jpg' },
+      { name: 'Sanctified Flame', image: 'Assets/Skin/thamuzskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Cauterant Inferno',
+          image: 'Assets/Skills/thamuzskill1.webp',
+          description: 'Deals continuous burn damage to enemies in his path.'
+      },
+      { 
+          name: 'Molten Scythes',
+          image: 'Assets/Skills/thamuzskill1.1.webp',
+          description: 'Throws his scythes, dealing damage and leaving trails of lava.'
+      },
+      { 
+          name: 'Chasm Trample',
+          image: 'Assets/Skills/thamuzskill2.webp',
+          description: 'Leaps to a designated area, damaging and slowing enemies.'
+      },
+      { 
+          name: 'Cauterant Inferno',
+          image: 'Assets/Skills/thamuzskill3.webp',
+          description: 'Boosts attack damage and healing effects, enhancing survivability.'
+      }
+  ],
+  'Thamuz is a durable front-liner capable of dealing sustained damage over time.'
+)">
+    <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz" />
+    <p>Thamuz</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Executioner',
+  'Terizla',
+  'Assets/fighter/Terizla.jpg',
+  'A blacksmith turned warrior seeking vengeance with his massive hammer.',
+  [
+      { name: 'Abyss Guard', image: 'Assets/Skin/terizlaskin1.jpg' },
+      { name: 'Flare', image: 'Assets/Skin/terizlaskin2.jpg' },
+      { name: 'Hammer Giant', image: 'Assets/Skin/terizlaskin3.jpg' },
+      { name: 'Rustwreck', image: 'Assets/Skin/terizlaskin4.jpg' },
+      { name: 'Flames of Judgement', image: 'Assets/Skin/terizlaskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Body of Smith',
+          image: 'Assets/Skills/terizlaskill1.webp',
+          description: 'Converts physical damage into health, making him harder to kill.'
+      },
+      { 
+          name: 'Skill 1: Revenge Strike',
+          image: 'Assets/Skills/terizlaskill1.1.webp',
+          description: 'Swings his hammer, damaging enemies and reducing their movement speed.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals damage in an arc and slows enemies.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2.1',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals increased damage in a wider arc.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2.2',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals the highest damage with a knockback effect.'
+      },
+      { 
+          name: 'Ultimate: Penalty Zone',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Hurls a chain hammer, stunning enemies and pulling them into its radius.'
+      }
+  ],
+  'Terizla is a tanky fighter with high area-of-effect damage and team utility.'
+)">
+    <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla" />
+    <p>Terizla</p>
+</div>
+
             </div>
+
             <div class="hero-column right">
               <div><h3>Ferdinand's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Scarlet Raven', 'Julian', 'Assets/fighter/Julian.jpg', 'A Raven assassin of the Church of Light, a young boy who is in search of his home...')"
-              >
-                <img src="Assets/fighter/select-Julian.jpg" alt="Julian" />
-                <p>Julian</p>
+
+              <div class="hero" onclick="selectHero(
+                'The Scarlet Raven',
+                'Julian',
+                'Assets/fighter/Julian.jpg',
+                'A Raven assassin of the Church of Light, a young boy who is in search of his home...',
+                [
+                    { name: 'Silent Edge', image: 'Assets/Skin/julianskin1.jpg' },
+                    { name: 'Megumi Fushiguro', image: 'Assets/Skin/julianskin2.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive1: Smith Legacy',
+                        image: 'Assets/Skills/julianskill1.webp',
+                        description: 'Enhances skills after casting two different abilities, dealing bonus magic damage. Basic attacks reduce cooldowns and restore HP.'
+                    },
+                    { 
+                        name: 'Passive2: Dual Blade',
+                        image: 'Assets/Skills/julianskill1.1.webp',
+                        description: 'Alternates between two attack types, dealing extra damage with each skill cast.'
+                    },
+                    { 
+                        name: 'Passive3: Chain Reaction',
+                        image: 'Assets/Skills/julianskill1.2.webp',
+                        description: 'Using an enhanced skill boosts movement speed and attack speed for a short time.'
+                    },
+                    { 
+                        name: 'Skill 1: Scythe',
+                        image: 'Assets/Skills/julianskill1.3.webp',
+                        description: 'Throws a scythe forward, dealing damage to all enemies in its path.'
+                    },
+                    { 
+                        name: 'Skill 1: Scythe Enhance',
+                        image: 'Assets/Skills/julianskill1.4.webp',
+                        description: 'Enlarges and pulls enemies.'
+                    },
+                    { 
+                        name: 'Skill 2: Sword',
+                        image: 'Assets/Skills/julianskill2.webp',
+                        description: 'Leaps forward, dealing damage to enemies in the area.'
+                    },
+                    { 
+                        name: 'Skill 2: Enhanced Sword',
+                        image: 'Assets/Skills/julianskill2.1.webp',
+                        description: 'Leaves an explosive mark for additional damage.'
+                    },
+                    { 
+                        name: 'Ultimate: Chain',
+                        image: 'Assets/Skills/julianskill3.webp',
+                        description: 'Launches chains to immobilize enemies.'
+                    },
+                    { 
+                        name: 'Ultimate: Chain Enhance',
+                        image: 'Assets/Skills/julianskill3.1.webp',
+                        description: 'Creates a stun zone, chaining enemies in the area.'
+                    }
+                ],
+                'Julian excels at chaining skills and controlling enemies with his combos.'
+              )">
+                  <img src="Assets/fighter/select-Julian.jpg" alt="Julian" />
+                  <p>Julian</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Heavenly Fist', 'Paquito', 'Assets/assasin/Paquito.jpg', 'A firm and righteous champion.')"
-              >
-                <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito" />
-                <p>Paquito</p>
-              </div>
+              
+
+              <div class="hero" onclick="selectHero(
+  'The Heavenly Fist',
+  'Paquito',
+  'Assets/assasin/Paquito.jpg',
+  'A firm and righteous champion.',
+  [
+      { name: 'Death Blow', image: 'Assets/Skin/paquitoskin1.jpg' },
+      { name: 'Manny Pacquiao', image: 'Assets/Skin/paquitoskin2.jpg' },
+      { name: 'Underground Boxer', image: 'Assets/Skin/paquitoskin3.jpg' },
+      { name: 'Fulgent Punch', image: 'Assets/Skin/paquitoskin4.jpg' },
+      { name: 'Fist of Light', image: 'Assets/Skin/paquitoskin5.jpg' },
+      { name: 'Blazing Tiger', image: 'Assets/Skin/paquitoskin6.jpg' },
+      { name: 'Terry Bogard', image: 'Assets/Skin/paquitoskin7.jpg' },
+      { name: 'Fist of Glory', image: 'Assets/Skin/paquitoskin8.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Champ Stance',
+          image: 'Assets/Skills/paquitoskill1.webp',
+          description: 'Stacks combat readiness to empower his next skill.'
+      },
+      { 
+          name: 'Skill 1: Heavy Left Punch',
+          image: 'Assets/Skills/paquitoskill1.1.webp',
+          description: 'Paquito punches in a straight line, dealing damage to all enemies in its path.'
+      },
+      { 
+          name: 'Skill 1: Heavy Left Punch Enhance',
+          image: 'Assets/Skills/paquitoskill1.2.webp',
+          description: 'Paquito punches in a straight line, dealing increased damage and slowing enemies.'
+      },
+      { 
+          name: 'Skill 2: Jab',
+          image: 'Assets/Skills/paquitoskill2.webp',
+          description: 'Paquito delivers a wide-area punch, dealing damage and knocking back enemies.'
+      },
+      { 
+          name: 'Skill 2: Jab Enhance',
+          image: 'Assets/Skills/paquitoskill2.1.webp',
+          description: 'Paquito delivers a wide-area punch, dealing more damage and knocking back enemies further..'
+      },
+      { 
+          name: 'Ultimate: Knockout Strike',
+          image: 'Assets/Skills/paquitoskill3.webp',
+          description: 'Paquito charges forward, dealing multiple punches to enemies along the way.'
+      },
+      { 
+          name: 'Ultimate: Knockout Strike Enhance',
+          image: 'Assets/Skills/paquitoskill3.1.webp',
+          description: 'Paquito charges forward, dealing multiple punches with increased damage and a longer range.'
+      }
+  ],
+  'Paquito is a mobile fighter who deals burst damage and excels at dueling.'
+)">
+    <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito" />
+    <p>Paquito</p>
+</div>
+
+
               <div
                 class="hero"
                 onclick="selectHero('The Chains of Sin', 'Phoveus', 'Assets/fighter/Phoveus.jpg', 'A Fighter that pursues those who blink or dash.')"
@@ -999,6 +1407,7 @@
                 <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus" />
                 <p>Phoveus</p>
               </div>
+
               <div
                 class="hero"
                 onclick="selectHero('The  Firaga Armor', 'X.Borg', 'Assets/fighter/X.Borg.jpg', 'A talented teenager who uses his Firaga Armor to burn everything he comes across.')"
@@ -1006,6 +1415,7 @@
                 <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg" />
                 <p>X.Borg</p>
               </div>
+
               <div
                 class="hero"
                 onclick="selectHero('The Martial Genius', 'Yin', 'Assets/assasin/Yin.jpg', 'A gifted Kungfu boy possessed by an Evil God.')"
@@ -1013,9 +1423,11 @@
                 <img src="Assets/assasin/select-Yin.jpg" alt="Yin" />
                 <p>Yin</p>
               </div>
+
             </div>
           </div>
         </div>
+
         <div id="mage" class="hero-category" style="display: none">
           <div class="hero-category-title">Mage Heroes</div>
           <div class="hero-container">

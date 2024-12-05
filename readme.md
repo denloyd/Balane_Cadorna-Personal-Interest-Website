@@ -24,3 +24,5 @@ Add details and picture to the container.
 Created file for skins and skills.
 Modified the size of picture(skill item).
 Provided more details and picture.
+12-05-24 - 3:12PM
+Add details and Picture to the Marksaman 
