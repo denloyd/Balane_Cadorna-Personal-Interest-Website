@@ -128,7 +128,10 @@
                                 description: 'Dashes to an area, dealing massive damage to enemies in the path.' 
                             }
                         ],
-                        'Lancelot excels in close combat, leveraging his agility and burst damage to outmaneuver enemies.'
+                        [
+                                'https://www.youtube.com/embed/eDcN2jKAMkU', 
+                                'https://www.youtube.com/embed/XR6NzSQ3hHE'
+                        ]
                     )"
               >
                 <img src="Assets/assasin/select-Lancelot.jpg" alt="Lancelot" />
@@ -1273,7 +1276,7 @@
       <!-- Hero Info Section -->
       <div class="hero-overview">
         <h2 id="hero-name"></h2>
-        <img id="hero-image" src="" alt="Hero Image" />
+        <img id="hero-image" src="" alt="Hero Image"  class="hero-image"/>
         <p id="hero-info"></p>
         <div class="hero-buttons">
           <button class="btn" onclick="showSection('skins-section')">
@@ -1314,13 +1317,16 @@
         <div id="skills-list" class="skills-container"></div>
       </section>
 
-      <!-- Gameplay Section -->
-      <section id="gameplay-section" class="hero-section" style="display: none">
-        <h3>Gameplay</h3>
-        <p id="gameplay-info"></p>
+      <section id="gameplay-section" class="hero-section" style="display: none;">
+        <div class="gameplay-header">
+          <h3>Gameplay</h3>
+          <p id="gameplay-info">
+            Explore how heroes perform in real-time battles. Watch gameplay highlights or read detailed information to master the strategies.
+          </p>
+        </div>
+        <div id="gameplay-video-container" class="video-gallery"></div>
       </section>
-    </div>
-
+      
     <script src="script.js"></script>
   </body>
 </html>

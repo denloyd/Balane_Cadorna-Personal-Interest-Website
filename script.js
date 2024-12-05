@@ -76,8 +76,22 @@ function selectHero(category, name, image, info, skinsData = [], skills = [], ga
         skillsList.appendChild(skillDiv);
     });
 
-    // Set gameplay information
-    document.getElementById('gameplay-info').innerText = gameplay;
+    const gameplayContainer = document.getElementById('gameplay-video-container');
+gameplayContainer.innerHTML = ''; // Clear previous videos
+if (Array.isArray(gameplay)) {
+    gameplay.forEach(videoUrl => {
+        const iframe = document.createElement('iframe');
+        iframe.src = videoUrl;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.width = '100%';
+        iframe.style.height = '300px';
+        iframe.style.marginBottom = '20px';
+        gameplayContainer.appendChild(iframe);
+    });
+} else {
+    gameplayContainer.innerHTML = '<p>No gameplay videos available.</p>';
+}
 
     // Hide hero selection, show selected hero details
     document.getElementById('hero-selection').style.display = 'none';
@@ -136,4 +150,3 @@ function showSection(sectionId) {
         selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
-
