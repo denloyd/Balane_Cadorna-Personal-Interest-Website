@@ -33,3 +33,5 @@ Modified the size of picture(skill item).
 Provided more details and picture.
 12-05-24 - 3:12PM
 Add details and Picture to the Marksaman 
+12-06-24  -  12-07-24
+add details and picture to Mage, Tank, Support
