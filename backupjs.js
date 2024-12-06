@@ -1,7 +1,41 @@
-// Function to start the hero selection after clicking 'Get Started'
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    const startContainer = document.querySelector('.start-container');
+    startContainer.classList.add('enter');
+});
+
+// Video intro handling
+document.getElementById('intro-video').addEventListener('ended', function() {
+    document.getElementById('video-intro').classList.add('fade-out');
+    setTimeout(() => {
+        document.getElementById('video-intro').style.display = 'none';
+    }, 1000);
+});
+
+// Enhanced start selection function with animation
 function startSelection() {
-    document.getElementById('start-screen').style.display = 'none';
-    document.getElementById('hero-selection').style.display = 'block';
+    const startContainer = document.querySelector('.start-container');
+    startContainer.classList.add('exit');
+    
+    setTimeout(() => {
+        startContainer.style.display = 'none';
+        document.getElementById('hero-selection').style.display = 'block';
+    }, 1500);
+}
+
+// Optional: Add dynamic brightness based on mouse movement
+function addMouseEffects() {
+    const startContainer = document.querySelector('.start-container');
+    
+    startContainer.addEventListener('mousemove', (e) => {
+        const rect = startContainer.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        
+        // Create a subtle light effect following the cursor
+        const brightness = 0.7 + (1 - Math.sqrt((x - 0.5) ** 2 + (y - 0.5) ** 2)) * 0.3;
+        startContainer.style.setProperty('--mouse-brightness', brightness);
+    });
 }
 
 // Function to show a category of heroes
@@ -102,19 +136,6 @@ function goBack() {
     document.getElementById('selected-hero').style.display = 'none';
 }
 
-// Video end event to show start screen
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('intro-video');
-    const videoIntro = document.getElementById('video-intro');
-    const startScreen = document.getElementById('start-screen');
-
-    if (video && videoIntro && startScreen) {
-        video.addEventListener('ended', function() {
-            videoIntro.style.display = 'none';
-            startScreen.style.display = 'block';
-        });
-    }
-});
 
 // Scroll to a specific section
 function scrollToSection(sectionId) {

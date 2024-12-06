@@ -1,275 +1,392 @@
-body {
-    font-family: Arial, sans-serif;
+/* Global Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-/* Add a stronger text shadow for enhanced visibility */
-h1, h2, h3, p {
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for contrast */
-}
-
-/* Start Container */
-.start-container {
-    background: url('Assets/background.jpg') no-repeat center center fixed; /* Set your background image */
-    background-size: cover; /* Ensure the background covers the full viewport */
-    height: 100vh; /* Make the container cover the full viewport height */
+    box-sizing: border-box;
+   
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  /* Video Intro Section */
+  #video-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: #000;
+  }
+  
+  #intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Start Screen Section with Enhanced Animation */
+  .start-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Vertically center content */
-    padding: 1px;
-}
-
-.start-container h1{
-   margin-top: 5rem;
-}
-
-
-.hero-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-/* Select Container */
-.select-container {
-    display: block;
-    margin: 20px;
-}
-.hero {
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-}
-.hero-column {
-    margin: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background for better contrast */
-    color: #FFFFFF; /* White text for clarity */
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hero-category-title {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-}
-.hero img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.hero img:hover{
-    transform: scale(1.50);
-}
-#selected-hero img {
-    margin-top: 2rem;
-    width: 400px;
-    height: 500px;
-    border-radius: 15px;
-    border-style: double;
-}
-.category-btn {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #00FFFF;
-    color: #000;
-    border: 2px solid #00FFFF;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    display: inline-block;
-    transition: background-color 0.3s, color 0.3s;
-    cursor: pointer;
-}
-
-button:hover {
-    scale: 1.1;
-    color: black;
-    border: 2px solid aqua;
-    background-color: aqua;
-    font-weight: 700;
-    box-shadow: 0 0 40px aqua;
-}
-/* Video Intro Section */
-#video-intro {
-    position: fixed;
+    align-items: center;
+    z-index: 900;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Animated Background Layer */
+  .start-container::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    z-index: 10;
-}
-
-#intro-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Hide content initially */
-#hero-selection {
-    display: none;
-}
-
-#start-screen {
+    background: linear-gradient(135deg, rgba(13, 13, 48, 0.7), rgba(26, 26, 77, 0.7)),
+                url('Assets/background.jpg') center/cover no-repeat;
+    z-index: -1;
+    transition: all 1.5s ease-in-out;
+    animation: backgroundPulse 8s infinite;
+  }
+  
+  /* Background Animation */
+  @keyframes backgroundPulse {
+    0% {
+      filter: brightness(0.7);
+      transform: scale(1);
+    }
+    50% {
+      filter: brightness(0.9);
+      transform: scale(1.05);
+    }
+    100% {
+      filter: brightness(0.7);
+      transform: scale(1);
+    }
+  }
+  
+  /* Entrance Animation */
+  .start-container.enter {
+    animation: enterAnimation 1.5s ease-out forwards;
+  }
+  
+  @keyframes enterAnimation {
+    0% {
+      filter: brightness(0);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  
+  /* Exit Animation */
+  .start-container.exit {
+    animation: exitAnimation 1.5s ease-in forwards;
+  }
+  
+  @keyframes exitAnimation {
+    0% {
+      filter: brightness(1);
+    }
+    100% {
+      filter: brightness(0);
+    }
+  }
+  
+  /* Enhanced Title Styles */
+  .start-container h1 {
+    font-size: 3.5rem;
     text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     position: relative;
-    z-index: 5;
-}
-
-.hero-section {
-    margin-top: 20px;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-}
-.skins-gallery img {
-    max-width: 150px;
-    margin-right: 10px;
-}
-
-
-
-/* Base styles for the last-container */
-.last-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-/* Hero overview section */
-.hero-overview {
-    text-align: center;
-}
-
-.hero-overview img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.hero-buttons .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
+    z-index: 2;
+    animation: titleGlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes titleGlow {
+    0%, 100% {
+      text-shadow: 0 0 10px #4a90e2,
+                   0 0 20px #4a90e2,
+                   0 0 30px #4a90e2;
+    }
+    50% {
+      text-shadow: 0 0 20px #4a90e2,
+                   0 0 30px #4a90e2,
+                   0 0 40px #4a90e2,
+                   0 0 50px #4a90e2;
+    }
+  }
+  
+  /* Enhanced Button Styles */
+  .start-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background: linear-gradient(45deg, #4a90e2, #2d5a8e);
     border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+    z-index: 2;
+  }
+  
+  .start-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+  }
+  
+  .start-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(74, 144, 226, 0.8);
+  }
+  
+  .start-btn:hover::before {
+    animation: shine 1.5s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+  
+  /* Video Fade Out Animation */
+  .fade-out {
+    animation: fadeOut 1s ease-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .start-container h1 {
+      font-size: 2.5rem;
+      padding: 0 1rem;
+    }
+    
+    .start-btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .start-container h1 {
+      font-size: 2rem;
+    }
+    
+    .start-btn {
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+    }
+  }
 
-.hero-buttons .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Section styles (Skins, Skills, Gameplay) */
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* Hero Selection Container */
+.select-container {
     min-height: 100vh;
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Slider styles for skins */
-.slider {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(13, 13, 48, 0.9), rgba(26, 26, 77, 0.9)),
+                url('path/to/ml-background.jpg') center/cover no-repeat fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 3rem;
+    animation: fadeIn 1s ease-out;
 }
 
-.slider-content {
-    text-align: center;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Overall Hero Selection Container */
+.select-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(13, 13, 48, 0.9), rgba(26, 26, 77, 0.9)),
+                url('path/to/ml-background.jpg') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    animation: fadeIn 1s ease-out;
 }
 
-.slider-content img {
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.slider-content p {
-    margin-top: 10px;
-    font-size: 18px;
+
+/* Section Header */
+.select-text h1 {
+    font-size: 3rem;
     font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 
-.slider-btn {
-    font-size: 24px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.slider-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Skills section styles */
-.skills-container {
+/* Button Container Grid */
+.button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Center align buttons horizontally */
+    gap: 2rem; /* Space between buttons */
+    width: 100%;
+    max-width: 1200px;
 }
 
-.skill-item {
+/* Hero Category Button */
+.category-btn {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    max-width: 400px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-.skill-item img {
-    max-width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.category-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/* Gameplay section styles */
-#gameplay-info {
-    font-size: 18px;
-    line-height: 1.6;
+/* Button Icons */
+.button-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.category-btn:hover .button-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}
+
+/* Button Text */
+.category-btn span {
+    margin-top: auto;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Role-specific color accents */
+.category-btn[onclick*="fighter"] { border-color: rgba(255, 87, 87, 0.3); }
+.category-btn[onclick*="mage"] { border-color: rgba(147, 87, 255, 0.3); }
+.category-btn[onclick*="assassin"] { border-color: rgba(255, 192, 87, 0.3); }
+.category-btn[onclick*="marksman"] { border-color: rgba(87, 255, 147, 0.3); }
+.category-btn[onclick*="tank"] { border-color: rgba(87, 198, 255, 0.3); }
+.category-btn[onclick*="support"] { border-color: rgba(255, 87, 192, 0.3); }
+
+/* Role-specific hover effects */
+.category-btn[onclick*="fighter"]:hover { border-color: rgba(255, 87, 87, 0.8); }
+.category-btn[onclick*="mage"]:hover { border-color: rgba(147, 87, 255, 0.8); }
+.category-btn[onclick*="assassin"]:hover { border-color: rgba(255, 192, 87, 0.8); }
+.category-btn[onclick*="marksman"]:hover { border-color: rgba(87, 255, 147, 0.8); }
+.category-btn[onclick*="tank"]:hover { border-color: rgba(87, 198, 255, 0.8); }
+.category-btn[onclick*="support"]:hover { border-color: rgba(255, 87, 192, 0.8); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .select-text h1 {
+        font-size: 2rem;
+    }
+    
+    .button-container {
+        gap: 1rem;
+    }
+
+    .category-btn {
+        width: 120px;
+        height: 120px;
+    }
+
+    .button-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .category-btn span {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 480px) {
+    .select-text h1 {
+        font-size: 2rem;
+    }
+    
+    .button-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-btn {
+        padding: 1.5rem;
+    }
 }

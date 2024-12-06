@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -23,60 +24,45 @@
       </video>
     </div>
 
-    <!-- Start Screen Section -->
-    <div class="start-container" id="start-screen">  
-      <h1>Get to know our Favorite Hero?</h1>
-      <button class="btn" onclick="startSelection()">Get Started</button>
+   <!-- Start Screen Section -->
+   <div class="start-container" id="start-screen">  
+    <h1>Get to know our Favorite Hero?</h1>
+    <button class="start-btn" onclick="startSelection()">Get Started</button>
+  </div>
+
+
+   <!-- Hero Selection Section -->
+   <div class="select-container" id="hero-selection" style="display: none">
+    <div id="select-text" class="select-text">
+      <h1>Select Your Favorite Hero</h1>
     </div>
 
-    <!-- Hero Selection Section -->
-    <div class="select-container" id="hero-selection" style="display: none">
-      <div id="select-text" class="select-text">
-        <h1>Select Your Favorite Hero</h1>
-      </div>
-
-      <div class="button-container">
-        <button class="category-btn" onclick="showCategory('fighter')">
-          <img
-            src="path/to/fighter-image.png"
-            alt="Fighter"
-            class="button-icon"
-          />
-          Fighter
-        </button>
-        <button class="category-btn" onclick="showCategory('mage')">
-          <img src="path/to/mage-image.png" alt="Mage" class="button-icon" />
-          Mage
-        </button>
-        <button class="category-btn" onclick="showCategory('assassin')">
-          <img
-            src="path/to/assassin-image.png"
-            alt="Assassin"
-            class="button-icon"
-          />
-          Assassin
-        </button>
-        <button class="category-btn" onclick="showCategory('marksman')">
-          <img
-            src="path/to/marksman-image.png"
-            alt="Marksman"
-            class="button-icon"
-          />
-          Marksman
-        </button>
-        <button class="category-btn" onclick="showCategory('tank')">
-          <img src="path/to/tank-image.png" alt="Tank" class="button-icon" />
-          Tank
-        </button>
-        <button class="category-btn" onclick="showCategory('support')">
-          <img
-            src="path/to/support-image.png"
-            alt="Support"
-            class="button-icon"
-          />
-          Support
-        </button>
-      </div>
+    <div class="button-container">
+      <button class="category-btn" onclick="showCategory('fighter')">
+          <img src="Assets/icons/Custom_Fighter_Emblem.webp" alt="Fighter" class="button-icon" />
+          <h3>Fighter</h3>
+      </button>
+      <button class="category-btn" onclick="showCategory('mage')">
+          <img src="Assets/icons/Custom_Mage_Emblem.webp" alt="Mage" class="button-icon" />
+          <span>Mage</span>
+      </button>
+      <button class="category-btn" onclick="showCategory('assassin')">
+          <img src="Assets/icons/Custom_Assassin_Emblem.webp" alt="Assassin" class="button-icon" />
+          <span>Assassin</span>
+      </button>
+      <button class="category-btn" onclick="showCategory('marksman')">
+          <img src="Assets/icons/Custom_Marksman_Emblem.webp" alt="Marksman" class="button-icon" />
+          <span>Marksman</span>
+      </button>
+      <button class="category-btn" onclick="showCategory('tank')">
+          <img src="Assets/icons/Custom_Tank_Emblem.webp" alt="Tank" class="button-icon" />
+          <span>Tank</span>
+      </button>
+      <button class="category-btn" onclick="showCategory('support')">
+          <img src="Assets/icons/Custom_Support_Emblem.webp" alt="Support" class="button-icon" />
+          <span>Support</span>
+      </button>
+  </div>
 
       <div class="hero-container">
         <div id="assassin" class="hero-category" style="display: none">

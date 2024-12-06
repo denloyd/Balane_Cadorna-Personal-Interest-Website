@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorite Hero</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style1.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
     <!-- Video Intro Section -->
     <div id="video-intro">
-        <video id="intro-video" autoplay muted>
-            <source src="Assets/Intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <video id="intro-video" autoplay muted>
+        <source src="Assets/Intro.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <!-- Start Screen Section -->
-    <div class="start-container" id="start-screen">
-        <h1>Get to know our Favorite Hero?</h1>
-        <button class="btn" onclick="startSelection()">Get Started</button>
+    <div class="start-container" id="start-screen">  
+      <h1>Get to know our Favorite Hero?</h1>
+      <button class="start-btn" onclick="startSelection()">Get Started</button>
     </div>
 
     <!-- Hero Selection Section -->
-    <div class="select-container" id="hero-selection" style="display: none;">
-        <div id="select-text" class="select-text">
-            <h1>Select Your Favorite Hero</h1>
-        </div>
-        
-        <div class="button-container">
-            <button class="category-btn" onclick="showCategory('fighter')">
-                <i class="fas fa-fist-raised"></i> Fighter
-            </button>
-            <button class="category-btn" onclick="showCategory('mage')">
-                <i class="fas fa-magic"></i> Mage
-            </button>
-            <button class="category-btn" onclick="showCategory('assassin')">
-                <i class="fas fa-skull-crossbones"></i> Assassin
-            </button>
-            <button class="category-btn" onclick="showCategory('marksman')">
-                <i class="fas fa-bullseye"></i> Marksman
-            </button>
-            <button class="category-btn" onclick="showCategory('tank')">
-                <i class="fas fa-shield-alt"></i> Tank
-            </button>
-            <button class="category-btn" onclick="showCategory('support')">
-                <i class="fas fa-heart"></i> Support
-            </button>
-        </div>
-        <div class="hero-container">
-            <div id="assassin" class="hero-category" style="display: none;">
-              <div class="hero-category-title">Assassin Heroes</div>
-                <div class="hero-column">
-                    <div><h3>Denloyd's Pick</h3></div>
-                    <div class="hero" onclick="selectHero(
-                        'Assassin', 
+    <div class="select-container" id="hero-selection" style="display: none">
+      <div id="select-text" class="select-text">
+        <h1>Select Your Favorite Hero</h1>
+      </div>
+
+      <div class="button-container">
+        <button class="category-btn" onclick="showCategory('fighter')">
+            <img src="Assets/icons/Custom_Fighter_Emblem.webp" alt="Fighter" class="button-icon" />
+            <span>Fighter</span>
+        </button>
+        <button class="category-btn" onclick="showCategory('mage')">
+            <img src="Assets/icons/Custom_Mage_Emblem.webp" alt="Mage" class="button-icon" />
+            <span>Mage</span>
+        </button>
+        <button class="category-btn" onclick="showCategory('assassin')">
+            <img src="Assets/icons/Custom_Assassin_Emblem.webp" alt="Assassin" class="button-icon" />
+            <span>Assassin</span>
+        </button>
+        <button class="category-btn" onclick="showCategory('marksman')">
+            <img src="Assets/icons/Custom_Marksman_Emblem.webp" alt="Marksman" class="button-icon" />
+            <span>Marksman</span>
+        </button>
+        <button class="category-btn" onclick="showCategory('tank')">
+            <img src="Assets/icons/Custom_Tank_Emblem.webp" alt="Tank" class="button-icon" />
+            <span>Tank</span>
+        </button>
+        <button class="category-btn" onclick="showCategory('support')">
+            <img src="Assets/icons/Custom_Support_Emblem.webp" alt="Support" class="button-icon" />
+            <span>Support</span>
+        </button>
+    </div>
+    
+      <div class="hero-container">
+        <div id="assassin" class="hero-category" style="display: none">
+          <div class="hero-category-title">Assassin Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero(
+                        'The Blade of Roses', 
                         'Lancelot', 
                         'Assets/assasin/Lancelot.jpg', 
                         'A gifted young man who infuses the power of magic into his swordsmanship.',
@@ -73,367 +89,1704 @@
 
                         ],
                         [
+
+                        { 
+                                name: 'Passive: Soul Cutter ', 
+                                image: 'Assets/Skills/lancelotskill1.webp', 
+                                description: 'Reduces cooldowns after basic attacks, enabling faster skill use.' 
+                            },
+
                             { 
-                                name: 'Soul Cutter', 
-                                image: 'Assets/skills/soul-cutter.jpg', 
-                                description: 'A powerful dash attack dealing damage.' 
+                                name: 'Puncture', 
+                                image: 'Assets/Skills/lancelotskill1.1.webp', 
+                                description: 'Dashes through enemies, dealing damage and reducing cooldown on hit.' 
                             },
                             { 
                                 name: 'Thorned Rose', 
-                                image: 'Assets/skills/thorned-rose.jpg', 
-                                description: 'Releases a circular sword attack.' 
+                                image: 'Assets/Skills/lancelotskill2.webp', 
+                                description: 'A series of slashes that grant CC immunity and deal damage.' 
                             },
                             { 
                                 name: 'Phantom Execution', 
-                                image: 'Assets/skills/phantom-execution.jpg', 
-                                description: 'Executes an enemy with high damage.' 
+                                image: 'Assets/Skills/lancelotskill3.webp', 
+                                description: 'Dashes to an area, dealing massive damage to enemies in the path.' 
                             }
                         ],
-                        'Lancelot excels in close combat, leveraging his agility and burst damage to outmaneuver enemies.'
-                    )">
-                        <img src="Assets/assasin/select-Lancelot.jpg" alt="Lancelot">
-                        <p>Lancelot</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Cyan Finch', 'Ling', 'Assets/assasin/Ling.jpg', 'A great assassin who can take out his target from above.')">
-                        <img src="Assets/assasin/select-Ling.jpg" alt="Ling">
-                        <p>Ling</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Bright Claw', 'Natalia', 'Assets/assasin/Natalia.jpg', 'The Church of Lights top assassin.')">
-                        <img src="Assets/assasin/select-Natalia.jpg" alt="Natalia">
-                        <p>Natalia</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Cosmic Wayfinder', 'Nolan', 'Assets/assasin/Nolan.jpg', 'A scholar of Eruditio who travered the multiverse to save his daughter.')">
-                        <img src="Assets/assasin/select-Nolan.jpg" alt="Nolan">
-                        <p>Nolan</p>
-                    </div>
-                  
-                    <div class="hero" onclick="selectHero('The Mask of the Immortal', 'Suyou', 'Assets/assasin/Suyou.jpg', 'An exorcist from Zhu an who has inherited the power of the Immortal Nuo.')">
-                        <img src="Assets/assasin/select-Suyou.jpg" alt="Suyou">
-                        <p>Suyou</p>
-                    </div>
-                </div>
-                <div class="hero-column">
-                    <div><h3>Ferdinand's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Lone Lancer', 'Arlott', 'Assets/assasin/Arlott.jpg', 'A demon human hybrid wielding two lances with a thirst for vengeance against both the Church and demons.')">
-                        <img src="Assets/assasin/select-Arlott.jpg" alt="Arlott">
-                        <p>Arlott</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadow Ranger', 'Benedetta', 'Assets/assasin/Benedetta.jpg', 'A ranger that fights for hope.')">
-                        <img src="Assets/assasin/select-Benedetta.jpg" alt="Benedetta">
-                        <p>Benedetta</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadowbringer', 'Helcurt', 'Assets/assasin/Helcurt.jpg', 'A member of a mysterious race with light-swallowing ability.')">
-                        <img src="Assets/assasin/select-Helcurt.jpg" alt="Helcurt">
-                        <p>Helcurt</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Shadow Blade', 'Karina', 'Assets/assasin/Karina.jpg', 'The assassin who dances upon blades.')">
-                        <img src="Assets/assasin/select-Karina.jpg" alt="Karina">
-                        <p>Karina</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Wandering Sword', 'Saber', 'Assets/assasin/Saber.jpg', 'A master swordsman in search of his true self.')">
-                        <img src="Assets/assasin/select-Saber.jpg" alt="Saber">
-                        <p>Saber</p>
-                    </div>
-                </div>
-            </div>
-            <div id="marksman" class="hero-category" style="display: none;">
-                <div class="hero-category-title">Marksman Heroes</div>
-                <div class="hero-column">
-                    <div><h3>Denloyd's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Lone Star', 'Brody', 'Assets/marksaman/brody.jpg', 'A solitary youth bearing the corruption of the Abyss.')">
-                        <img src="Assets/marksaman/select-brody.jpg" alt="Brody">
-                        <p>Brody</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Protector', 'Bruno', 'Assets/marksaman/Bruno.jpg', 'Top football player of Eruditio.')">
-                        <img src="Assets/marksaman/select-bruno.jpg" alt="Bruno">
-                        <p>Bruno</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('Death Chanter', 'Granger', 'Assets/marksaman/Granger.jpg', 'A mysterious demon hunter that operates outside the conventions of the Church of Light. Always seen with a violin case in hand, he hunts down demons with his two soul-devouring weapons.')">
-                        <img src="Assets/marksaman/select-Granger.jpg" alt="Granger">
-                        <p>Granger</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Dire Wolf Hunter', 'Roger', 'Assets/marksaman/roger.jpg', 'A hunter who walks the line Between good and evil.')">
-                        <img src="Assets/marksaman/select-roger.jpg" alt="Roger">
-                        <p>Roger</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Agile Tiger', 'Wanwan', 'Assets/marksaman/wanwan.jpg', 'A nimble assassin.')">
-                        <img src="Assets/marksaman/select-wanwan.jpg" alt="Wanwan">
-                        <p>Wanwan</p>
-                    </div>
-                </div>
 
-                    <div class="hero-column">
-                    <div><h3>Ferdinand's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('Dawnbreak Soldier', 'Beatrix', 'Assets/marksaman/Beatrix.jpg', 'A young inventor girl born with a silver spoon in her mouth. But she is a genius in more than just science: she excels in battle too, and joined forced with the Eruditio Rangers to shut down the 1718 Labs plot.')">
-                        <img src="Assets/marksaman/select-beatrix.jpg" alt="Beatrix">
-                        <p>Beatrix</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Arclight Outlaw', 'Ixia', 'Assets/marksaman/ixia.jpg', 'The leader of Bad Soul and self-proclaimed inventor, she wields a homemade weapon powered by a Starlium reactor.')">
-                        <img src="Assets/marksaman/select-ixia.jpg" alt="Ixia">
-                        <p>Ixia</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lost Star', 'Karrie', 'Assets/marksaman/karrie.jpg', 'A lone Yasson warrior.')">
-                        <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie">
-                        <p>Karrie</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Deadly Sniper', 'Melissa', 'Assets/marksaman/melissa.jpg', 'Harleys guardian and a talented sniper.')">
-                        <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa">
-                        <p>Melissa</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Spacetime Walker', 'Natan', 'Assets/marksaman/natan.jpg', 'A time-traveler with a masterful grasp on all things scientific and magical.')">
-                        <img src="Assets/marksaman/select-natan.jpg" alt="Natan">
-                        <p>Natan</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div id="fighter" class="hero-category" style="display: none;">
-            <div class="hero-category-title">Fighter Heroes</div>
-              <div class="hero-column">
-                <div><h3>Denloyd's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Blade of Enmity', 'Alpha', 'Assets/fighter/Alpha.jpg', 'Blade of Enmity,')">
-                        <img src="Assets/fighter/select-Alpha.jpg" alt="Alpha">
-                        <p>Alpha</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Warrior of Ferocity', 'Aulus', 'Assets/fighter/Aulus.jpg', 'A ferocious warrior who gets stronger as he fights.')">
-                        <img src="Assets/fighter/select-Aulus.jpg" alt="Aulus">
-                        <p>Aulus</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Kung Fu Boy', 'Chou', 'Assets/fighter/Chou.jpg', 'A kind and passionate Kung-Fu boy.')">
-                        <img src="Assets/fighter/select-Chou.jpg" alt="Chou">
-                        <p>Chou</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Lord Lava', 'Thamuz', 'Assets/fighter/Thamuz.jpg', 'The mighty Lord Lava.')">
-                        <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz">
-                        <p>Thamuz</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Executioner', 'Terizla', 'Assets/fighter/Terizla.jpg', 'A smith with a great hatred for the empire.')">
-                        <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla">
-                        <p>Terizla</p>
-                    </div>
-                </div>
-                <div class="hero-column">
-                    <div><h3>Ferdinand's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Scarlet Raven', 'Julian', 'Assets/fighter/Julian.jpg', 'A Raven assassin of the Church of Light, a young boy who is in search of his home...')">
-                        <img src="Assets/fighter/select-Julian.jpg" alt="Julian">
-                        <p>Julian</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Heavenly Fist', 'Paquito', 'Assets/assasin/Paquito.jpg', 'A firm and righteous champion.')">
-                        <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito">
-                        <p>Paquito</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Chains of Sin', 'Phoveus', 'Assets/fighter/Phoveus.jpg', 'A Fighter that pursues those who blink or dash.')">
-                        <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus">
-                        <p>Phoveus</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The  Firaga Armor', 'X.Borg', 'Assets/fighter/X.Borg.jpg', 'A talented teenager who uses his Firaga Armor to burn everything he comes across.')">
-                        <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg">
-                        <p>X.Borg</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Martial Genius', 'Yin', 'Assets/assasin/Yin.jpg', 'A gifted Kungfu boy possessed by an Evil God.')">
-                        <img src="Assets/assasin/select-Yin.jpg" alt="Yin">
-                        <p>Yin</p>
-                    </div>
+                        [
+                                'https://www.youtube.com/embed/eDcN2jKAMkU', 
+                                'https://www.youtube.com/embed/XR6NzSQ3hHE'
+                        ]
+                    )"
+              >
+                <img src="Assets/assasin/select-Lancelot.jpg" alt="Lancelot" />
+                <p>Lancelot</p>
               </div>
+
+                            <div
+                                class="hero"
+                                onclick="selectHero(
+                    'The Cyan Finch', 
+                    'Ling', 
+                    'Assets/assasin/Ling.jpg', 
+                    'A great assassin who can take out his target from above.',
+                    [
+                        { name: 'Fiery Dance', image: 'Assets/Skin/lingskin1.jpg' },
+                        { name: 'Street Punk', image: 'Assets/Skin/lingskin2.jpg' },
+                        { name: 'Night Shade', image: 'Assets/Skin/lingskin3.jpg' },
+                        { name: 'Cosmo Guard', image: 'Assets/Skin/lingskin4.jpg' },
+                        { name: 'Serene Plume', image: 'Assets/Skin/lingskin5.jpg' },
+                        { name: 'M-World Ling', image: 'Assets/Skin/lingskin6.jpg' },
+                        { name: 'Lord Shen', image: 'Assets/Skin/lingskin7.jpg' }
+
+
+                    ],
+                    [
+
+                        { 
+                                name: 'Passive: Cloud Walkerr ', 
+                                image: 'Assets/Skills/lingskill1.webp', 
+                                description: 'Leap between walls, gain Crit Chance and damage' 
+                            },
+
+                        { 
+                            name: 'Finch Poise', 
+                            image: 'Assets/Skills/lingskill1.1.webp', 
+                            description: 'Jump to walls for stealth and faster movement' 
+                        },
+                        { 
+                            name: 'Defiant Sword Ground Version', 
+                            image: 'Assets/Skills/lingskill2.webp', 
+                            description: 'Ling charges toward enemies, dealing damage in his path.' 
+                        },
+                        { 
+                            name: 'Defiant Sword Wall Version', 
+                            image: 'Assets/Skills/lingskill2.2.webp', 
+                            description: 'When on a wall, Ling dashes to a target area on the ground, dealing damage and slowing enemies' 
+                        },
+
+                        { 
+                            name: 'Tempest of Blades', 
+                            image: 'Assets/Skills/lingskill3.webp', 
+                            description: 'Becomes invincible, deals damage, creates a Sword Field for cooldown resets'
+                        
+                        }
+                    ],
+                    [
+                                'https://www.youtube.com/embed/tROvSzZsqY4', 
+                                'https://www.youtube.com/embed/2fSslGSwHdc'
+                    ]
+                )"
+                            >
+                                <img src="Assets/assasin/select-Ling.jpg" alt="Ling" />
+                                <p>Ling</p>
+                            </div>
+
+                            <div class="hero" onclick="selectHero(
+                                'The Bright Claw', 
+                                'Natalia', 
+                                'Assets/assasin/Natalia.jpg', 
+                                'The Church of Lights top assassin.',
+                                [
+                                    { name: 'Glass Blade', image: 'Assets/Skin/nataliaskin1.jpg' },
+                                    { name: 'Phantom Dancer', image: 'Assets/Skin/nataliaskin2.jpg' },
+                                    { name: 'Deadly Mamba', image: 'Assets/Skin/nataliaskin3.jpg' },
+                                    { name: 'Midnight Raven', image: 'Assets/Skin/nataliaskin4.jpg' },
+                                    { name: 'Grim Strangler', image: 'Assets/Skin/nataliaskin5.jpg' },
+                                    { name: 'Cyber Spectre', image: 'Assets/Skin/nataliaskin6.jpg' },
+                                    { name: 'Warrioress Paragon', image: 'Assets/Skin/nataliaskin7.jpg' }
+                                ],
+                                [
+                                    { 
+                                        name: 'Passive: Assassin Instinct', 
+                                        image: 'Assets/Skills/nataliaskill1.webp', 
+                                        description: ' Natalia becomes invisible in bushes and gains a burst of movement speed. Her next attack deals extra damage, slows, and silences the target.'
+                                    },
+                                    { 
+                                        name: 'Claw Dash', 
+                                        image: 'Assets/Skills/nataliaskill1.1.webp', 
+                                        description: 'Dashes through enemies, dealing damage, and can be used again if an enemy is hit.'
+                                    },
+                                    { 
+                                        name: 'Smoke Bomb', 
+                                        image: 'Assets/Skills/nataliaskill2.webp', 
+                                        description: 'Creates a smoke area that boosts her attack speed, grants immunity to basic attacks, and slows enemies.'
+                                    },
+                                    { 
+                                        name: 'The Hunt', 
+                                        image: 'Assets/Skills/nataliaskill3.webp', 
+                                        description: 'Makes Natalia invisible again, enhancing her next attack with bonus damage and silencing the target.'
+                                    }
+                                ],
+                                [
+                                      'https://www.youtube.com/embed/DbFZ9tTpX3s', 
+                                      'https://www.youtube.com/embed/Cm1w6LJ-LzA'
+                                ]
+                            )">
+                                <img src="Assets/assasin/select-Natalia.jpg" alt="Natalia" />
+                                <p>Natalia</p>
+                            </div>
+                            
+
+
+                            <div class="hero" onclick="selectHero(
+                                'The Cosmic Wayfinder', 
+                                'Nolan', 
+                                'Assets/assasin/Nolan.jpg', 
+                                'A scholar of Eruditio who traversed the multiverse to save his daughter.',
+                                [
+                                    { name: 'Voidwalker', image: 'Assets/Skin/nolanskin1.jpg' },
+                                    { name: 'Fashion Mogul', image: 'Assets/Skin/nolanskin2.jpg' },
+                                    { name: 'Fashion Tycoon', image: 'Assets/Skin/nolanskin3.jpg' },
+                                    { name: 'Fashion Magnate', image: 'Assets/Skin/nolanskin4.jpg' },
+                                    { name: 'The Navigator', image: 'Assets/Skin/nolanskin5.jpg' }
+                                ],
+                                [
+                                    { 
+                                        name: 'Passive: Dimensional Rift', 
+                                        image: 'Assets/Skills/nolanskill1.webp', 
+                                        description: 'Nolan creates rifts on the battlefield, allowing him to pass through them for quick mobility, aiding in evasion and repositioning.'
+                                    },
+                                    { 
+                                        name: 'Passive: Fissure Strike', 
+                                        image: 'Assets/Skills/nolanskill1.1.webp', 
+                                        description: 'After dealing a set number of attacks or using abilities, Nolan’s damage output is boosted, making him deadly in quick exchanges.'
+                                    },
+                                    { 
+                                        name: 'Expansion', 
+                                        image: 'Assets/Skills/nolanskill1.2.webp', 
+                                        description: 'Nolan cuts through enemies in a rectangular area, dealing damage and creating a rift.'
+                                    },
+                                    { 
+                                        name: 'Gauge', 
+                                        image: 'Assets/Skills/nolanskill2.webp', 
+                                        description: 'He charges forward, dealing damage and leaving a rift behind.'
+                                    },
+                                    { 
+                                        name: 'Fracture', 
+                                        image: 'Assets/Skills/nolanskill3.webp', 
+                                        description: 'Nolan slashes a target area multiple times, dealing damage, removing debuffs, and activating rifts that trigger automatically.'
+                                    }
+                                ],
+                                [
+                                      'https://www.youtube.com/embed/Dh4KSGV8t0E', 
+                                      'https://www.youtube.com/embed/g-yelL-RxM0'
+                                ]
+                            )">
+                                <img src="Assets/assasin/select-Nolan.jpg" alt="Nolan" />
+                                <p>Nolan</p>
+                            </div>
+                            
+              
+
+
+                            <div class="hero" onclick="selectHero(
+                                'The Mask of the Immortal', 
+                                'Suyou', 
+                                'Assets/assasin/Suyou.jpg', 
+                                'An exorcist from Zhu An who has inherited the power of the Immortal Nuo.',
+                                [
+                                    { name: 'Venerated Vigilance', image: 'Assets/Skin/suyouskin1.jpg' }
+                                    
+                                ],
+                                [
+                                    { 
+                                        name: 'Passive: Transient Immortal', 
+                                        image: 'Assets/Skills/suyouskill1.webp', 
+                                        description: 'Alternates between Mortal and Immortal forms, boosting damage and healing in Immortal form.'
+                                    },
+                                    { 
+                                        name: 'Blade Surge', 
+                                        image: 'Assets/Skills/suyouskill1.1.webp', 
+                                        description: 'Suyou dashes forward, dealing increasing damage the longer he holds the skill.'
+                                    },
+                                    { 
+                                        name: 'Soul Sever', 
+                                        image: 'Assets/Skills/suyouskill2.webp', 
+                                        description: 'Suyou attacks in a fan-shaped area, dealing damage based on the target’s lost HP and healing himself.'
+                                    },
+
+                                    { 
+                                        name: 'Evil Queller', 
+                                        image: 'Assets/Skills/suyouskill3.webp', 
+                                        description: 'Suyou creates a powerful arrow with increased range and damage the longer it charged.'
+                                    }
+                                ],
+                                [
+                                      'https://www.youtube.com/embed/3TY0N-3avuA', 
+                                      'https://www.youtube.com/embed/s7s6GAw_aXg'
+                                ]
+                            )">
+                                <img src="Assets/assasin/select-Suyou.jpg" alt="Suyou" />
+                                <p>Suyou</p>
+                            </div>
+                        </div>
+
+
+
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+
+              <div class="hero" onclick="selectHero(
+                'The Lone Lancer', 
+                'Arlott', 
+                'Assets/assasin/Arlott.jpg', 
+                'A demon human hybrid wielding two lances with a thirst for vengeance against both the Church and demons.',
+                [
+                    { name: 'Wandering Lance', image: 'Assets/Skin/arlottskin1.jpg' },
+                    { name: 'Fury of the Deep', image: 'Assets/Skin/arlottskin2.jpg' },
+                    { name: 'Scorn of the Deep', image: 'Assets/Skin/arlottskin3.jpg' },
+                    { name: 'Ire of the Deep', image: 'Assets/Skin/arlottskin4.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive: Demon Gaze', 
+                        image: 'Assets/Skills/arlottskill1.webp', 
+                        description: 'Marks enemies and crowd-controlled targets, causing critical damage from his second skill, Vengeance.'
+                    },
+                    { 
+                        name: 'Dauntless Strike', 
+                        image: 'Assets/Skills/arlottskill1.1.webp', 
+                        description: 'Slams his spear to deal damage and stun enemies, with longer stuns for distant targets.'
+                    },
+                    { 
+                        name: 'Vengeance', 
+                        image: 'Assets/Skills/arlottskill2.webp', 
+                        description: 'Charges at marked enemies, dealing damage, healing, and refreshing the cooldown if it critically strikes.'
+                    },
+                    { 
+                        name: 'Final Slash', 
+                        image: 'Assets/Skills/arlottskill3.webp', 
+                        description: 'Sweeps his spear, displacing enemies and revealing hidden targets.'
+                    }
+                ],
+                [
+                        'https://www.youtube.com/embed/rbH-xoLRqxw', 
+                        'https://www.youtube.com/embed/GV5sw4WG2hY'
+                ]
+            )">
+                <img src="Assets/assasin/select-Arlott.jpg" alt="Arlott" />
+                <p>Arlott</p>
             </div>
-           <div id="mage" class="hero-category" style="display: none;">
-            <div class="hero-category-title">Mage Heroes</div>
-                <div class="hero-column">
-                    <div><h3>Denloyd's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Embrace of Night', 'Cecilion', 'Assets/mage/Cecilion.jpg', 'An opera singer, a Blood Demon.')">
-                        <img src="Assets/mage/select-Cecilion.jpg" alt="Cecilion">
-                        <p>Cecilion</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Moon Palace Immortal', 'Change e', 'Assets/mage/Change.jpg', 'A heroine from a mysterious eastern land.')">
-                        <img src="Assets/mage/select-Change.jpg" alt="Change">
-                        <p>Chang'e</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Yin-yang Geomancer', 'Luo Yi', 'Assets/mage/Luo yi.jpg', 'A mage who roams between the binary of Yin and Yang.')">
-                        <img src="Assets/mage/select-Luo yi.jpg" alt="Luo Yi">
-                        <p>Luo Yi</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Wings of Vengeance', 'Pharsa', 'Assets/mage/Pharsa.jpg', 'A member of the Crow Clan who was born with a blood mutaion.')">
-                        <img src="Assets/mage/select-Pharsa.jpg" alt="Pharsa">
-                        <p>Pharsa</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Valentina', 'Assets/mage/Valentina.jpg', 'The unpredictable shadow predator.')">
-                        <img src="Assets/mage/select-Valentina.jpg" alt="Valentina">
-                        <p>Valentina</p>
-                    </div>
-                </div>
-                <div class="hero-column">
-                    <div><h3>Ferdinand's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Lightning Weaver', 'Eudora', 'Assets/mage/Eudora.jpg', 'The master of the power of lightning.')">
-                        <img src="Assets/mage/select-Eudora.jpg" alt="Eudora">
-                        <p>Eudora</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Astrologer', 'Esmeralda', 'Assets/mage/Esmeralda.jpg', 'Falling Starmoon')">
-                        <img src="Assets/mage/select-Esmeralda.jpg" alt="Esmeralda">
-                        <p>Esmeralda</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Star Rebel', 'Novaria', 'Assets/mage/Novaria.jpg', 'The young girl who seeks to rebuild the Star Atlas in order to solve the secrets of the Stars.')">
-                        <img src="Assets/mage/select-Novaria.jpg" alt="Novaria">
-                        <p>Novaria</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Defier of Light', 'Xavier', 'Assets/mage/Xavier.jpg', 'Former member of the Knights of Light who is determined to forge a path of his own.')">
-                        <img src="Assets/mage/select-Xavier.jpg" alt="Xavier">
-                        <p>Xavier</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Zhuxin', 'Assets/mage/Zhuxin.jpg', 'The unpredictable shadow predator.')">
-                        <img src="Assets/mage/select-Zhuxin.jpg" alt="Zhuxin">
-                        <p>Zhuxin</p>
-                    </div>
-                </div>
-           </div>
-           <div id="support" class="hero-category" style="display: none;">
-            <div class="hero-category-title">Support Heroes</div>
-                <div class="hero-column">
-                    <div><h3>Denloyd's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Bunnylove', 'Angela', 'Assets/support/Angela.jpg', 'An android with a heart full of love.')">
-                        <img src="Assets/support/select-Angela.jpg" alt="Angela ">
-                        <p>Angela </p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Timekeeper', 'Diggie', 'Assets/support/Diggie.jpg', 'A little owl with a penchant for timepieces.')">
-                        <img src="Assets/support/select-Diggie.jpg" alt="Diggie">
-                        <p>Diggie</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Moon Elf King', 'Estes', 'Assets/support/Estes.jpg', 'The Elf Guardian.')">
-                        <img src="Assets/support/select-Estes.jpg" alt="Estes">
-                        <p>Estes</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Nazar King', 'Kaja', 'Assets/support/Kaja.jpg', 'Leader of Nazar.')">
-                        <img src="Assets/support/select-Kaja.jpg" alt="Kaja">
-                        <p>Kaja</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Prophetess of the Night', 'Mathilda', 'Assets/support/Mathilda.jpg', 'The unpredictable shadow predator.')">
-                        <img src="Assets/support/select-Mathilda.jpg" alt="Mathilda">
-                        <p>Mathilda</p>
-                    </div>
-                </div>
-                <div class="hero-column">
-                    <div><h3>Ferdinand's Pick</h3></div>
-                    <div class="hero" onclick="selectHero('The Shadow of Twilight', 'Carmilla', 'Assets/support/Carmilla.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
-                        <img src="Assets/support/select-Carmilla.jpg" alt="Carmilla">
-                        <p>Carmilla</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Phase Technician', 'Chip', 'Assets/support/Chip.jpg', 'A carefree, genetically enhanced fox that wields advanced portal technology.')">
-                        <img src="Assets/support/select-Chip.jpg" alt="Chip">
-                        <p>Chip</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Soul Binder', 'Faramis', 'Assets/support/Faramis.jpg', 'A fallen imperial mage.')">
-                        <img src="Assets/support/select-Faramis.jpg" alt="Faramis">
-                        <p>Faramis</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Budding Hope', 'Floryn', 'Assets/support/Floryn.jpg', 'A kind-hearted girl who is determined to spread greenery throughout the world.')">
-                        <img src="Assets/support/select-Floryn.jpg" alt="Floryn">
-                        <p>Floryn</p>
-                    </div>
-                    <div class="hero" onclick="selectHero('The Wings of Holiness', 'Rafaela', 'Assets/support/Rafaela.jpg', 'The angel who heals everything.')">
-                        <img src="Assets/support/select-Rafaela.jpg" alt="Rafaela">
-                        <p>Rafaela</p>
-                    </div>
-                </div>
-           </div>
-           <div id="tank" class="hero-category" style="display: none;">
-            <div class="hero-category-title">Tank Heroes</div>
-            <div class="hero-column">
-                <div><h3>Denloyd's Pick</h3></div>
-                <div class="hero" onclick="selectHero('The Panda Warrior', 'Akai', 'Assets/tank/Akai.jpg', 'A panda warrior who likes rolling around.')">
-                    <img src="Assets/tank/select-Akai.jpg" alt="Akai">
-                    <p>Akai</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Guard of Nature', 'Belerick', 'Assets/tank/Belerick.jpg', 'A friendly creature of nature.')">
-                    <img src="Assets/tank/select-Belerick.jpg" alt="Belerick">
-                    <p>Belerick</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Grand Warden', 'Hylos', 'Assets/tank/Hylos.jpg', 'A Centaur Hero with the ability of convert natural magic into life force.')">
-                    <img src="Assets/tank/select-Hylos.jpg" alt="Hylos">
-                    <p>Hylos</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Wild Engine', 'Johnson', 'Assets/tank/Johnson.jpg', 'A super cyborg who can transform into a car and lead his teammates into battle.')">
-                    <img src="Assets/tank/select-Johnson.jpg" alt="Johnson">
-                    <p>Johnson</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Shadow of Twilight', 'Uranus', 'Assets/tank/Uranus.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
-                    <img src="Assets/tank/select-Uranus.jpg" alt="Uranus">
-                    <p>Uranus</p>
-                </div>
+
+
+
+            <div class="hero" onclick="selectHero(
+                'The Shadow Ranger', 
+                'Benedetta', 
+                'Assets/assasin/Benedetta.jpg', 
+                'A ranger that fights for hope.',
+                [
+                    { name: 'Honor Blade', image: 'Assets/Skin/benedettaskin1.jpg' },
+                    { name: 'Street Blow', image: 'Assets/Skin/benedettaskin2.jpg' },
+                    { name: 'Death Oath', image: 'Assets/Skin/benedettaskin3.jpg' },
+                    { name: 'Moonblade', image: 'Assets/Skin/benedettaskin4.jpg' },
+                    { name: 'Panigale V4S Rider', image: 'Assets/Skin/benedettaskin5.jpg' },
+                    { name: 'Quantum Edge', image: 'Assets/Skin/benedettaskin6.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive: Elapsed Daytime', 
+                        image: 'Assets/Skills/benedettaskill1.webp', 
+                        description: 'Charges Sword Intent with basic attacks and abilities, enabling a powerful Swordout Slash when fully charged.'
+                    },
+                    { 
+                        name: 'Phantom Slash', 
+                        image: 'Assets/Skills/benedettaskill1.1.webp', 
+                        description: 'Dashes and slashes in a cone, doubling damage if her shadow hits enemies.'
+                    },
+                    { 
+                        name: 'An Eye for An Eye', 
+                        image: 'Assets/Skills/benedettaskill2.webp', 
+                        description: 'Becomes immune to damage and control, then dashes to deal damage.'
+                    },
+                    { 
+                        name: 'Alecto: Final Blow', 
+                        image: 'Assets/Skills/benedettaskill3.webp', 
+                        description: 'Dashes forward, immune to damage, dealing significant damage and slowing enemies.'
+                    }
+                ],
+                [
+                        'https://www.youtube.com/embed/9Z-1-6e9Qiw', 
+                        'https://www.youtube.com/embed/Pp-IxneZJMs'
+                ]
+            )">
+                <img src="Assets/assasin/select-Benedetta.jpg" alt="Benedetta" />
+                <p>Benedetta</p>
             </div>
-            <div class="hero-column">
-                <div><h3>Ferdinand's Pick</h3></div>
-                <div class="hero" onclick="selectHero('The Ocean Gladiator', 'Atlas', 'Assets/tank/Atlas.jpg', 'An ancient creature that pilots a mecha.')">
-                    <img src="Assets/tank/select-Atlas.jpg" alt="Atlas">
-                    <p>Atlas</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Frozen Warrior', 'Franco', 'Assets/tank/Franco.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')">
-                    <img src="Assets/tank/select-Franco.jpg" alt="Franco">
-                    <p>Franco</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Rogue Appraiser', 'Fredrinn', 'Assets/tank/Fredrinn.jpg', 'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.')">
-                    <img src="Assets/tank/select-Fredrinn.jpg" alt="Fredrinn">
-                    <p>Fredrinn</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Desert Tyrant', 'Khufra', 'Assets/tank/Khufra.jpg', 'A cruel and greedy tyrant of the desert.')">
-                    <img src="Assets/tank/select-Khufra.jpg" alt="Khufra">
-                    <p>Khufra</p>
-                </div>
-                <div class="hero" onclick="selectHero('The Warrior of Dawn', 'Tigreal', 'Assets/tank/Tigreal.jpg', 'The holy knight loyal to the Lord of Light.')">
-                    <img src="Assets/tank/select-Tigreal.jpg" alt="Tigreal">
-                    <p>Tigreala</p>
-                </div>
-            </div>
-           </div>
-        </div>
-        <div class="button-container">
-            <button id="back-button" class="back-btn" style="display: none;" onclick="goBack()">Back</button>
+
+            <div class="hero" onclick="selectHero(
+              'The Shadowbringer', 
+              'Helcurt', 
+              'Assets/assasin/Helcurt.jpg', 
+              'A member of a mysterious race with light-swallowing ability.',
+              [
+                  { name: 'Exoracial Executer', image: 'Assets/Skin/helcurtskin1.jpg' },
+                  { name: 'Ice Scythe', image: 'Assets/Skin/helcurtskin2.jpg' },
+                  { name: 'Evolved Predator', image: 'Assets/Skin/helcurtskin3.jpg' },
+                  { name: 'Scorpio', image: 'Assets/Skin/helcurtskin4.jpg' },
+                  { name: 'Dream Prowler', image: 'Assets/Skin/helcurtskin5.jpg' },
+                  { name: 'Phantom Prowler', image: 'Assets/Skin/helcurtskin6.jpg' }
+                  
+              ],
+              [
+                  { 
+                      name: 'Passive: Shadow of Styx', 
+                      image: 'Assets/Skills/helcurtskill1.webp', 
+                      description: 'Gains increased movement speed and HP regeneration while hidden; exiting concealment grants bonus attack speed. Kills shroud Helcurt in a dark fog, concealing him temporarily.' 
+                  },
+                  { 
+                      name: 'Hidden Terror', 
+                      image: 'Assets/Skills/helcurtskill1.1.webp', 
+                      description: 'Blinks to a target location, damaging and slowing enemies. Terrifies them if Helcurt is hidden.' 
+                  },
+                  { 
+                      name: 'Deadly Stinger', 
+                      image: 'Assets/Skills/helcurtskill2.webp', 
+                      description: 'Fires stingers, dealing damage to enemies. Gathers stingers through basic attacks and while hidden.' 
+                  },
+                  { 
+                      name: 'Dark Night Falls', 
+                      image: 'Assets/Skills/helcurtskill3.webp', 
+                      description: 'Reduces the vision of all enemies and increases his own attack speed.' 
+                  }
+              ],
+              [
+                        'https://www.youtube.com/embed/1Pgf_vPj4HA', 
+                        'https://www.youtube.com/embed/aJVTuiTyxRo'
+              ]
+          )">
+              <img src="Assets/assasin/select-Helcurt.jpg" alt="Helcurt" />
+              <p>Helcurt</p>
+          </div>
+          
+          <div class="hero" onclick="selectHero(
+            'The Shadow Blade', 
+            'Karina', 
+            'Assets/assasin/Karina.jpg', 
+            'The assassin who dances upon blades.',
+            [
+                { name: 'Phantom Blade', image: 'Assets/Skin/karinaskin1.jpg' },
+                { name: 'Christmas Carnival', image: 'Assets/Skin/karinaskin2.jpg' },
+                { name: 'Black Pearl', image: 'Assets/Skin/karinaskin3.jpg' },
+                { name: 'Spider Lily', image: 'Assets/Skin/karinaskin4.jpg' },
+                { name: 'Doom Duelist', image: 'Assets/Skin/karinaskin5.jpg' },
+                { name: 'Leona', image: 'Assets/Skin/karinaskin6.jpg' },
+                { name: 'Gemini - Halo', image: 'Assets/Skin/karinaskin7.jpg' },
+                { name: 'Blood Moon', image: 'Assets/Skin/karinaskin8.jpg' },
+                { name: 'Cutting Edge', image: 'Assets/Skin/karinaskin9.jpg' }
+            ],
+            [
+                { 
+                    name: 'Passive: Shadow Combo', 
+                    image: 'Assets/Skills/karinaskill1.webp', 
+                    description: 'Repeated attacks on the same target deal bonus true damage and speed up her skill cooldowns.' 
+                },
+                { 
+                    name: 'Dance of Blades', 
+                    image: 'Assets/Skills/karinaskill1.1.webp', 
+                    description: 'Enhances movement, blocks basic attacks, and reflects magic damage.' 
+                },
+                { 
+                    name: 'Dance of Death', 
+                    image: 'Assets/Skills/karinaskill2.webp', 
+                    description: 'Unleashes an area slash that deals magic damage to nearby enemies.' 
+                },
+                { 
+                    name: 'Shadow Assault', 
+                    image: 'Assets/Skills/karinaskill3.webp', 
+                    description: 'Charges at an enemy, deals magic damage, and applies a shadow mark that resets the cooldown if the target dies.' ,
+                }
+            ],
+            [
+                        'https://www.youtube.com/embed/7hkRcjYiU', 
+                        'https://www.youtube.com/embed/KaKGWJvxu2E'
+            ]
+        )">
+            <img src="Assets/assasin/select-Karina.jpg" alt="Karina" />
+            <p>Karina</p>
         </div>
         
-    </div>
 
-    <div class="last-container" id="selected-hero" style="display: none;">
-        <!-- Hero Info Section -->
-        <div class="hero-overview">
-            <h2 id="hero-name"></h2>
-            <img id="hero-image" src="" alt="Hero Image">
-            <p id="hero-info"></p>
-            <div class="hero-buttons">
-                <button class="btn" onclick="showSection('skins-section')">Skins</button>
-                <button class="btn" onclick="showSection('skills-section')">Skills</button>
-                <button class="btn" onclick="showSection('gameplay-section')">Gameplay</button>
-                <button class="btn back-btn" onclick="goBack()">Back to Selection</button>
+        <div class="hero" onclick="selectHero(
+          'The Wandering Sword', 
+          'Saber', 
+          'Assets/assasin/Saber.jpg', 
+          'A master swordsman in search of his true self.',
+          [
+              { name: 'Golden Flash', image: 'Assets/Skin/saberskin1.jpg' },
+              { name: 'Force Warrior', image: 'Assets/Skin/saberskin2.jpg' },
+              { name: 'Codename - Storm', image: 'Assets/Skin/saberskin3.jpg' },
+              { name: 'Fullmetal Ronin', image: 'Assets/Skin/saberskin4.jpg' },
+              { name: 'S.A.B.E.R. Regulator', image: 'Assets/Skin/saberskin5.jpg' },
+              { name: 'Onimaru', image: 'Assets/Skin/saberskin6.jpg' },
+              { name: 'Silver Edge', image: 'Assets/Skin/saberskin7.jpg' },
+              { name: 'Iron Hound', image: 'Assets/Skin/saberskin8.jpg' },
+              { name: 'Steel of Hound', image: 'Assets/Skin/saberskin9.jpg' }
+          ],
+          [
+              { 
+                  name: 'Passive: Enemy Bane', 
+                  image: 'Assets/Skills/saberskill1.webp', 
+                  description: 'Reduces enemy armor with each attack.' 
+              },
+              { 
+                  name: 'Orbiting Swords', 
+                  image: 'Assets/Skills/saberskill1.1.webp', 
+                  description: 'Releases swords orbiting around Saber, dealing Physical Damage and enhancing attacks.' 
+              },
+              { 
+                  name: 'Charge', 
+                  image: 'Assets/Skills/saberskill2.webp', 
+                  description: 'Dashes in a direction, damaging enemies and empowering the next Basic Attack, which slows targets.' 
+              },
+              { 
+                  name: 'Triple Sweep', 
+                  image: 'Assets/Skills/saberskill3.webp', 
+                  description: 'Knocks an enemy hero airborne and delivers multiple Physical Damage strikes during the duration.' 
+              }
+          ],
+          [
+                        'https://www.youtube.com/embed/dCrVgYCqKSA', 
+                        'https://www.youtube.com/embed/z0RdHBsB0lw'
+          ]
+      )">
+          <img src="Assets/assasin/select-Saber.jpg" alt="Saber" />
+          <p>Saber</p>
+      </div>
             </div>
+          </div>
         </div>
-    
-        <!-- Skins Section -->
-        <section id="skins-section" class="hero-section" style="display: none;">
-            <div class="slider">
-                <button class="slider-btn prev" onclick="changeSkin(-1)">&#10094;</button>
-                <div class="slider-content">
-                    <img id="skin-image" src="" alt="Skin Image">
-                    <p id="skin-name"></p>
-                </div>
-                <button class="slider-btn next" onclick="changeSkin(1)">&#10095;</button>
-            </div>
-        </section>
-    
-        <!-- Skills Section -->
-        <section id="skills-section" class="hero-section" style="display: none;">
-            <h3>Hero Skills</h3>
-            <div id="skills-list" class="skills-container"></div>
-        </section>
-    
-        <!-- Gameplay Section -->
-        <section id="gameplay-section" class="hero-section" style="display: none;">
-            <h3>Gameplay</h3>
-            <p id="gameplay-info"></p>
-        </section>
+
+
+        <div id="marksman" class="hero-category" style="display: none">
+          <div class="hero-category-title">Marksman Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+
+
+                      <div class="hero" onclick="selectHero(
+            'The Lone Star',
+            'Brody',
+            'Assets/marksaman/brody.jpg',
+            'A solitary youth bearing the corruption of the Abyss.',
+            [
+                { name: 'Nameless Stray', image: 'Assets/Skin/brodyskin1.jpg' },
+                { name: 'S.T.U.N. Brody', image: 'Assets/Skin/brodyskin2.jpg' },
+                { name: 'Lethal Fang', image: 'Assets/Skin/brodyskin3.jpg' },
+                { name: 'Ore-chemist', image: 'Assets/Skin/brodyskin4.jpg' },
+                { name: 'Quantum Grip', image: 'Assets/Skin/brodyskin5.jpg' },
+                { name: 'APBren', image: 'Assets/Skin/brodyskin6.jpg' }
+            ],
+            [
+                { 
+                    name: 'Passive: Abyss Corrosion',
+                    image: 'Assets/Skills/brodyskill1.webp',
+                    description: 'Basic attacks mark enemies with Abyss Marks, amplifying Brody’s damage and granting bonus movement speed per stack.'
+                },
+                { 
+                    name: 'Abyss Impact',
+                    image: 'Assets/Skills/brodyskill1.1.webp',
+                    description: 'Releases a shockwave that damages and slows enemies, applying Abyss Marks.'
+                },
+                { 
+                    name: 'Corrosive Strike',
+                    image: 'Assets/Skills/brodyskill2.webp',
+                    description: 'Dashes to a target, dealing damage, stunning them, and applying Abyss Marks.'
+                },
+                { 
+                    name: 'Torn-Apart Memory',
+                    image: 'Assets/Skills/brodyskill3.webp',
+                    description: 'Deals damage to all marked enemies, scaling with their missing health and consuming Abyss Marks for increased damage.'
+                }
+            ],
+            [
+                        'https://www.youtube.com/embed/vDy9VzBG-RA', 
+                        'https://www.youtube.com/embed/anPTWQVIWjQ'
+            ]
+        )">
+            <img src="Assets/marksaman/select-brody.jpg" alt="Brody" />
+            <p>Brody</p>
+        </div>
+
+
+
+        <div class="hero" onclick="selectHero(
+          'The Protector',
+          'Bruno',
+          'Assets/marksaman/bruno.jpg',
+          'Top football player of Eruditio.',
+          [
+                { name: 'Vanguard Elite', image: 'Assets/Skin/brunoskin1.jpg' },
+                { name: 'Best DJ', image: 'Assets/Skin/brunoskin2.jpg' },
+                { name: 'Street Football', image: 'Assets/Skin/brunoskin3.jpg' },
+                { name: 'The Falcon', image: 'Assets/Skin/brunoskin4.jpg' },
+                { name: 'Firebolt', image: 'Assets/Skin/brunoskin5.jpg' },
+                { name: 'Street Hype', image: 'Assets/Skin/brunoskin6.jpg' },
+                { name: 'Halo Striker', image: 'Assets/Skin/brunoskin7.jpg' },
+                { name: 'Neymar Jr', image: 'Assets/Skin/brunoskin8.jpg' },
+                { name: 'Urban Hype', image: 'Assets/Skin/brunoskin9.jpg' }
+          ],
+          [
+              { 
+                  name: 'Passive: Mecha Legs',
+                  image: 'Assets/Skills/brunoskill1.webp',
+                  description: 'Boosts Critical Chance with skill damage and enhances Physical Attack but limits Attack Speed gain from items.'
+              },
+              { 
+                  name: 'Volley Shot',
+                  image: 'Assets/Skills/brunoskill1.1.webp',
+                  description: 'Enhances the next Basic Attack with a Powerball, dealing bonus damage and slowing enemies. The ball bounces back for reuse.'
+              },
+              { 
+                  name: 'Flying Tackle',
+                  image: 'Assets/Skills/brunoskill2.webp',
+                  description: 'Slides in a chosen direction, dealing damage and stunning enemies. Can recall the Powerball if it’s bouncing.'
+              },
+              { 
+                  name: 'Worldie',
+                  image: 'Assets/Skills/brunoskill3.webp',
+                  description: 'Kicks an Energy Ball at an enemy, causing damage and reducing their Physical Defense. The ball bounces to nearby enemies multiple times.'
+              }
+          ],
+          [
+                        'https://www.youtube.com/embed/5z9bAiuSA0E', 
+                        'https://www.youtube.com/embed/g59YC1f6UY8'
+          ]
+      )">
+          <img src="Assets/marksaman/select-bruno.jpg" alt="Bruno" />
+          <p>Bruno</p>
+      </div>
+      
+
+
+      <div class="hero" onclick="selectHero(
+        'Death Chanter',
+        'Granger',
+        'Assets/marksaman/Granger.jpg',
+        'A mysterious demon hunter that operates outside the conventions of the Church of Light. Always seen with a violin case in hand, he hunts down demons with his two soul-devouring weapons.',
+        [
+            { name: 'Bardic Whisper', image: 'Assets/Skin/grangerskin1.jpg' },
+            { name: 'Doomsday Terminator', image: 'Assets/Skin/grangerskin2.jpg' },
+            { name: 'Biosoldier', image: 'Assets/Skin/grangerskin3.jpg' },
+            { name: 'Lightborn - Overrider', image: 'Assets/Skin/grangerskin4.jpg' },
+            { name: 'Agent Z', image: 'Assets/Skin/grangerskin5.jpg' },
+            { name: 'Starfall Knight', image: 'Assets/Skin/grangerskin6.jpg' },
+            { name: 'Megatron', image: 'Assets/Skin/grangerskin7.jpg' },
+            { name: 'Hellbringer', image: 'Assets/Skin/grangerskin8.jpg' },
+            { name: 'Exorcist Granger', image: 'Assets/Skin/grangerskin9.jpg' },
+            { name: 'Alluring Enigma', image: 'Assets/Skin/grangerskin10.jpg' }
+            
+        ],
+        [
+            { 
+                name: 'Passive: Capriccio',
+                image: 'Assets/Skills/grangerskill1.webp',
+                description: 'Granger can reload up to six bullets. His last bullet always critically hits.'
+            },
+            { 
+                name: 'Rhapsody',
+                image: 'Assets/Skills/grangerskill1.1.webp',
+                description: 'Granger fires all six bullets in a straight line, dealing damage to enemies hit.'
+            },
+            { 
+                name: 'Rondo',
+                image: 'Assets/Skills/grangerskill2.webp',
+                description: 'Granger dashes in a chosen direction, increasing his next two basic attacks’ damage.'
+            },
+            { 
+                name: 'Death Sonata',
+                image: 'Assets/Skills/grangerskill3.webp',
+                description: 'Transforms his violin case into a super cannon and fires three large bullets, each dealing high damage.'
+            }
+        ],
+        [
+                        'https://www.youtube.com/embed/uTj1rB3WibA', 
+                        'https://www.youtube.com/embed/18GtwaJffag'
+        ]
+    )">
+        <img src="Assets/marksaman/select-Granger.jpg" alt="Granger" />
+        <p>Granger</p>
     </div>
     
-    
+
+    <div class="hero" onclick="selectHero(
+      'The Dire Wolf Hunter',
+      'Roger',
+      'Assets/marksaman/Roger.jpg',
+      'A hunter who walks the line between good and evil, capable of transforming into a deadly wolf.',
+      [
+          { name: 'Dark Gent', image: 'Assets/Skin/rogerskin1.jpg' },
+          { name: 'Dr. Beast', image: 'Assets/Skin/rogerskin2.jpg' },
+          { name: 'Anubis', image: 'Assets/Skin/rogerskin3.jpg' },
+          { name: 'Phantom Pirate', image: 'Assets/Skin/rogerskin4.jpg' },
+          { name: 'Cyborg Werewolf', image: 'Assets/Skin/rogerskin5.jpg' },
+          { name: 'Phantom Predator', image: 'Assets/Skin/rogerskin6.jpg' },
+          { name: 'Fiend Haunter', image: 'Assets/Skin/rogerskin7.jpg' },
+          { name: 'Grimlock', image: 'Assets/Skin/rogerskin8.jpg' }
+      ],
+      [
+          { 
+              name: 'Passive: Full Moon Curse',
+              image: 'Assets/Skills/rogerskill1.webp',
+              description: 'In human form, each basic attack reduces the target’s Physical Defense. In wolf form, attacks deal extra damage to low-HP enemies.'
+          },
+          { 
+              name: 'Open Fire',
+              image: 'Assets/Skills/rogerskill1.1.webp',
+              description: 'Fires a shot that slows the enemy and reduces their defense.'
+          },
+          { 
+              name: 'Hunter’s Steps',
+              image: 'Assets/Skills/rogerskill2.webp',
+              description: 'Increases Roger’s movement speed temporarily.'
+          },
+          { 
+              name: 'Wolf Transformation',
+              image: 'Assets/Skills/rogerskill3.webp',
+              description: 'Transforms into a wolf, gaining access to new abilities and enhanced movement speed.'
+          }
+      ],
+      [
+                        'https://www.youtube.com/embed/pXsG6flAFCE', 
+                        'https://www.youtube.com/embed/SFtu5FWHojo'
+        ]
+  )">
+      <img src="Assets/marksaman/select-Roger.jpg" alt="Roger" />
+      <p>Roger</p>
+  </div>
+  
 
 
-    
+              <div class="hero" onclick="selectHero(
+                'The Agile Tiger',
+                'Wanwan',
+                'Assets/marksaman/Wanwan.jpg',
+                'A nimble marksman with the ability to dodge attacks and take down enemies swiftly.',
+                [
+                    { name: 'Darting Star', image: 'Assets/Skin/wanwanskin1.jpg' },
+                    { name: 'Shoujo Commander', image: 'Assets/Skin/wanwanskin2.jpg' },
+                    { name: 'Teen Pop', image: 'Assets/Skin/wanwanskin3.jpg' },
+                    { name: 'Pixel Blast', image: 'Assets/Skin/wanwanskin4.jpg' },
+                    { name: 'E-Girl', image: 'Assets/Skin/wanwanskin5.jpg' },
+                    { name: 'M-World Wanwan', image: 'Assets/Skin/wanwanskin6.jpg' },
+                    { name: 'Flying Swallow', image: 'Assets/Skin/wanwanskin7.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive: Tiger Pace',
+                        image: 'Assets/Skills/wanwanskill1.webp',
+                        description: 'Wanwan reveals enemy weaknesses, dealing extra true damage when hitting all marks.'
+                    },
+                    { 
+                        name: 'Swallow’s Path',
+                        image: 'Assets/Skills/wanwanskill1.1.webp',
+                        description: 'Throws needles in a cone, marking and damaging enemies.'
+                    },
+                    { 
+                        name: 'Needles in Flowers',
+                        image: 'Assets/Skills/wanwanskill2.webp',
+                        description: 'Removes crowd control effects and increases her attack speed temporarily.'
+                    },
+                    { 
+                        name: 'Crossbow of Tang',
+                        image: 'Assets/Skills/wanwanskill3.webp',
+                        description: 'Activates a crossbow and fires rapid shots, dealing true damage to enemies.'
+                    }
+                ],
+                [
+                        'https://www.youtube.com/embed/vYvfqVfHRLU', 
+                        'https://www.youtube.com/embed/AvfcITaYfEs'
+                ]
+            )">
+                <img src="Assets/marksaman/select-Wanwan.jpg" alt="Wanwan" />
+                <p>Wanwan</p>
+            </div>
 
+          </div>
+
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+              
+              <div class="hero" onclick="selectHero(
+                'Dawnbreak Soldier',
+                'Beatrix',
+                'Assets/marksaman/Beatrix.jpg',
+                'A young inventor girl born with a silver spoon in her mouth. But she is a genius in more than just science: she excels in battle too, and joined forces with the Eruditio Rangers to shut down the 1718 Labs plot.',
+                [
+                    { name: 'X Factor', image: 'Assets/Skin/beatrixskin1.jpg' },
+                    { name: 'Blitz Attack', image: 'Assets/Skin/beatrixskin2.jpg' },
+                    { name: 'Space Agent', image: 'Assets/Skin/beatrixskin3.jpg' },
+                    { name: 'Light Chaser', image: 'Assets/Skin/beatrixskin4.jpg' },
+                    { name: 'Stellar Briliance', image: 'Assets/Skin/beatrixskin5.jpg' },
+                    { name: 'Vibrant Fiesta', image: 'Assets/Skin/beatrixskin6.jpg' },
+                    { name: 'Light Seeker', image: 'Assets/Skin/beatrixskin7.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive: Mecha Genius | Renner ',
+                        image: 'Assets/Skills/beatrixskill1.webp',
+                        description: 'After every few basic attacks, Beatrix gains bonus damage for her next attack, allowing her to deal extra damage from a long-range shot using Renner.'
+                    },
+                    { 
+                        name: 'Passive: Mecha Genius | Bennett ',
+                        image: 'Assets/Skills/beatrixskill1.1.webp',
+                        description: 'After a few basic attacks, Beatrix gains bonus damage for her next attack, boosting her close-range burst damage with Bennett grenade launcher.'
+                    },
+                    { 
+                        name: 'Passive: Mecha Genius | Wesker ',
+                        image: 'Assets/Skills/beatrixskill1.2.webp',
+                        description: 'Beatrix’s attacks gain bonus damage after a few hits, enhancing her next close-range burst with Wesker’s shotgun, dealing massive damage.'
+                    },
+                    { 
+                        name: 'Passive: Mecha Genius | Nibiru ',
+                        image: 'Assets/Skills/beatrixskill1.3.webp',
+                        description: 'After a few basic attacks, Beatrix’s next attack gets enhanced damage, boosting her rapid-fire attacks with Nibiru’s machine gun, dealing continuous damage over time.'
+                    },
+                    { 
+                        name: 'Masterful Gunner',
+                        image: 'Assets/Skills/beatrixskill2.webp',
+                        description: 'Beatrix’s attacks with her chosen weapon gain enhanced targeting and damage, improving her precision with all of her weapons..'
+                    },
+                    { 
+                        name: 'Tactical Reposition',
+                        image: 'Assets/Skills/beatrixskill3.webp',
+                        description: 'Beatrix dashes in a specified direction and reloads her weapon. Afterward, she switches to a new weapon and gains additional effects based on the weapon she selects.'
+                    },
+                    { 
+                        name: 'Ultimate 1: Renner’s Apathy',
+                        image: 'Assets/Skills/beatrixskill4.webp',
+                        description: 'Beatrix uses Renner to deal massive damage in a straight line to all enemies in its path, targeting a single enemy with precise shots.'
+                    },
+                    { 
+                        name: 'Ultimate 2: Bennett Rage',
+                        image: 'Assets/Skills/beatrixskill4.1.webp',
+                        description: 'Beatrix fires a barrage of grenades from Bennett, dealing explosive area-of-effect damage to enemies in the target zone.'
+                    },
+                    { 
+                        name: 'Ultimate 3: Wesker’s Elation',
+                        image: 'Assets/Skills/beatrixskill4.2.webp',
+                        description: 'Beatrix unleashes a shotgun blast from Wesker, dealing significant damage to multiple enemies in close proximity.'
+                    },
+                    { 
+                        name: 'Ultimate 4: Nibiru Passion',
+                        image: 'Assets/Skills/beatrixskill4.3.webp',
+                        description: 'Beatrix uses Nibiru to fire rapidly at all nearby enemies, dealing continuous damage with each shot as she unleashes a barrage.'
+                    }
+                ],
+                [
+                                'https://www.youtube.com/embed/3tZc1L3uSAc', 
+                                'https://www.youtube.com/embed/I_Tm1mWM7YU'
+                ]
+            )">
+                <img src="Assets/marksaman/select-beatrix.jpg" alt="Beatrix" />
+                <p>Beatrix</p>
+            </div>
+
+            <div class="hero" onclick="selectHero(
+              'The Arclight Outlaw',
+              'Ixia',
+              'Assets/marksaman/ixia.jpg',
+              'The leader of Bad Soul and self-proclaimed inventor, she wields a homemade weapon powered by a Starlium reactor.',
+              [
+                  { name: 'Shifting Sand', image: 'Assets/Skin/ixiaskin1.jpg' },
+                  { name: 'Dynamic Streak', image: 'Assets/Skin/ixiaskin2.jpg' },
+                  { name: 'Dynamic Flair', image: 'Assets/Skin/ixiaskin3.jpg' },
+                  { name: 'Dynamic Stylet', image: 'Assets/Skin/ixiaskin4.jpg' }
+              ],
+              [
+                  { 
+                      name: 'Passive: Siphon Starlium',
+                      image: 'Assets/Skills/ixiaskill1.webp',
+                      description: 'Ixia enhances her weapons with Starlium, increasing her attack damage as she attacks enemies.'
+                  },
+                  { 
+                      name: 'Dual Beam',
+                      image: 'Assets/Skills/ixiaskill1.1.webp',
+                      description: 'Ixia releases a burst of fiery energy in a cone, damaging enemies in the area.'
+                  },
+                  { 
+                      name: 'Star Helix',
+                      image: 'Assets/Skills/ixiaskill2.webp',
+                      description: 'Her weapon releases a concussive shockwave that stuns nearby enemies.'
+                  },
+                  { 
+                      name: 'Full Barrage',
+                      image: 'Assets/Skills/ixiaskill3.webp',
+                      description: 'Ixia unleashes a series of explosive projectiles, dealing high damage to enemies.'
+                  }
+              ],
+              [
+                                'https://www.youtube.com/embed/ANVvkv1fcEQ', 
+                                'https://www.youtube.com/embed/ym9Eey2Gusc'
+              ]
+          )">
+              <img src="Assets/marksaman/select-ixia.jpg" alt="Ixia" />
+              <p>Ixia</p>
+          </div>
+
+              <div class="hero" onclick="selectHero(
+    'The Lost Star',
+    'Karrie',
+    'Assets/marksaman/karrie.jpg',
+    'A lone Yasson warrior, blessed with the strength of a thousand stars.',
+    [
+        { name: 'Rising Star', image: 'Assets/Skin/karrieskin1.jpg' },
+        { name: 'Bladed Mantis', image: 'Assets/Skin/karrieskin2.jpg' },
+        { name: 'Dragon Queen', image: 'Assets/Skin/karrieskin3.jpg' },
+        { name: 'Jester', image: 'Assets/Skin/karrieskin4.jpg' },
+        { name: 'Hawkwatch', image: 'Assets/Skin/karrieskin5.jpg' },
+        { name: 'Gill-Girl', image: 'Assets/Skin/karrieskin6.jpg' },
+        { name: 'Neon Lightwheel', image: 'Assets/Skin/karrieskin7.jpg' },
+        { name: 'Wheel of Justice', image: 'Assets/Skin/karrieskin8.jpg' },
+        { name: 'Ice Talon', image: 'Assets/Skin/karrieskin9.jpg' }
+    ],
+    [
+        { 
+            name: 'Passive: Lightwheel Mark',
+            image: 'Assets/Skills/karrieskill1.webp',
+            description: 'Karrie gains energy with each attack, which is used to power her basic and special abilities.'
+        },
+        { 
+            name: 'Spinning Lightwheel',
+            image: 'Assets/Skills/karrieskill1.1.webp',
+            description: 'Karrie leaps through spacetime, dealing damage to enemies in her path.'
+        },
+        { 
+            name: 'Phantom Step',
+            image: 'Assets/Skills/karrieskill2.webp',
+            description: 'Karrie summons a massive nova that deals damage to all nearby enemies.'
+        },
+        { 
+            name: 'Speedy Lightwheel',
+            image: 'Assets/Skills/karrieskill3.webp',
+            description: 'Karrie channels cosmic energy to unleash a devastating storm of stars on her enemies.'
+        }
+    ],
+    [
+                                'https://www.youtube.com/embed/jvp0OqSm3Yk', 
+                                'https://www.youtube.com/embed/7Tx0iikksKk'
+    ]
+)">
+    <img src="Assets/marksaman/select-karrie.jpg" alt="Karrie" />
+    <p>Karrie</p>
+</div>
+
+<div class="hero" onclick="selectHero(
+  'The Cursed Needle,',
+  'Melissa',
+  'Assets/marksaman/melissa.jpg',
+  'Harley’s guardian and a talented sniper with unmatched precision.',
+  [
+      { name: 'Twinge Weaver', image: 'Assets/Skin/melissaskin1.jpg' },
+      { name: 'Nobara Kugisaki', image: 'Assets/Skin/melissaskin2.jpg' },
+      { name: 'Nightwalker', image: 'Assets/Skin/melissaskin3.jpg' },
+      { name: 'SPARKLE Melissa', image: 'Assets/Skin/melissaskin4.jpg' },
+      { name: 'Cursewalker', image: 'Assets/Skin/melissaskin5.jpg' },
+      { name: 'SHIMMER Melissa', image: 'Assets/Skin/melissaskin6.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Doll Buster',
+          image: 'Assets/Skills/melissaskill1.webp',
+          description: 'Melissa deals extra damage to minions and summoned units. Her attacks on them are amplified.'
+      },
+      { 
+          name: 'Falling!',
+          image: 'Assets/Skills/melissaskill1.1.webp',
+          description: 'Melissa dashes in a target direction, enhancing her basic attack for increased range and damage.'
+      },
+      { 
+          name: 'Eyes on You!',
+          image: 'Assets/Skills/melissaskill2.webp',
+          description: 'Throws Muddles to link enemies, slowing them and enabling direct attacks.'
+      },
+      { 
+          name: 'Go Away!',
+          image: 'Assets/Skills/melissaskill3.webp',
+          description: 'Summons a field that knocks back and damages enemies while boosting defense..'
+      }
+  ],
+  [
+                                'https://www.youtube.com/embed/L3DvXXAMnug', 
+                                'https://www.youtube.com/embed/U_vGBXy1GFc'
+  ]
+)">
+  <img src="Assets/marksaman/select-melissa.jpg" alt="Melissa" />
+  <p>Melissa</p>
+</div>
+
+              
+<div class="hero" onclick="selectHero(
+  'The Spacetime Walker',
+  'Natan',
+  'Assets/marksaman/natan.jpg',
+  'A time-traveler with a masterful grasp on all things scientific and magical.',
+  [
+      { name: 'Time Wielder', image: 'Assets/Skin/natanskin1.jpg' },
+      { name: 'Chaos Hunter', image: 'Assets/Skin/natanskin2.jpg' },
+      { name: 'Captain Chrono', image: 'Assets/Skin/natanskin3.jpg' },
+      { name: 'Tidal Lord', image: 'Assets/Skin/natanskin4.jpg' },
+      { name: 'Temporal Vortex', image: 'Assets/Skin/natanskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Theory of Everything',
+          image: 'Assets/Skills/natanskill1.webp',
+          description: 'Gains attack speed from physical and magic lifesteal, with reverse attacks dealing bonus magic damage.'
+      },
+      { 
+          name: 'Superposition',
+          image: 'Assets/Skills/natanskill1.1.webp',
+          description: 'Fires an energy blast, damaging enemies in its path and returning for a second hit.'
+      },
+      { 
+          name: 'Interference!',
+          image: 'Assets/Skills/natanskill2.webp',
+          description: 'Creates a gravitational field, pulling enemies to the center and slowing them.'
+      },
+      { 
+          name: 'Entropy',
+          image: 'Assets/Skills/natanskill3.webp',
+          description: 'Summons a reverse clone to mimic attacks.'
+      },
+
+      { 
+          name: 'Entropy Second Phase',
+          image: 'Assets/Skills/natanskill3.1.webp',
+          description: 'The clone moves and attacks in the opposite direction to amplify damage output..'
+      }
+  ],
+  [
+                                'https://www.youtube.com/embed/Y7s2R9HoKP0', 
+                                'https://www.youtube.com/embed/U_vGBXy1GFc'
+  ]
+)">
+        <img src="Assets/marksaman/select-natan.jpg" alt="Natan" />
+        <p>Natan</p>
+    </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="fighter" class="hero-category" style="display: none">
+          <div class="hero-category-title">Fighter Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+
+
+
+              <div class="hero" onclick="selectHero(
+  'The Blade of Enmity',
+  'Alpha',
+  'Assets/fighter/Alpha.jpg',
+  'Alpha, a cyber-enhanced warrior, excels in dueling with strong crowd control and sustainability.',
+  [
+      { name: 'Onimusha Commander', image: 'Assets/Skin/alphaskin1.jpg' },
+      { name: 'Fierce Dragon', image: 'Assets/Skin/alphaskin2.jpg' },
+      { name: 'Sea Gladiator', image: 'Assets/Skin/alphaskin3.jpg' },
+      { name: 'Crimson Warrior', image: 'Assets/Skin/alphaskin4.jpg' },
+      { name: 'General Void', image: 'Assets/Skin/alphaskin5.jpg' },
+      { name: 'Star Enforcer', image: 'Assets/Skin/alphaskin6.jpg' },
+      { name: 'Mecha-King Perseus', image: 'Assets/Skin/alphaskin7.jpg' },
+      { name: 'Galactic Enforcer', image: 'Assets/Skin/alphaskin8.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Beta, Advance!',
+          image: 'Assets/Skills/alphaskill1.webp',
+          description: 'Alpha summons Beta to attack enemies, dealing extra magic damage.'
+      },
+      { 
+          name: 'Rotary Impact',
+          image: 'Assets/Skills/alphaskill1.1.webp',
+          description: 'Slashes forward, dealing damage and slowing enemies.'
+      },
+      { 
+          name: 'Force Swing',
+          image: 'Assets/Skills/alphaskill2.webp',
+          description: 'Deals area damage and heals Alpha based on the targets hit.'
+      },
+      { 
+          name: 'Spear of Alpha',
+          image: 'Assets/Skills/alphaskill3.webp',
+          description: 'Charges with Beta, damaging and stunning enemies in their path.'
+      }
+  ],
+  [
+                                'https://www.youtube.com/embed/hfuspxWEDAk', 
+                                'https://www.youtube.com/embed/JLC4YTh4t-E'
+  ]
+)">
+    <img src="Assets/fighter/select-Alpha.jpg" alt="Alpha" />
+    <p>Alpha</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Warrior of Ferocity',
+  'Aulus',
+  'Assets/fighter/Aulus.jpg',
+  'Aulus grows stronger as battles progress, mastering the art of combat.',
+  [
+      { name: 'Berserkert', image: 'Assets/Skin/aulusskin1.jpg' },
+      { name: 'Barren Pioneer', image: 'Assets/Skin/aulusskin2.jpg' },
+      { name: 'War Lion', image: 'Assets/Skin/aulusskin3.jpg' }
+      
+  ],
+  [
+      { 
+          name: 'Passive: Fighting Spirit',
+          image: 'Assets/Skills/aulusskill1.webp',
+          description: 'Increases attack damage and attack speed as the fight prolongs.'
+      },
+      { 
+          name: 'Aulus, Charge!',
+          image: 'Assets/Skills/aulusskill1.1.webp',
+          description: 'Slams his axe, dealing damage and reducing enemy movement speed.'
+      },
+      { 
+          name: 'The Power of Axee',
+          image: 'Assets/Skills/aulusskill2.webp',
+          description: 'Empowers his next attack to deal massive damage.'
+      },
+      { 
+          name: 'Undying Fury',
+          image: 'Assets/Skills/aulusskill3.webp',
+          description: 'Enters a berserk mode, enhancing all abilities temporarily.'
+      }
+  ],
+  [
+                                'https://www.youtube.com/embed/7TacXSEf_I4', 
+                                'https://www.youtube.com/embed/fKFu7JTsXOY'
+  ]
+)">
+    <img src="Assets/fighter/select-Aulus.jpg" alt="Aulus" />
+    <p>Aulus</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Kung Fu Boy',
+  'Chou',
+  'Assets/fighter/Chou.jpg',
+  'A martial arts master who combines agility and control to dominate the battlefield.',
+  [
+      { name: 'Hip-hop Boy', image: 'Assets/Skin/chouskin1.jpg' },
+      { name: 'Dragon Boy', image: 'Assets/Skin/chouskin2.jpg' },
+      { name: 'King of Muay Thai', image: 'Assets/Skin/chouskin3.jpg' },
+      { name: 'Furious Tiger', image: 'Assets/Skin/chouskin4.jpg' },
+      { name: 'Iori Yagami', image: 'Assets/Skin/chouskin5.jpg' },
+      { name: 'Go Ballistic', image: 'Assets/Skin/chouskin6.jpg' },
+      { name: 'Thunderfist', image: 'Assets/Skin/chouskin7.jpg' },
+      { name: 'S.T.U.N. Chou', image: 'Assets/Skin/chouskin8.jpg' },
+      { name: 'Dragon Shiryu', image: 'Assets/Skin/chouskin9.jpg' },
+      { name: 'Libra Shiryu', image: 'Assets/Skin/chouskin10.jpg' },
+      { name: 'ECHO', image: 'Assets/Skin/chouskin11.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Only Fast',
+          image: 'Assets/Skills/chouskill1.webp',
+          description: 'Enhances Chou’s next basic attack, dealing additional damage and slowing enemies.'
+      },
+      { 
+          name: 'Jeet Kune Do',
+          image: 'Assets/Skills/chouskill1.1.webp',
+          description: 'Chou strikes quickly, knocking up enemies with the third attack.'
+      },
+      { 
+          name: 'Shunpo',
+          image: 'Assets/Skills/chouskill2.webp',
+          description: 'Dashes a short distance, gaining immunity to crowd control.'
+      },
+      { 
+          name: 'The Way of Dragon',
+          image: 'Assets/Skills/chouskill3.webp',
+          description: 'Delivers a flying kick, knocking back the enemy and dealing massive damage.'
+      }
+  ],
+  [
+                                'https://www.youtube.com/embed/qnQoXox_9xM', 
+                                'https://www.youtube.com/embed/v47thtHLrD8'
+  ]
+)">
+    <img src="Assets/fighter/select-Chou.jpg" alt="Chou" />
+    <p>Chou</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Lord Lava',
+  'Thamuz',
+  'Assets/fighter/Thamuz.jpg',
+  'Thamuz is a melee fighter who wields a scythe engulfed in flames to punish his enemies.',
+  [
+      { name: 'Lord of Wraith', image: 'Assets/Skin/thamuzskin1.jpg' },
+      { name: 'Liquid Fire', image: 'Assets/Skin/thamuzskin2.jpg' },
+      { name: 'Abyssal Reaper', image: 'Assets/Skin/thamuzskin3.jpg' },
+      { name: 'General Kai', image: 'Assets/Skin/thamuzskin4.jpg' },
+      { name: 'Sanctified Flame', image: 'Assets/Skin/thamuzskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Cauterant Inferno',
+          image: 'Assets/Skills/thamuzskill1.webp',
+          description: 'Deals continuous burn damage to enemies in his path.'
+      },
+      { 
+          name: 'Molten Scythes',
+          image: 'Assets/Skills/thamuzskill1.1.webp',
+          description: 'Throws his scythes, dealing damage and leaving trails of lava.'
+      },
+      { 
+          name: 'Chasm Trample',
+          image: 'Assets/Skills/thamuzskill2.webp',
+          description: 'Leaps to a designated area, damaging and slowing enemies.'
+      },
+      { 
+          name: 'Cauterant Inferno',
+          image: 'Assets/Skills/thamuzskill3.webp',
+          description: 'Boosts attack damage and healing effects, enhancing survivability.'
+      }
+  ],
+  [
+                   'https://www.youtube.com/embed/xZcms5uYWY0', 
+                   'https://www.youtube.com/embed/jLC8_1YnRxY'
+  ]
+)">
+    <img src="Assets/fighter/select-Thamuz.jpg" alt="Thamuz" />
+    <p>Thamuz</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Executioner',
+  'Terizla',
+  'Assets/fighter/Terizla.jpg',
+  'A blacksmith turned warrior seeking vengeance with his massive hammer.',
+  [
+      { name: 'Abyss Guard', image: 'Assets/Skin/terizlaskin1.jpg' },
+      { name: 'Flare', image: 'Assets/Skin/terizlaskin2.jpg' },
+      { name: 'Hammer Giant', image: 'Assets/Skin/terizlaskin3.jpg' },
+      { name: 'Rustwreck', image: 'Assets/Skin/terizlaskin4.jpg' },
+      { name: 'Flames of Judgement', image: 'Assets/Skin/terizlaskin5.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Body of Smith',
+          image: 'Assets/Skills/terizlaskill1.webp',
+          description: 'Converts physical damage into health, making him harder to kill.'
+      },
+      { 
+          name: 'Skill 1: Revenge Strike',
+          image: 'Assets/Skills/terizlaskill1.1.webp',
+          description: 'Swings his hammer, damaging enemies and reducing their movement speed.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals damage in an arc and slows enemies.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2.1',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals increased damage in a wider arc.'
+      },
+      { 
+          name: 'Skill 2: Execution Strike Phase 2.2',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Deals the highest damage with a knockback effect.'
+      },
+      { 
+          name: 'Ultimate: Penalty Zone',
+          image: 'Assets/Skills/terizlaskill3.webp',
+          description: 'Hurls a chain hammer, stunning enemies and pulling them into its radius.'
+      }
+  ],
+  [
+                   'https://www.youtube.com/embed/GwKFg6wihIE', 
+                   'https://www.youtube.com/embed/Oy7uFhTrCn8'
+  ]
+)">
+    <img src="Assets/fighter/select-Terizla.jpg" alt="Terizla" />
+    <p>Terizla</p>
+</div>
+
+            </div>
+
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+
+              <div class="hero" onclick="selectHero(
+                'The Scarlet Raven',
+                'Julian',
+                'Assets/fighter/Julian.jpg',
+                'A Raven assassin of the Church of Light, a young boy who is in search of his home...',
+                [
+                    { name: 'Silent Edge', image: 'Assets/Skin/julianskin1.jpg' },
+                    { name: 'Megumi Fushiguro', image: 'Assets/Skin/julianskin2.jpg' }
+                ],
+                [
+                    { 
+                        name: 'Passive1: Smith Legacy',
+                        image: 'Assets/Skills/julianskill1.webp',
+                        description: 'Enhances skills after casting two different abilities, dealing bonus magic damage. Basic attacks reduce cooldowns and restore HP.'
+                    },
+                    { 
+                        name: 'Passive2: Dual Blade',
+                        image: 'Assets/Skills/julianskill1.1.webp',
+                        description: 'Alternates between two attack types, dealing extra damage with each skill cast.'
+                    },
+                    { 
+                        name: 'Passive3: Chain Reaction',
+                        image: 'Assets/Skills/julianskill1.2.webp',
+                        description: 'Using an enhanced skill boosts movement speed and attack speed for a short time.'
+                    },
+                    { 
+                        name: 'Skill 1: Scythe',
+                        image: 'Assets/Skills/julianskill1.3.webp',
+                        description: 'Throws a scythe forward, dealing damage to all enemies in its path.'
+                    },
+                    { 
+                        name: 'Skill 1: Scythe Enhance',
+                        image: 'Assets/Skills/julianskill1.4.webp',
+                        description: 'Enlarges and pulls enemies.'
+                    },
+                    { 
+                        name: 'Skill 2: Sword',
+                        image: 'Assets/Skills/julianskill2.webp',
+                        description: 'Leaps forward, dealing damage to enemies in the area.'
+                    },
+                    { 
+                        name: 'Skill 2: Enhanced Sword',
+                        image: 'Assets/Skills/julianskill2.1.webp',
+                        description: 'Leaves an explosive mark for additional damage.'
+                    },
+                    { 
+                        name: 'Ultimate: Chain',
+                        image: 'Assets/Skills/julianskill3.webp',
+                        description: 'Launches chains to immobilize enemies.'
+                    },
+                    { 
+                        name: 'Ultimate: Chain Enhance',
+                        image: 'Assets/Skills/julianskill3.1.webp',
+                        description: 'Creates a stun zone, chaining enemies in the area.'
+                    }
+                ],
+                [
+                   'https://www.youtube.com/embed/FAn0Id5_kd4', 
+                   'https://www.youtube.com/embed/z-AfrZEDuX8'
+                ]
+              )">
+                  <img src="Assets/fighter/select-Julian.jpg" alt="Julian" />
+                  <p>Julian</p>
+              </div>
+              
+
+              <div class="hero" onclick="selectHero(
+  'The Heavenly Fist',
+  'Paquito',
+  'Assets/assasin/Paquito.jpg',
+  'A firm and righteous champion.',
+  [
+      { name: 'Death Blow', image: 'Assets/Skin/paquitoskin1.jpg' },
+      { name: 'Manny Pacquiao', image: 'Assets/Skin/paquitoskin2.jpg' },
+      { name: 'Underground Boxer', image: 'Assets/Skin/paquitoskin3.jpg' },
+      { name: 'Fulgent Punch', image: 'Assets/Skin/paquitoskin4.jpg' },
+      { name: 'Fist of Light', image: 'Assets/Skin/paquitoskin5.jpg' },
+      { name: 'Blazing Tiger', image: 'Assets/Skin/paquitoskin6.jpg' },
+      { name: 'Terry Bogard', image: 'Assets/Skin/paquitoskin7.jpg' },
+      { name: 'Fist of Glory', image: 'Assets/Skin/paquitoskin8.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Champ Stance',
+          image: 'Assets/Skills/paquitoskill1.webp',
+          description: 'Stacks combat readiness to empower his next skill.'
+      },
+      { 
+          name: 'Skill 1: Heavy Left Punch',
+          image: 'Assets/Skills/paquitoskill1.1.webp',
+          description: 'Paquito punches in a straight line, dealing damage to all enemies in its path.'
+      },
+      { 
+          name: 'Skill 1: Heavy Left Punch Enhance',
+          image: 'Assets/Skills/paquitoskill1.2.webp',
+          description: 'Paquito punches in a straight line, dealing increased damage and slowing enemies.'
+      },
+      { 
+          name: 'Skill 2: Jab',
+          image: 'Assets/Skills/paquitoskill2.webp',
+          description: 'Paquito delivers a wide-area punch, dealing damage and knocking back enemies.'
+      },
+      { 
+          name: 'Skill 2: Jab Enhance',
+          image: 'Assets/Skills/paquitoskill2.1.webp',
+          description: 'Paquito delivers a wide-area punch, dealing more damage and knocking back enemies further..'
+      },
+      { 
+          name: 'Ultimate: Knockout Strike',
+          image: 'Assets/Skills/paquitoskill3.webp',
+          description: 'Paquito charges forward, dealing multiple punches to enemies along the way.'
+      },
+      { 
+          name: 'Ultimate: Knockout Strike Enhance',
+          image: 'Assets/Skills/paquitoskill3.1.webp',
+          description: 'Paquito charges forward, dealing multiple punches with increased damage and a longer range.'
+      }
+  ],
+  [
+                   'https://www.youtube.com/embed/gcp98FvjQYs', 
+                   'https://www.youtube.com/embed/KHnWVKuLIc0'
+  ]
+)">
+    <img src="Assets/assasin/select-Paquito.jpg" alt="Paquito" />
+    <p>Paquito</p>
+</div>
+
+
+              <div
+                class="hero"
+                onclick="selectHero('The Chains of Sin', 'Phoveus', 'Assets/fighter/Phoveus.jpg', 'A Fighter that pursues those who blink or dash.')"
+              >
+                <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus" />
+                <p>Phoveus</p>
+              </div>
+
+              <div
+                class="hero"
+                onclick="selectHero('The  Firaga Armor', 'X.Borg', 'Assets/fighter/X.Borg.jpg', 'A talented teenager who uses his Firaga Armor to burn everything he comes across.')"
+              >
+                <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg" />
+                <p>X.Borg</p>
+              </div>
+
+              <div
+                class="hero"
+                onclick="selectHero('The Martial Genius', 'Yin', 'Assets/assasin/Yin.jpg', 'A gifted Kungfu boy possessed by an Evil God.')"
+              >
+                <img src="Assets/assasin/select-Yin.jpg" alt="Yin" />
+                <p>Yin</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="mage" class="hero-category" style="display: none">
+          <div class="hero-category-title">Mage Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Embrace of Night', 'Cecilion', 'Assets/mage/Cecilion.jpg', 'An opera singer, a Blood Demon.')"
+              >
+                <img src="Assets/mage/select-Cecilion.jpg" alt="Cecilion" />
+                <p>Cecilion</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Moon Palace Immortal', 'Change e', 'Assets/mage/Change.jpg', 'A heroine from a mysterious eastern land.')"
+              >
+                <img src="Assets/mage/select-Change.jpg" alt="Change" />
+                <p>Chang'e</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Yin-yang Geomancer', 'Luo Yi', 'Assets/mage/Luo yi.jpg', 'A mage who roams between the binary of Yin and Yang.')"
+              >
+                <img src="Assets/mage/select-Luo yi.jpg" alt="Luo Yi" />
+                <p>Luo Yi</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Wings of Vengeance', 'Pharsa', 'Assets/mage/Pharsa.jpg', 'A member of the Crow Clan who was born with a blood mutaion.')"
+              >
+                <img src="Assets/mage/select-Pharsa.jpg" alt="Pharsa" />
+                <p>Pharsa</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Prophetess of the Night', 'Valentina', 'Assets/mage/Valentina.jpg', 'The unpredictable shadow predator.')"
+              >
+                <img src="Assets/mage/select-Valentina.jpg" alt="Valentina" />
+                <p>Valentina</p>
+              </div>
+            </div>
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Lightning Weaver', 'Eudora', 'Assets/mage/Eudora.jpg', 'The master of the power of lightning.')"
+              >
+                <img src="Assets/mage/select-Eudora.jpg" alt="Eudora" />
+                <p>Eudora</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Astrologer', 'Esmeralda', 'Assets/mage/Esmeralda.jpg', 'Falling Starmoon')"
+              >
+                <img src="Assets/mage/select-Esmeralda.jpg" alt="Esmeralda" />
+                <p>Esmeralda</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Star Rebel', 'Novaria', 'Assets/mage/Novaria.jpg', 'The young girl who seeks to rebuild the Star Atlas in order to solve the secrets of the Stars.')"
+              >
+                <img src="Assets/mage/select-Novaria.jpg" alt="Novaria" />
+                <p>Novaria</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Defier of Light', 'Xavier', 'Assets/mage/Xavier.jpg', 'Former member of the Knights of Light who is determined to forge a path of his own.')"
+              >
+                <img src="Assets/mage/select-Xavier.jpg" alt="Xavier" />
+                <p>Xavier</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Prophetess of the Night', 'Zhuxin', 'Assets/mage/Zhuxin.jpg', 'The unpredictable shadow predator.')"
+              >
+                <img src="Assets/mage/select-Zhuxin.jpg" alt="Zhuxin" />
+                <p>Zhuxin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="support" class="hero-category" style="display: none">
+          <div class="hero-category-title">Support Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Bunnylove', 'Angela', 'Assets/support/Angela.jpg', 'An android with a heart full of love.')"
+              >
+                <img src="Assets/support/select-Angela.jpg" alt="Angela " />
+                <p>Angela</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Timekeeper', 'Diggie', 'Assets/support/Diggie.jpg', 'A little owl with a penchant for timepieces.')"
+              >
+                <img src="Assets/support/select-Diggie.jpg" alt="Diggie" />
+                <p>Diggie</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Moon Elf King', 'Estes', 'Assets/support/Estes.jpg', 'The Elf Guardian.')"
+              >
+                <img src="Assets/support/select-Estes.jpg" alt="Estes" />
+                <p>Estes</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Nazar King', 'Kaja', 'Assets/support/Kaja.jpg', 'Leader of Nazar.')"
+              >
+                <img src="Assets/support/select-Kaja.jpg" alt="Kaja" />
+                <p>Kaja</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Prophetess of the Night', 'Mathilda', 'Assets/support/Mathilda.jpg', 'The unpredictable shadow predator.')"
+              >
+                <img src="Assets/support/select-Mathilda.jpg" alt="Mathilda" />
+                <p>Mathilda</p>
+              </div>
+            </div>
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Shadow of Twilight', 'Carmilla', 'Assets/support/Carmilla.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
+              >
+                <img src="Assets/support/select-Carmilla.jpg" alt="Carmilla" />
+                <p>Carmilla</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Phase Technician', 'Chip', 'Assets/support/Chip.jpg', 'A carefree, genetically enhanced fox that wields advanced portal technology.')"
+              >
+                <img src="Assets/support/select-Chip.jpg" alt="Chip" />
+                <p>Chip</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Soul Binder', 'Faramis', 'Assets/support/Faramis.jpg', 'A fallen imperial mage.')"
+              >
+                <img src="Assets/support/select-Faramis.jpg" alt="Faramis" />
+                <p>Faramis</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Budding Hope', 'Floryn', 'Assets/support/Floryn.jpg', 'A kind-hearted girl who is determined to spread greenery throughout the world.')"
+              >
+                <img src="Assets/support/select-Floryn.jpg" alt="Floryn" />
+                <p>Floryn</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Wings of Holiness', 'Rafaela', 'Assets/support/Rafaela.jpg', 'The angel who heals everything.')"
+              >
+                <img src="Assets/support/select-Rafaela.jpg" alt="Rafaela" />
+                <p>Rafaela</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tank" class="hero-category" style="display: none">
+          <div class="hero-category-title">Tank Heroes</div>
+          <div class="hero-container">
+            <div class="hero-column left">
+              <div><h3>Denloyd's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Panda Warrior', 'Akai', 'Assets/tank/Akai.jpg', 'A panda warrior who likes rolling around.')"
+              >
+                <img src="Assets/tank/select-Akai.jpg" alt="Akai" />
+                <p>Akai</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Guard of Nature', 'Belerick', 'Assets/tank/Belerick.jpg', 'A friendly creature of nature.')"
+              >
+                <img src="Assets/tank/select-Belerick.jpg" alt="Belerick" />
+                <p>Belerick</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Grand Warden', 'Hylos', 'Assets/tank/Hylos.jpg', 'A Centaur Hero with the ability of convert natural magic into life force.')"
+              >
+                <img src="Assets/tank/select-Hylos.jpg" alt="Hylos" />
+                <p>Hylos</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Wild Engine', 'Johnson', 'Assets/tank/Johnson.jpg', 'A super cyborg who can transform into a car and lead his teammates into battle.')"
+              >
+                <img src="Assets/tank/select-Johnson.jpg" alt="Johnson" />
+                <p>Johnson</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Shadow of Twilight', 'Uranus', 'Assets/tank/Uranus.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
+              >
+                <img src="Assets/tank/select-Uranus.jpg" alt="Uranus" />
+                <p>Uranus</p>
+              </div>
+            </div>
+            <div class="hero-column right">
+              <div><h3>Ferdinand's Pick</h3></div>
+              <div
+                class="hero"
+                onclick="selectHero('The Ocean Gladiator', 'Atlas', 'Assets/tank/Atlas.jpg', 'An ancient creature that pilots a mecha.')"
+              >
+                <img src="Assets/tank/select-Atlas.jpg" alt="Atlas" />
+                <p>Atlas</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Frozen Warrior', 'Franco', 'Assets/tank/Franco.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
+              >
+                <img src="Assets/tank/select-Franco.jpg" alt="Franco" />
+                <p>Franco</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Rogue Appraiser', 'Fredrinn', 'Assets/tank/Fredrinn.jpg', 'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.')"
+              >
+                <img src="Assets/tank/select-Fredrinn.jpg" alt="Fredrinn" />
+                <p>Fredrinn</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Desert Tyrant', 'Khufra', 'Assets/tank/Khufra.jpg', 'A cruel and greedy tyrant of the desert.')"
+              >
+                <img src="Assets/tank/select-Khufra.jpg" alt="Khufra" />
+                <p>Khufra</p>
+              </div>
+              <div
+                class="hero"
+                onclick="selectHero('The Warrior of Dawn', 'Tigreal', 'Assets/tank/Tigreal.jpg', 'The holy knight loyal to the Lord of Light.')"
+              >
+                <img src="Assets/tank/select-Tigreal.jpg" alt="Tigreal" />
+                <p>Tigreal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back-button-container">
+        <button
+          id="back-button"
+          class="back-btn"
+          style="display: none"
+          onclick="goBack()"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+
+    <div class="last-container" id="selected-hero" style="display: none">
+      <!-- Hero Info Section -->
+      <div class="hero-overview">
+        <h2 id="hero-name"></h2>
+        <img id="hero-image" src="" alt="Hero Image"  class="hero-image"/>
+        <p id="hero-info"></p>
+        <div class="hero-buttons">
+          <button class="btn" onclick="showSection('skins-section')">
+            Skins
+          </button>
+          <button class="btn" onclick="showSection('skills-section')">
+            Skills
+          </button>
+          <button class="btn" onclick="showSection('gameplay-section')">
+            Gameplay
+          </button>
+          <button class="btn back-btn" onclick="goBack()">
+            Back to Selection
+          </button>
+        </div>
+      </div>
+
+      <!-- Skins Section -->
+      <section id="skins-section" class="hero-section" style="display: none">
+        <h1>Skins</h1>
+        <div class="slider">
+          <button class="slider-btn prev" onclick="changeSkin(-1)">
+            &#10094;
+          </button>
+          <div class="slider-content">
+            <img id="skin-image" src="" alt="Skin Image" />
+            <p id="skin-name"></p>
+          </div>
+          <button class="slider-btn next" onclick="changeSkin(1)">
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills-section" class="hero-section" style="display: none">
+        <h3>Hero Skills</h3>
+        <div id="skills-list" class="skills-container"></div>
+      </section>
+
+      <section id="gameplay-section" class="hero-section" style="display: none;">
+        <div class="gameplay-header">
+          <h3>Gameplay</h3>
+          <p id="gameplay-info">
+            Explore how heroes perform in real-time battles. Watch gameplay highlights or read detailed information to master the strategies.
+          </p>
+        </div>
+        <div id="gameplay-video-container" class="video-gallery"></div>
+      </section>
+      
     <script src="backupjs.js"></script>
-</body>
+  </body>
 </html>
