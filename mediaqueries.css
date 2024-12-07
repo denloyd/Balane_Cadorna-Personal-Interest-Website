@@ -60,6 +60,8 @@
     .hero-info{
         font-size: 0.8rem;
         margin-bottom: 2rem;
+        text-align: justify;
+        text-align: center;
     }
     .hero-buttons {
         display: grid;
@@ -71,13 +73,17 @@
     
     .hero-buttons .btn {
         padding: 8px 15px;
-        font-size: 10px;
+        font-size: 0.8rem;
         cursor: pointer;
         background-color: #007bff;
         color: white;
         border: none;
         border-radius: 5px;
         transition: background-color 0.3s;
+    }
+    .hero img{
+        width: 50px;
+        height: 50px;
     }
     .slider-content img{
         width: 180px;
@@ -92,7 +98,38 @@
         font-size: 0.9rem;
     }
     .hero-section h1{
-        font-size: 1.3rem;
-        
+        font-size: 1.3rem; 
+    }
+    .skill-item {
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers the content horizontally */
+        text-align: center; /* Aligns text in the center */
+        margin-bottom: 20px;
+    }
+    
+    .skill-item img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px; /* Adds spacing between the image and text */
+    }
+    
+    .skill-item h5 {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 5px;
+    }
+    
+    .skill-item p {
+        font-size: 14px;
+        color: white;
+        line-height: 1.5;
+    }
+    .tooltip {
+        font-size: 0.6rem;
+        bottom: 110%; /* Position tooltip above */
     }
   }

@@ -23,6 +23,9 @@ added video link on gameplay section
 modify the style.css  (start-container, select-container and last-container) note: not final 
 adjust the media queries for skills, skins (not final)
 
+almost done, will do testing anf finalizing the design 
+
+
 
 # Ferdinand Cadorna 
 11-28-24
