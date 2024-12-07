@@ -24,6 +24,42 @@
         text-align: center;
 
     }
+    #video-intro {
+        /* Ensure it remains fullscreen */
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #intro-video {
+        /* Maintain center alignment and full cover behavior */
+        object-fit: cover;
+    }
+    .container {
+        width: 80%;
+        height: 500px;
+    }
+    .item {
+        width: 150px;
+        height: 250px;
+    }
+    .content {
+        left: 50px;
+        width: 250px;
+    }
+    .content .name {
+        font-size: 24px;
+    }
+    .content .des {
+        font-size: 12px;
+    }
+    .content button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .item .content{
+        left: 15px;
+    }
+     
   }
   
   @media (max-width: 480px) {
@@ -132,4 +168,48 @@
         font-size: 0.6rem;
         bottom: 110%; /* Position tooltip above */
     }
+    #video-intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+    }
+
+    #intro-video {
+        width: 80%; /* Adjust width to make it smaller */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 60%; /* Limit height to avoid too much space */
+        object-fit: contain; /* Ensure the video scales properly */
+    }
+    .container {
+        width: 95%;
+        height: 450px;
+    }
+    .item {
+        width: 130px;
+        height: 220px;
+    }
+    .content {
+        left: 20px;
+        width: 200px;
+    }
+    .content .name {
+        font-size: 15px;
+    }
+    .content .des {
+        font-size: 0.5rem;
+        text-align: justify;
+    }
+    .content button {
+        padding: 5px 10px;
+        font-size: 0.6rem;
+    }
+    .button button {
+        width: 30px;
+        height: 30px;
+    }
+    .item .content{
+        left: 10px;
+    }
+   
   }

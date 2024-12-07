@@ -38,7 +38,8 @@ function addMouseEffects() {
     });
 }
 
-// Function to show a category of heroes
+let storiesVisible = false;
+
 function showCategory(category) {
     const selectText = document.getElementById('select-text');
     if (selectText) selectText.style.display = 'none';
@@ -54,8 +55,50 @@ function showCategory(category) {
 
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach(btn => btn.style.display = 'none');
+
+    // Hide the arrow button when a category is selected
+    const arrowButton = document.getElementById('arrow-button');
+    if (arrowButton) {
+        arrowButton.classList.add('hide-arrow');
+    }
 }
 
+// Toggle the visibility of the story section
+function toggleStories() {
+    const arrowButton = document.getElementById('arrow-button');
+    const storiesSection = document.getElementById('stories-section');
+    const arrowIcon = document.getElementById('arrow-icon');
+  
+    // Toggle stories visibility
+    storiesVisible = !storiesVisible;
+  
+    if (storiesVisible) {
+        storiesSection.style.display = 'block';
+        arrowIcon.innerHTML = '&#8595;'; // Change to arrow down
+    } else {
+        storiesSection.style.display = 'none';
+        arrowIcon.innerHTML = '&#8593;'; // Change to arrow up
+    }
+
+    // Show the arrow button again if stories are toggled off
+    if (!storiesVisible) {
+        arrowButton.classList.remove('hide-arrow');
+    }
+}
+
+// Optionally reset visibility of the arrow button and stories section
+function closeCategory() {
+    const arrowButton = document.getElementById('arrow-button');
+    const storiesSection = document.getElementById('stories-section');
+    
+    // Reset states
+    storiesVisible = false;
+    if (arrowButton) arrowButton.classList.remove('hide-arrow');
+    if (storiesSection) storiesSection.style.display = 'none';
+
+    const arrowIcon = document.getElementById('arrow-icon');
+    if (arrowIcon) arrowIcon.innerHTML = '&#8593;'; // Set back to arrow up
+}
 
 // Skin slider variables
 let currentSkinIndex = 0;
@@ -101,7 +144,7 @@ function selectHero(category, name, image, info, skinsData = [], skills = [], ga
     skills.forEach(skill => {
         const skillDiv = document.createElement('div');
         skillDiv.classList.add('skill-item');
-        skillDiv.innerHTML = `
+        skillDiv.innerHTML = ` 
             <img src="${skill.image}" alt="${skill.name}" class="skill-image">
             <div>
                 <h5>${skill.name}</h5>
@@ -112,21 +155,21 @@ function selectHero(category, name, image, info, skinsData = [], skills = [], ga
     });
 
     const gameplayContainer = document.getElementById('gameplay-video-container');
-gameplayContainer.innerHTML = ''; // Clear previous videos
-if (Array.isArray(gameplay)) {
-    gameplay.forEach(videoUrl => {
-        const iframe = document.createElement('iframe');
-        iframe.src = videoUrl;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        iframe.style.width = '100%';
-        iframe.style.height = '300px';
-        iframe.style.marginBottom = '20px';
-        gameplayContainer.appendChild(iframe);
-    });
-} else {
-    gameplayContainer.innerHTML = '<p>No gameplay videos available.</p>';
-}
+    gameplayContainer.innerHTML = ''; // Clear previous videos
+    if (Array.isArray(gameplay)) {
+        gameplay.forEach(videoUrl => {
+            const iframe = document.createElement('iframe');
+            iframe.src = videoUrl;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.width = '100%';
+            iframe.style.height = '300px';
+            iframe.style.marginBottom = '20px';
+            gameplayContainer.appendChild(iframe);
+        });
+    } else {
+        gameplayContainer.innerHTML = '<p>No gameplay videos available.</p>';
+    }
 
     // Hide hero selection, show selected hero details
     document.getElementById('hero-selection').style.display = 'none';
@@ -155,14 +198,19 @@ function goBack() {
 
     document.getElementById('hero-selection').style.display = 'block';
     document.getElementById('selected-hero').style.display = 'none';
-    
+
+    // Ensure the arrow button is visible again
+    const arrowButton = document.getElementById('arrow-button');
+    if (arrowButton) {
+        arrowButton.classList.remove('hide-arrow');
+    }
 }
 
 // Function to hide all hero sections
 function hideHeroSections() {
-    const sections = document.querySelectorAll('.hero-section'); // Add class 'hero-section' to relevant sections (e.g., skins, skills, gameplay)
+    const sections = document.querySelectorAll('.hero-section');
     sections.forEach(section => {
-        section.style.display = 'none'; // Hide each section
+        section.style.display = 'none';
     });
 }
 
@@ -194,6 +242,7 @@ function scrollToSection(sectionId) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+
 function showSection(sectionId) {
     // Hide all hero sections
     const sections = document.querySelectorAll('.hero-section');
@@ -203,8 +252,32 @@ function showSection(sectionId) {
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
         selectedSection.style.display = 'flex';
-        // Scroll smoothly to the selected section
         selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+
+/*const button = document.querySelector('.arrow-button');
+    button.addEventListener('click', () => {
+      if (button.classList.contains('arrow-up')) {
+        button.classList.remove('arrow-up');
+        button.classList.add('arrow-down');
+        button.innerHTML = '<span class="arrow"></span>Scroll Down';
+      } else {
+        button.classList.remove('arrow-down');
+        button.classList.add('arrow-up');
+        button.innerHTML = '<span class="arrow"></span>Scroll to Top';
+      }
+    }); */

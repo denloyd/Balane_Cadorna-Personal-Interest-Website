@@ -6,6 +6,7 @@
     <title>Favorite Hero</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"  rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
@@ -62,7 +63,75 @@
         <h3>Support</h3>
         <span class="tooltip">Aid and sustain allies</span>
     </button>
-    
+  </div>
+
+  <!-- Arrow Up button -->
+  <div id="arrow-button" class="arrow-button" onclick="toggleStories()">
+    <span id="arrow-icon" class="arrow-up">&#8593;</span> <!-- Arrow Up -->
+  </div>
+  
+
+  <!-- Story Section (Initially Hidden) -->
+  <div id="stories-section" class="stories-section" style="display: none;">
+    <h2>Mobile Legends Stories</h2>
+    <div class="container">
+
+      <div class="slide">
+
+          
+          <div class="item" style="background-image: url(Assets/stories/1.jpg);">
+              <div class="content">
+                  <div class="name">Legends Arise</div>
+                  <div class="des">railer for *Rise of Necrokeep* unveils revamped heroes and dark lore, featuring stunning visuals and epic battles in *Mobile Legends: Bang Bang*.</div>
+                  <a href="https://youtu.be/hobpDrungfc?si=poXh-NTHmtaVQSvU" target="_blank">
+                    <button>See More</button>
+                  </a>
+              </div>
+          </div>
+          <div class="item" style="background-image: url(https://i.ibb.co/jrRb11q/img2.jpg);">
+              <div class="content">
+                  <div class="name">Finland</div>
+                  <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item" style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg);">
+              <div class="content">
+                  <div class="name">Iceland</div>
+                  <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item" style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg);">
+              <div class="content">
+                  <div class="name">Australia</div>
+                  <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+              <div class="content">
+                  <div class="name">Netherland</div>
+                  <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+              <div class="content">
+                  <div class="name">Ireland</div>
+                  <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="button">
+          <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+  </div>
   </div>
 
   
@@ -3180,7 +3249,7 @@
           <button class="btn" onclick="showSection('gameplay-section')">
             Gameplay
           </button>
-          <button class="btn back-btn" onclick="goBack()">
+          <button class="btn" onclick="goBack()">
             Back to Selection
           </button>
         </div>
