@@ -47,3 +47,5 @@ Provided more details and picture.
 Add details and Picture to the Marksaman 
 12-06-24  -  12-07-24
 add details and picture to Mage, Tank, Support
+12-08-24
+100% done for all heroes content. modified the stories container
