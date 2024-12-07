@@ -19,6 +19,10 @@ put hero lists from left to right
 added buttons on last container 
 added video link on gameplay section 
 
+12-07 
+modify the style.css  (start-container, select-container and last-container) note: not final 
+adjust the media queries for skills, skins (not final)
+
 
 # Ferdinand Cadorna 
 11-28-24

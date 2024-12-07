@@ -135,6 +135,12 @@ if (Array.isArray(gameplay)) {
 
 // Function to go back to hero selection
 function goBack() {
+    // Reset all hero sections
+    hideHeroSections();
+
+    // Clear hero details
+    resetHeroDetails();
+
     const selectText = document.getElementById('select-text');
     if (selectText) selectText.style.display = 'block';
 
@@ -149,9 +155,37 @@ function goBack() {
 
     document.getElementById('hero-selection').style.display = 'block';
     document.getElementById('selected-hero').style.display = 'none';
+    
 }
 
+// Function to hide all hero sections
+function hideHeroSections() {
+    const sections = document.querySelectorAll('.hero-section'); // Add class 'hero-section' to relevant sections (e.g., skins, skills, gameplay)
+    sections.forEach(section => {
+        section.style.display = 'none'; // Hide each section
+    });
+}
 
+// Function to reset hero details
+function resetHeroDetails() {
+    document.getElementById('hero-name').innerText = '';
+    document.getElementById('hero-image').src = '';
+    document.getElementById('hero-info').innerText = '';
+
+    // Clear skins
+    const skinImage = document.getElementById('skin-image');
+    const skinName = document.getElementById('skin-name');
+    if (skinImage) skinImage.src = '';
+    if (skinName) skinName.textContent = '';
+
+    // Clear skills
+    const skillsList = document.getElementById('skills-list');
+    if (skillsList) skillsList.innerHTML = '';
+
+    // Clear gameplay videos
+    const gameplayContainer = document.getElementById('gameplay-video-container');
+    if (gameplayContainer) gameplayContainer.innerHTML = '';
+}
 
 // Scroll to a specific section
 function scrollToSection(sectionId) {
@@ -173,3 +207,4 @@ function showSection(sectionId) {
         selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+

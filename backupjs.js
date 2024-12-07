@@ -56,6 +56,7 @@ function showCategory(category) {
     categoryButtons.forEach(btn => btn.style.display = 'none');
 }
 
+
 // Skin slider variables
 let currentSkinIndex = 0;
 let skins = [];
@@ -110,8 +111,22 @@ function selectHero(category, name, image, info, skinsData = [], skills = [], ga
         skillsList.appendChild(skillDiv);
     });
 
-    // Set gameplay information
-    document.getElementById('gameplay-info').innerText = gameplay;
+    const gameplayContainer = document.getElementById('gameplay-video-container');
+gameplayContainer.innerHTML = ''; // Clear previous videos
+if (Array.isArray(gameplay)) {
+    gameplay.forEach(videoUrl => {
+        const iframe = document.createElement('iframe');
+        iframe.src = videoUrl;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.width = '100%';
+        iframe.style.height = '300px';
+        iframe.style.marginBottom = '20px';
+        gameplayContainer.appendChild(iframe);
+    });
+} else {
+    gameplayContainer.innerHTML = '<p>No gameplay videos available.</p>';
+}
 
     // Hide hero selection, show selected hero details
     document.getElementById('hero-selection').style.display = 'none';
@@ -120,6 +135,12 @@ function selectHero(category, name, image, info, skinsData = [], skills = [], ga
 
 // Function to go back to hero selection
 function goBack() {
+    // Reset all hero sections
+    hideHeroSections();
+
+    // Clear hero details
+    resetHeroDetails();
+
     const selectText = document.getElementById('select-text');
     if (selectText) selectText.style.display = 'block';
 
@@ -134,8 +155,37 @@ function goBack() {
 
     document.getElementById('hero-selection').style.display = 'block';
     document.getElementById('selected-hero').style.display = 'none';
+    
 }
 
+// Function to hide all hero sections
+function hideHeroSections() {
+    const sections = document.querySelectorAll('.hero-section'); // Add class 'hero-section' to relevant sections (e.g., skins, skills, gameplay)
+    sections.forEach(section => {
+        section.style.display = 'none'; // Hide each section
+    });
+}
+
+// Function to reset hero details
+function resetHeroDetails() {
+    document.getElementById('hero-name').innerText = '';
+    document.getElementById('hero-image').src = '';
+    document.getElementById('hero-info').innerText = '';
+
+    // Clear skins
+    const skinImage = document.getElementById('skin-image');
+    const skinName = document.getElementById('skin-name');
+    if (skinImage) skinImage.src = '';
+    if (skinName) skinName.textContent = '';
+
+    // Clear skills
+    const skillsList = document.getElementById('skills-list');
+    if (skillsList) skillsList.innerHTML = '';
+
+    // Clear gameplay videos
+    const gameplayContainer = document.getElementById('gameplay-video-container');
+    if (gameplayContainer) gameplayContainer.innerHTML = '';
+}
 
 // Scroll to a specific section
 function scrollToSection(sectionId) {

@@ -12,7 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
     <!-- Video Intro Section -->
@@ -23,45 +26,48 @@
       </video>
     </div>
 
-    <!-- Start Screen Section -->
-    <div class="start-container" id="start-screen">  
-      <h1>Get to know our Favorite Hero?</h1>
-      <button class="start-btn" onclick="startSelection()">Get Started</button>
+   <!-- Start Screen Section -->
+   <div class="start-container" id="start-screen">  
+    <h1>Get to know our Favorite Hero?</h1>
+    <button class="start-btn" onclick="startSelection()">Get Started</button>
+  </div>
+
+
+   <!-- Hero Selection Section -->
+   <div class="select-container" id="hero-selection" style="display: none">
+    <div id="select-text" class="select-text">
+      <h1>Select Your Favorite Hero</h1>
     </div>
 
-    <!-- Hero Selection Section -->
-    <div class="select-container" id="hero-selection" style="display: none">
-      <div id="select-text" class="select-text">
-        <h1>Select Your Favorite Hero</h1>
-      </div>
+    <div class="button-container">
+      <button class="category-btn" onclick="showCategory('fighter')">
+          <img src="Assets/icons/Custom_Fighter_Emblem.webp" alt="Fighter" class="button-icon" />
+          <h3>Fighter</h3>
+          <span class="tooltip">Strong melee heroes</span>
+      </button>
+      <button class="category-btn" onclick="showCategory('mage')">
+          <img src="Assets/icons/Custom_Mage_Emblem.webp" alt="Mage" class="button-icon" />
+          <h3>Mage</h3>
+      </button>
+      <button class="category-btn" onclick="showCategory('assassin')">
+          <img src="Assets/icons/Custom_Assassin_Emblem.webp" alt="Assassin" class="button-icon" />
+          <h3>Assassin</h3>
+      </button>
+      <button class="category-btn" onclick="showCategory('marksman')">
+          <img src="Assets/icons/Custom_Marksman_Emblem.webp" alt="Marksman" class="button-icon" />
+          <h3>Marksman</h3>
+      </button>
+      <button class="category-btn" onclick="showCategory('tank')">
+          <img src="Assets/icons/Custom_Tank_Emblem.webp" alt="Tank" class="button-icon" />
+          <h3>Tank</h3>
+      </button>
+      <button class="category-btn" onclick="showCategory('support')">
+          <img src="Assets/icons/Custom_Support_Emblem.webp" alt="Support" class="button-icon" />
+          <h3>Support</h3>
+      </button>
+  </div>
 
-      <div class="button-container">
-        <button class="category-btn" onclick="showCategory('fighter')">
-            <img src="Assets/icons/Custom_Fighter_Emblem.webp" alt="Fighter" class="button-icon" />
-            <span>Fighter</span>
-        </button>
-        <button class="category-btn" onclick="showCategory('mage')">
-            <img src="Assets/icons/Custom_Mage_Emblem.webp" alt="Mage" class="button-icon" />
-            <span>Mage</span>
-        </button>
-        <button class="category-btn" onclick="showCategory('assassin')">
-            <img src="Assets/icons/Custom_Assassin_Emblem.webp" alt="Assassin" class="button-icon" />
-            <span>Assassin</span>
-        </button>
-        <button class="category-btn" onclick="showCategory('marksman')">
-            <img src="Assets/icons/Custom_Marksman_Emblem.webp" alt="Marksman" class="button-icon" />
-            <span>Marksman</span>
-        </button>
-        <button class="category-btn" onclick="showCategory('tank')">
-            <img src="Assets/icons/Custom_Tank_Emblem.webp" alt="Tank" class="button-icon" />
-            <span>Tank</span>
-        </button>
-        <button class="category-btn" onclick="showCategory('support')">
-            <img src="Assets/icons/Custom_Support_Emblem.webp" alt="Support" class="button-icon" />
-            <span>Support</span>
-        </button>
-    </div>
-    
+  
       <div class="hero-container">
         <div id="assassin" class="hero-category" style="display: none">
           <div class="hero-category-title">Assassin Heroes</div>
@@ -1448,279 +1454,1707 @@
 </div>
 
 
-              <div
-                class="hero"
-                onclick="selectHero('The Chains of Sin', 'Phoveus', 'Assets/fighter/Phoveus.jpg', 'A Fighter that pursues those who blink or dash.')"
-              >
-                <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus" />
-                <p>Phoveus</p>
-              </div>
+              <div class="hero" onclick="selectHero(
+  'The Chains of Sin',
+  'Phoveus',
+  'Assets/fighter/Phoveus.jpg',
+  'A Fighter that pursues those who blink or dash.',
+  [
+      { name: 'Dark Conqueror', image: 'Assets/Skin/phoveusskin1.jpg' }
+  ],
+  [
+      { 
+          name: 'Passive: Demonic Force',
+          image: 'Assets/Skills/phoveusskill1.webp',
+          description: 'Reduces skill cooldowns when enemies use mobility abilities near him.'
+      },
+      { 
+          name: 'Skill 1: Demonic Impact',
+          image: 'Assets/Skills/phoveusskill1.1.webp',
+          description: 'Swings his chain, dealing damage in an area.'
+      },
+      { 
+          name: 'Skill 2: Dark Wave',
+          image: 'Assets/Skills/phoveusskill2.webp',
+          description: 'Summons a magical eye that slows and reveals enemies.'
+      },
+      { 
+          name: 'Ultimate: Infernal Pursuit',
+          image: 'Assets/Skills/phoveusskill3.webp',
+          description: 'Teleports to an enemy using a mobility skill, stunning and damaging them.'
+      }
+  ],
+  [
+                   'https://www.youtube.com/embed/zARPxmavoss', 
+                   'https://www.youtube.com/embed/4MGDlHaJ0ag'      
+  ]
+)">
+    <img src="Assets/fighter/select-Phoveus.jpg" alt="Phoveus" />
+    <p>Phoveus</p>
+</div>
 
-              <div
-                class="hero"
-                onclick="selectHero('The  Firaga Armor', 'X.Borg', 'Assets/fighter/X.Borg.jpg', 'A talented teenager who uses his Firaga Armor to burn everything he comes across.')"
-              >
-                <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg" />
-                <p>X.Borg</p>
-              </div>
 
-              <div
-                class="hero"
-                onclick="selectHero('The Martial Genius', 'Yin', 'Assets/assasin/Yin.jpg', 'A gifted Kungfu boy possessed by an Evil God.')"
-              >
-                <img src="Assets/assasin/select-Yin.jpg" alt="Yin" />
-                <p>Yin</p>
-              </div>
+<div class="hero" onclick="selectHero(
+  'The Firaga Armor',
+  'X.Borg',
+  'Assets/fighter/X.Borg.jpg',
+  'A talented teenager who uses his Firaga Armor to burn everything he comes across.',
+  [
+      { name: 'Blue Storm', image: 'Assets/Skin/xborgskin1.jpg' },
+      { name: 'Moto Drifter', image: 'Assets/Skin/xborgskin2.jpg' },
+      { name: 'Graffiti Fashion', image: 'Assets/Skin/xborgskin3.jpg' },
+      { name: 'Tesla Maniac', image: 'Assets/Skin/xborgskin4.jpg' },
+      { name: 'Bumblebee', image: 'Assets/Skin/xborgskin5.jpg' },
+      { name: 'Corrosion Rioter', image: 'Assets/Skin/xborgskin6.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Firaga Armor',
+        image: 'Assets/Skills/xborgskill1.webp',
+        description: 'X.Borg has an armor bar that absorbs damage. When the armor breaks, he enters a vulnerable state and restores energy to rebuild it.'
+    },
+    { 
+        name: 'Skill 1: Fire Missiles',
+        image: 'Assets/Skills/xborgskill1.1.webp',
+        description: 'Shoots flames in a cone, dealing continuous damage to enemies while reducing their armor.'
+    },
+    { 
+        name: 'Skill 1: Fire Missiles Enhance',
+        image: 'Assets/Skills/xborgskill1.2.webp',
+        description: 'Shoots enhanced flames with increased damage and a wider range.'
+    },
+    { 
+        name: 'Skill 2: Fire Stake',
+        image: 'Assets/Skills/xborgskill2.webp',
+        description: 'Launches fire stakes that attach to enemies and pull them towards X.Borg after a delay.'
+    },
+    { 
+        name: 'Skill 2: Fire Stake Enhance',
+        image: 'Assets/Skills/xborgskill2.1.webp',
+        description: 'Launches enhanced stakes that deal higher damage and pull multiple enemies more effectively.'
+    },
+    { 
+        name: 'Ultimate: Last Insanity',
+        image: 'Assets/Skills/xborgskill3.webp',
+        description: 'Detonates his armor, dealing massive AoE damage. X.Borg then enters a vulnerable state.'
+    },
+    { 
+        name: 'Ultimate: Last Insanity Enhance',
+        image: 'Assets/Skills/xborgskill3.1.webp',
+        description: 'Detonates his armor with a larger explosion radius and higher damage output.'
+    }
+],
 
+[         
+                   'https://www.youtube.com/embed/aixt2ZO0AQM',
+                   'https://www.youtube.com/embed/oe5OS7FQK40'    
+  ]
+)">
+    <img src="Assets/fighter/select-X.Borg.jpg" alt="X.Borg" />
+    <p>X.Borg</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Martial Genius',
+  'Yin',
+  'Assets/assasin/Yin.jpg',
+  'A gifted Kungfu boy possessed by an Evil God.',
+  [
+      { name: 'Fists of Valor', image: 'Assets/Skin/yinskin1.jpg' },
+      { name: 'M-World Yin', image: 'Assets/Skin/yinskin2.jpg' },
+      { name: 'Yuji Itadori', image: 'Assets/Skin/yinskin3.jpg' },
+      { name: 'Eternal Guardian', image: 'Assets/Skin/yinskin4.jpg' },
+      { name: 'Eren', image: 'Assets/Skin/yinskin5.jpg' },
+      { name: 'Immortal Guardian', image: 'Assets/Skin/yinskin6.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: My Turn',
+        image: 'Assets/Skills/yinskill1.webp',
+        description: 'Yin deals increased damage when no allied heroes are nearby.'
+    },
+    { 
+        name: 'Skill 1: Charged Punch',
+        image: 'Assets/Skills/yinskill1.1.webp',
+        description: 'Yin charges forward, punching enemies in a line and dealing damage.'
+    },
+    { 
+        name: 'Skill 1: Charged Punch Enhance (Lieh)',
+        image: 'Assets/Skills/yinskill1.2.webp',
+        description: 'Lieh punches enemies in a line with greater damage and crowd control.'
+    },
+    { 
+        name: 'Skill 2: Instant Blast',
+        image: 'Assets/Skills/yinskill2.webp',
+        description: 'Yin creates an explosive ward, dealing AoE damage and reducing enemy movement speed.'
+    },
+    { 
+        name: 'Skill 2: Instant Blast Enhance (Lieh)',
+        image: 'Assets/Skills/yinskill2.1.webp',
+        description: 'Lieh enhances the explosion, dealing higher AoE damage and applying a stronger slow.'
+    },
+    { 
+        name: 'Ultimate: My Turn',
+        image: 'Assets/Skills/yinskill3.webp',
+        description: 'Yin pulls an enemy into his domain for a 1v1 duel, gaining a power boost.'
+    }
+],
+  [
+                   'https://www.youtube.com/embed/cHXSYMUpJPM', 
+                   'https://www.youtube.com/embed/cgDAV7_zrtc'      
+  ]
+)">
+    <img src="Assets/assasin/select-Yin.jpg" alt="Yin" />
+    <p>Yin</p>
+</div>
             </div>
           </div>
         </div>
+
+
 
         <div id="mage" class="hero-category" style="display: none">
           <div class="hero-category-title">Mage Heroes</div>
           <div class="hero-container">
             <div class="hero-column left">
               <div><h3>Denloyd's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Embrace of Night', 'Cecilion', 'Assets/mage/Cecilion.jpg', 'An opera singer, a Blood Demon.')"
-              >
-                <img src="Assets/mage/select-Cecilion.jpg" alt="Cecilion" />
-                <p>Cecilion</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Moon Palace Immortal', 'Change e', 'Assets/mage/Change.jpg', 'A heroine from a mysterious eastern land.')"
-              >
-                <img src="Assets/mage/select-Change.jpg" alt="Change" />
-                <p>Chang'e</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Yin-yang Geomancer', 'Luo Yi', 'Assets/mage/Luo yi.jpg', 'A mage who roams between the binary of Yin and Yang.')"
-              >
-                <img src="Assets/mage/select-Luo yi.jpg" alt="Luo Yi" />
-                <p>Luo Yi</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Wings of Vengeance', 'Pharsa', 'Assets/mage/Pharsa.jpg', 'A member of the Crow Clan who was born with a blood mutaion.')"
-              >
-                <img src="Assets/mage/select-Pharsa.jpg" alt="Pharsa" />
-                <p>Pharsa</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Prophetess of the Night', 'Valentina', 'Assets/mage/Valentina.jpg', 'The unpredictable shadow predator.')"
-              >
-                <img src="Assets/mage/select-Valentina.jpg" alt="Valentina" />
-                <p>Valentina</p>
-              </div>
+
+              <div class="hero" onclick="selectHero(
+  'The Embrace of Night',
+  'Cecilion',
+  'Assets/mage/Cecilion.jpg',
+  'An opera singer, a Blood Demon.',
+  [
+      { name: 'Wisteria Count', image: 'Assets/Skin/cecilionskin1.jpg' },
+      { name: 'The Illusionist', image: 'Assets/Skin/cecilionskin2.jpg' },
+      { name: 'Phantom Count', image: 'Assets/Skin/cecilionskin3.jpg' },
+      { name: 'Stargazer', image: 'Assets/Skin/cecilionskin4.jpg' },
+      { name: 'Crimson Wings', image: 'Assets/Skin/cecilionskin5.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Overflowing',
+        image: 'Assets/Skills/cecilionskill1.webp',
+        description: 'Cecilion generates energy for his skills when dealing damage, and after reaching a certain amount, he gains enhanced basic attack damage.'
+    },
+    { 
+        name: 'Skill 1: Bat Impact',
+        image: 'Assets/Skills/cecilionskill1.1.webp',
+        description: 'Deals damage in a line and applies a curse.'
+    },
+    { 
+        name: 'Skill 2: Sanguine Claws',
+        image: 'Assets/Skills/cecilionskill2.webp',
+        description: 'Cecilion summons a claw that damages enemies in its path and slows them down.'
+    },
+    { 
+        name: 'Ultimate: Bats Feast',
+        image: 'Assets/Skills/cecilionskill3.webp',
+        description: 'Summons orbs that deal continuous damage in a targeted area.'
+    }
+  ],
+  [
+      'https://www.youtube.com/embed/36-FqwBzf3w', 
+      'https://www.youtube.com/embed/2kPmBD9zet0'
+  ]
+)">
+    <img src="Assets/mage/select-Cecilion.jpg" alt="Cecilion" />
+    <p>Cecilion</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Moon Palace Immortal',
+  'Chang\'e',
+  'Assets/mage/Change.jpg',
+  'A heroine from a mysterious eastern land.',
+  [
+      { name: 'Moonstruck', image: 'Assets/Skin/changeSkin1.jpg' },
+      { name: 'Crimson Moon', image: 'Assets/Skin/changeSkin2.jpg' },
+      { name: 'Floral Elfo', image: 'Assets/Skin/changeSkin3.jpg' },
+      { name: 'Lunar Magic', image: 'Assets/Skin/changeSkin4.jpg' },
+      { name: 'Strawberry Parfait', image: 'Assets/Skin/changeSkin5.jpg' },
+      { name: 'Vine Cradle', image: 'Assets/Skin/changeSkin6.jpg' },
+      { name: 'Moon Artist', image: 'Assets/Skin/changeSkin7.jpg' },
+      { name: 'New Moon', image: 'Assets/Skin/changeSkin8.jpg' },
+      { name: 'Tech Tensai', image: 'Assets/Skin/changeSkin9.jpg' },
+      { name: 'Azure Moon', image: 'Assets/Skin/changeSkin10.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Trouble Maker',
+        image: 'Assets/Skills/changeSkill1.webp',
+        description: 'Chang\'e deals bonus damage based on the enemy\'s missing HP after hitting with her skills.'
+    },
+    { 
+        name: 'Skill 1: Starmoon Shockwave',
+        image: 'Assets/Skills/changeSkill1.1.webp',
+        description: 'Chang\'e releases an orb that damages enemies in its path and slows them down.'
+    },
+    { 
+        name: 'Skill 1.1: Starmoon Shockwave Enhanced',
+        image: 'Assets/Skills/changeSkill1.2.webp',
+        description: 'The orb expands in size and deals more damage to enemies it touches.'
+    },
+    { 
+        name: 'Skill 2: Crescent Moon',
+        image: 'Assets/Skills/changeSkill2.webp',
+        description: 'Chang\'e summons a crescent-shaped moon that deals AoE damage and slows enemies.'
+    },
+    { 
+        name: 'Ultimate: Meteor Shower',
+        image: 'Assets/Skills/changeSkill3.webp',
+        description: 'Chang\'e calls down a rain of meteors, dealing massive AoE damage to enemies in the target area.'
+    },
+    { 
+        name: 'Ultimate 3.1: Meteor Shower Enhanced',
+        image: 'Assets/Skills/changeSkill3.1.webp',
+        description: 'The meteor shower becomes more intense, dealing more damage and affecting a larger area.'
+    }
+],
+  [
+      'https://www.youtube.com/embed/3_ZEJZqSge0', 
+      'https://www.youtube.com/embed/pUnFdufDtjA'
+  ]
+)">
+    <img src="Assets/mage/select-Change.jpg" alt="Chang'e" />
+    <p>Chang'e</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Yin-yang Geomancer',
+  'Luo Yi',
+  'Assets/mage/Luo yi.jpg',
+  'A mage who roams between the binary of Yin and Yang.',
+  [
+      { name: 'Ying-yang Mage', image: 'Assets/Skin/luoyiskin1.jpg' },
+      { name: 'Tenko', image: 'Assets/Skin/luoyiskin2.jpg' },
+      { name: 'Dawning Fortune', image: 'Assets/Skin/luoyiskin3.jpg' },
+      { name: 'Siren Priestess', image: 'Assets/Skin/luoyiskin4.jpg' },
+      { name: 'Elysium Guardian', image: 'Assets/Skin/luoyiskin5.jpg' },
+      { name: 'Oracle of Sol', image: 'Assets/Skin/luoyiskin6.jpg' },
+      
+  ],
+  [
+    { 
+        name: 'Passive: Duality',
+        image: 'Assets/Skills/luoyiskill1.webp',
+        description: 'Luo Yi alternates between Yin and Yang stances, empowering her skills with different effects based on the stance.'
+    },
+    { 
+        name: 'Skill 1: Dispersion - Yin Stance',
+        image: 'Assets/Skills/luoyiskill1.1.webp',
+        description: 'In Yin stance, Dispersion deals magic damage in a cone and marks enemies with Sigil of Yin.'
+    },
+    { 
+        name: 'Skill 1: Dispersion - Yang Stance',
+        image: 'Assets/Skills/luoyiskill1.2.webp',
+        description: 'In Yang stance, Dispersion deals magic damage in a cone and marks enemies with Sigil of Yang.'
+    },
+    
+    { 
+        name: 'Skill 2: Rotation - Yin Stance',
+        image: 'Assets/Skills/luoyiskill2.webp',
+        description: 'In Yin stance, Rotation slows enemies and marks them with Aqua of Yin.'
+    },
+    { 
+        name: 'Skill 2: Rotation - Yang Stance',
+        image: 'Assets/Skills/luoyiskill2.1.webp',
+        description: 'In Yang stance, Rotation slows enemies and marks them with Fire of Yang.'
+    },
+    { 
+        name: 'Ultimate: Diversion',
+        image: 'Assets/Skills/luoyiskill3.webp',
+        description: 'Luo Yi teleports to a targeted location and disorients enemies around her upon arrival.'
+    }
+],
+  [
+      'https://www.youtube.com/embed/k64k7L-0vCk', 
+      'https://www.youtube.com/embed/4XJdzmXO6mY'
+  ]
+)">
+    <img src="Assets/mage/select-Luo yi.jpg" alt="Luo Yi" />
+    <p>Luo Yi</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Wings of Vengeance',
+  'Pharsa',
+  'Assets/mage/Pharsa.jpg',
+  'A member of the Crow Clan who was born with a blood mutation.',
+  [
+      { name: 'Wings of Heaven', image: 'Assets/Skin/pharsaskin1.jpg' },
+      { name: 'Peafowl  Dance', image: 'Assets/Skin/pharsaskin2.jpg' },
+      { name: 'Indigo Aviatrix', image: 'Assets/Skin/pharsaskin3.jpg' },
+      { name: 'Enchanting Witch', image: 'Assets/Skin/pharsaskin4.jpg' },
+      { name: 'Empress Phoenix', image: 'Assets/Skin/pharsaskin5.jpg' },
+      { name: 'Samba Muse', image: 'Assets/Skin/pharsaskin6.jpg' },
+      { name: 'Peony Bloom', image: 'Assets/Skin/pharsaskin7.jpg' },
+      { name: 'Hierophant', image: 'Assets/Skin/pharsaskin8.jpg' },
+      { name: 'Neon Shingetsu', image: 'Assets/Skin/pharsaskin9.jpg' },
+  ],
+  [
+    { 
+        name: 'Passive: Spiritual Unity',
+        image: 'Assets/Skills/pharsaskill1.webp',
+        description: 'Every 8 seconds, Verri assists Pharsa, dealing magic damage and slowing enemies by 60% for 1 second.'
+    },
+    { 
+        name: 'Skill 1: Curse of Crow',
+        image: 'Assets/Skills/pharsaskill1.1.webp',
+        description: 'Unleashes a magic blast, marking enemies. Pharsa’s next attack stuns them for 1 second.'
+    },
+    { 
+        name: 'Skill 2: Energy Impact',
+        image: 'Assets/Skills/pharsaskill2.webp',
+        description: 'Fires magic energy in a direction, dealing magic damage to enemies hit.'
+    },
+    { 
+        name: 'Ultimate: Feathered Air Strike',
+        image: 'Assets/Skills/pharsaskill3.webp',
+        description: 'Pharsa flies and bombards the target area, dealing magic damage up to 4 times during the 8-second duration.'
+    },
+    { 
+        name: 'Special: Wings by Wings',
+        image: 'Assets/Skills/pharsaskill4.webp',
+        description: 'Transforms into mist and wraps around Verri, gaining 135% movement speed for 5 seconds or until Pharsa uses a skill or is controlled.'
+    }
+],
+
+  [
+      'https://www.youtube.com/embed/BlhtlZLTxKk', 
+      'https://www.youtube.com/embed/dLccaa01kcI'
+  ]
+)">
+    <img src="Assets/mage/select-Pharsa.jpg" alt="Pharsa" />
+    <p>Pharsa</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Prophetess of the Night',
+  'Valentina',
+  'Assets/mage/Valentina.jpg',
+  'The unpredictable shadow predator.',
+  [
+      { name: 'Twilight Charmer', image: 'Assets/Skin/valentinaskin1.jpg' },
+      { name: 'Archmagister', image: 'Assets/Skin/valentinaskin2.jpg' },
+      { name: 'Cyber Agent', image: 'Assets/Skin/valentinaskin3.jpg' },
+      { name: 'Celestial Judicator', image: 'Assets/Skin/valentinaskin4.jpg' },
+      { name: 'Dark Nexus', image: 'Assets/Skin/valentinaskin5.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Primal Force',
+        image: 'Assets/Skills/valentinaskill1.webp',
+        description: 'Valentina gains extra EXP each time she deals damage to an enemy hero. If the enemy hero\'s level isn’t higher than Valentina\'s, 30% of the damage dealt is converted into HP. Cooldown: 2 seconds.'
+    },
+    { 
+        name: 'Skill 1: Shadow Strike',
+        image: 'Assets/Skills/valentinaskill1.1.webp',
+        description: 'Valentina casts Shadow Strike in the target direction, dealing 340–665 (+185% Total Magic Power) Magic Damage and slowing enemies by 40% for 1 second. Enemies hit are marked with a Shadow Sigil and become terrified for 1 second if hit again within 4 seconds.'
+    },
+    { 
+        name: 'Skill 2: Arcane Shade',
+        image: 'Assets/Skills/valentinaskill2.webp',
+        description: 'Valentina dashes in the target direction, firing 3 Shadow Bolts that deal 125–225 (+30% Total Magic Power) Magic Damage each. This skill can be recast within 6 seconds. Each Shadow Bolt reduces the cooldown of Shadow Strike by 1 second.'
+    },
+    { 
+        name: 'Ultimate: I Am You',
+        image: 'Assets/Skills/valentinaskill3.webp',
+        description: 'Valentina slows the target enemy hero by 70% for 0.5 seconds and gains the ability to cast their Ultimate. The stolen Ultimate’s cooldown is reduced by 120%-100% of the target’s cooldown. Valentina also gains Physical Attack if the enemy is a Physical Damage hero.'
+    }
+],
+
+  [
+      'https://www.youtube.com/embed/jrgqMFHPWTg', 
+      'https://www.youtube.com/embed/qVrwnT5DYBA'
+  ]
+)">
+    <img src="Assets/mage/select-Valentina.jpg" alt="Valentina" />
+    <p>Valentina</p>
+</div>
+
+
             </div>
+
             <div class="hero-column right">
               <div><h3>Ferdinand's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Lightning Weaver', 'Eudora', 'Assets/mage/Eudora.jpg', 'The master of the power of lightning.')"
-              >
-                <img src="Assets/mage/select-Eudora.jpg" alt="Eudora" />
-                <p>Eudora</p>
+
+              <div class="hero" onclick="selectHero(
+                'The Lightning Weaver',
+                'Eudora',
+                'Assets/mage/Eudora.jpg',
+                'The master of the power of lightning.',
+                [
+                    { name: 'Flame Red Lips', image: 'Assets/Skin/eudoraskin1.jpg' },
+                    { name: 'Christmas Carnival', image: 'Assets/Skin/eudoraskin2.jpg' },
+                    { name: 'Emerald Enchantress', image: 'Assets/Skin/eudoraskin3.jpg' },
+                    { name: 'Vivo Selfie Goddess', image: 'Assets/Skin/eudoraskin4.jpg' },
+                    { name: 'Countess Scarlet', image: 'Assets/Skin/eudoraskin5.jpg' },
+                    { name: 'Cosmic Voyage', image: 'Assets/Skin/eudoraskin6.jpg' },
+                    { name: 'Atomic Pop Eudora', image: 'Assets/Skin/eudoraskin7.jpg' }
+                ],
+                [
+    { 
+        name: 'Passive: Superconductor',
+        image: 'Assets/Skills/eudoraskill1.webp',
+        description: 'Eudora’s basic attacks deal extra magic damage after every few attacks, triggering an Energy Burst that deals Magic Damage to nearby enemies.'
+    },
+    { 
+        name: 'Skill 1: Forked Lightning',
+        image: 'Assets/Skills/eudoraskill1.1.webp',
+        description: 'Eudora casts a lightning bolt that strikes a target enemy, chaining to up to 2 nearby enemies, dealing Magic Damage to each enemy hit.'
+    },
+    { 
+        name: 'Skill 2: Ball Lightning',
+        image: 'Assets/Skills/eudoraskill2.webp',
+        description: 'Eudora sends a blast of electricity to a target enemy, dealing Magic Damage and stunning them for 1 second.'
+    },
+    { 
+        name: 'Ultimate: Thunder’s Wrath',
+        image: 'Assets/Skills/eudoraskill3.webp',
+        description: 'Eudora unleashes a powerful thunderbolt in a targeted area, dealing massive Magic Damage to all enemies within the area.'
+    }
+],
+                [
+                    'https://www.youtube.com/embed/wvKxQaSBFFs', 
+                    'https://www.youtube.com/embed/DTCYxRSm7H8'
+                ]
+              )">
+                  <img src="Assets/mage/select-Eudora.jpg" alt="Eudora" />
+                  <p>Eudora</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Astrologer', 'Esmeralda', 'Assets/mage/Esmeralda.jpg', 'Falling Starmoon')"
-              >
-                <img src="Assets/mage/select-Esmeralda.jpg" alt="Esmeralda" />
-                <p>Esmeralda</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Star Rebel', 'Novaria', 'Assets/mage/Novaria.jpg', 'The young girl who seeks to rebuild the Star Atlas in order to solve the secrets of the Stars.')"
-              >
-                <img src="Assets/mage/select-Novaria.jpg" alt="Novaria" />
-                <p>Novaria</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Defier of Light', 'Xavier', 'Assets/mage/Xavier.jpg', 'Former member of the Knights of Light who is determined to forge a path of his own.')"
-              >
-                <img src="Assets/mage/select-Xavier.jpg" alt="Xavier" />
-                <p>Xavier</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Prophetess of the Night', 'Zhuxin', 'Assets/mage/Zhuxin.jpg', 'The unpredictable shadow predator.')"
-              >
-                <img src="Assets/mage/select-Zhuxin.jpg" alt="Zhuxin" />
-                <p>Zhuxin</p>
-              </div>
+              
+
+              <div class="hero" onclick="selectHero(
+  'The Astrologer',
+  'Esmeralda',
+  'Assets/mage/Esmeralda.jpg',
+  'Falling Starmoon',
+  [
+      { name: 'Ruddy Dusk', image: 'Assets/Skin/esmeraldaskin1.jpg' },
+      { name: 'Poison Vine', image: 'Assets/Skin/esmeraldaskin2.jpg' },
+      { name: 'Lady Thief', image: 'Assets/Skin/esmeraldaskin3.jpg' },
+      { name: 'Cleopatra', image: 'Assets/Skin/esmeraldaskin4.jpg' },
+      { name: 'Blazing Shadow', image: 'Assets/Skin/esmeraldaskin5.jpg' },
+      { name: 'The Foreseer', image: 'Assets/Skin/esmeraldaskin6.jpg' },
+      { name: 'Light Envoy', image: 'Assets/Skin/esmeraldaskin7.jpg' },
+      { name: 'Astral Muse', image: 'Assets/Skin/esmeraldaskin8.jpg' },
+      { name: 'Stellar Muse', image: 'Assets/Skin/esmeraldaskin9.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Starmoon Casket',
+        image: 'Assets/Skills/esmeraldaskill1.webp',
+        description: 'Esmeralda manipulates Stardust and Frostmoon: Stardust deals Physical Damage, while Frostmoon deals Magic Damage and provides a shield equal to 135% of Frostmoon’s damage. Esmeralda’s basic attacks deal both Physical and Magic Damage. Her shield ignores all other shields and gradually converts into HP over time.'
+    },
+    { 
+        name: 'Skill 1: Frostmoon Shield',
+        image: 'Assets/Skills/esmeraldaskill1.1.webp',
+        description: 'Esmeralda gains a shield and a burst of Movement Speed. She also absorbs shields from nearby enemies, converting them into her own shield (up to 50% of her Max HP). The shield decays over time, and the effect lasts for 4 seconds.'
+    },
+    { 
+        name: 'Skill 2: Stardust Dance',
+        image: 'Assets/Skills/esmeraldaskill2.webp',
+        description: 'Esmeralda waves her Stardust and Frostmoon, dealing both Physical and Magic Damage to nearby enemies. Each time she hits an enemy hero, the cooldown of Frostmoon Shield is reduced. The enemy’s Movement Speed is also reduced by 10% for 1.5 seconds.'
+    },
+    { 
+        name: 'Ultimate: Falling Starmoon',
+        image: 'Assets/Skills/esmeraldaskill3.webp',
+        description: 'Esmeralda channels the power of Astrospace into her two weapons, Stardust and Frostmoon. After a brief charge-up, she casts Stardust to deal Physical Damage, then blinks to the target location and casts Frostmoon, dealing Magic Damage and immobilizing enemies in the area for 1 second.'
+    }
+],
+
+  [
+      'https://www.youtube.com/embed/EbQdb91c5Bk', 
+      'https://www.youtube.com/embed/7hqAjK0a41A'
+  ]
+)">
+    <img src="Assets/mage/select-Esmeralda.jpg" alt="Esmeralda" />
+    <p>Esmeralda</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Star Rebel',
+  'Novaria',
+  'Assets/mage/Novaria.jpg',
+  'The young girl who seeks to rebuild the Star Atlas in order to solve the secrets of the Stars.',
+  [
+      { name: 'Dark Star', image: 'Assets/Skin/novariaskin1.jpg' },
+      { name: 'Sugar Glaze', image: 'Assets/Skin/novariaskin2.jpg' },
+      { name: 'Honey Glaze', image: 'Assets/Skin/novariaskin3.jpg' },
+      { name: 'Aqua Glazer', image: 'Assets/Skin/novariaskin4.jpg' }
+  ],
+  [
+    { 
+        name: 'Passive: Star Trail',
+        image: 'Assets/Skills/novariaskill1.webp',
+        description: 'Novaria summons Astral Spheres that continuously slow nearby enemies by 20% and grant vision of them for 2 seconds.'
+    },
+    { 
+        name: 'Skill 1: Astral Meteor',
+        image: 'Assets/Skills/novariaskill1.1.webp',
+        description: 'Novaria summons an Astral Sphere at the target location, continuously dealing 75–150 (+25% Total Magic Power) Magic Damage to nearby enemies up to six times. After 2 seconds, the sphere will explode, dealing 260–385 (+50% Total Magic Power) (+4%–6% of enemy’s Total HP) Magic Damage and increasing the slow effect to 50% (2.5x the original slow).'
+    },
+    { 
+        name: 'Skill 2: Astral Recall',
+        image: 'Assets/Skills/novariaskill2.webp',
+        description: 'Novaria summons an Astral Sphere at a distance, drawing it toward her while gaining 20% Movement Speed. Passing through walls increases the Movement Speed bonus to 60%. When the sphere reaches Novaria, she can launch it in a target direction, dealing 260–385 (+50% Total Magic Power) (+4%–6% of enemy’s Total HP) Magic Damage. The damage increases with the travel distance, up to 2.5 times the original.'
+    },
+    { 
+        name: 'Ultimate: Astral Echo',
+        image: 'Assets/Skills/novariaskill3.webp',
+        description: 'Novaria scatters Astral Echo in the target direction, briefly slowing enemy heroes by 50% for approximately 0.8 seconds while applying Astral Ring, which increases their hitbox by 2.5 times and reveals their surrounding area. This effect lasts for 8 seconds.'
+    }
+],
+
+  [
+      'https://www.youtube.com/embed/wLMnyqxqyxA', 
+      'https://www.youtube.com/embed/CmQ0lvHzdG8'
+  ]
+)">
+    <img src="Assets/mage/select-Novaria.jpg" alt="Novaria" />
+    <p>Novaria</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Defier of Light',
+  'Xavier',
+  'Assets/mage/Xavier.jpg',
+  'Former member of the Knights of Light who is determined to forge a path of his own.',
+  [
+      { name: 'Verdict of Light', image: 'Assets/Skin/xavierskin1.jpg' },
+      { name: 'Satoru Gojo', image: 'Assets/Skin/xavierskin2.jpg' },
+      { name: 'Hardlight Artificer', image: 'Assets/Skin/xavierskin3.jpg' },
+      { name: 'Beyond the Clouds Xavier', image: 'Assets/Skin/xavierskin4.jpg' },
+  ],
+  [
+  { 
+    name: 'Passive: Transcendence',
+    image: 'Assets/Skills/xavierskill1.webp',
+    description: 'Xavier enhances his skills each time he hits an enemy hero. Stage I: Increases movement speed by 50%. Stage II: Expands skill width. Stage III: Reduces skill cooldowns by 4 seconds, lasting 5 seconds (extendable by hitting enemies).'
+  },
+  { 
+    name: 'Skill 1: Infinite Extension',
+    image: 'Assets/Skills/xavierskill1.1.webp',
+    description: 'Xavier releases a burst of light, dealing magic damage to enemies in a small area.'
+  },
+  { 
+    name: 'Skill 1: Infinite Extension Enhanced',
+    image: 'Assets/Skills/xavierskill1.2.webp',
+    description: 'Xavier fires a Mystic Bullet that deals 350–600 (+150% Total Magic Power) Magic Damage to enemies it passes through. The Bullet’s flying distance increases each time it hits an enemy or the Mystic Barrier.'
+  },
+  { 
+    name: 'Skill 2: Mystic Field',
+    image: 'Assets/Skills/xavierskill2.webp',
+    description: 'Xavier creates a barrier of light, absorbing damage and granting a shield to himself and allies.'
+  },
+  { 
+    name: 'Skill 2: Mystic Field Enhanced',
+    image: 'Assets/Skills/xavierskill2.1.webp',
+    description: 'Xavier conjures a Mystic Barrier that slows enemies and grants movement speed to allies. Enhanced by other skills, it becomes a forbidden field dealing 300–600 (+120% Magic Power) Magic Damage and immobilizing enemies.'
+  },
+  { 
+    name: 'Ultimate: Dawning Light',
+    image: 'Assets/Skills/xavierskill3.webp',
+    description: 'Xavier calls down divine light to deal massive damage to enemies in a large area, slowing them down.'
+  },
+  { 
+    name: 'Ultimate: Dawning Light Enhanced',
+    image: 'Assets/Skills/xavierskill3.1.webp',
+    description: 'Xavier unleashes a beam of Mystic magic that deals 650–1050 (+150% Total Magic Power) Magic Damage to all enemies in a line on the map. Xavier also directly enters Transcendence Stage III.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/I6-cYQWfuhU', 
+      'https://www.youtube.com/embed/-pNPpxACYXw'
+  ]
+)">
+    <img src="Assets/mage/select-Xavier.jpg" alt="Xavier" />
+    <p>Xavier</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Prophetess of the Night',
+  'Zhuxin',
+  'Assets/mage/Zhuxin.jpg',
+  'The unpredictable shadow predator.',
+  [
+      { name: 'Ethereal Serenity', image: 'Assets/Skin/zhuxinskin1.jpg' }
+      
+  ],
+  [
+  { 
+    name: 'Passive: Crimson Butterflies',
+    image: 'Assets/Skills/zhuxinskill1.webp',
+    description: 'Zhuxin converts Mana from Lantern Flare into Crimson Butterflies, which restore her Mana over time. The Butterflies decay after Lantern Flare ends.'
+  },
+  { 
+    name: 'Skill 1: Fluttering Grace',
+    image: 'Assets/Skills/zhuxinskill1.1.webp',
+    description: 'Zhuxin deals magic damage to enemies in a fan-shaped area, slows them, and boosts her movement speed for a short duration.'
+  },
+  { 
+    name: 'Skill 2: Lantern Flare',
+    image: 'Assets/Skills/zhuxinskill2.webp',
+    description: 'Zhuxin channels a lantern that deals magic damage to enemies, applies Soul Snare, and captures enemies with 10 stacks, throwing them to a target location.'
+  },
+  { 
+    name: 'Ultimate: Crimson Beacon',
+    image: 'Assets/Skills/zhuxinskill3.webp',
+    description: 'Zhuxin blinks to a target location, gaining a shield and creating a field that deals magic damage and applies Soul Snare every second for 6 seconds.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/cf4OUIZjLu8', 
+      'https://www.youtube.com/embed/mN8i8HW5_7I'
+  ]
+)">
+    <img src="Assets/mage/select-Zhuxin.jpg" alt="Zhuxin" />
+    <p>Zhuxin</p>
+</div>
             </div>
           </div>
         </div>
+
         <div id="support" class="hero-category" style="display: none">
           <div class="hero-category-title">Support Heroes</div>
           <div class="hero-container">
             <div class="hero-column left">
               <div><h3>Denloyd's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Bunnylove', 'Angela', 'Assets/support/Angela.jpg', 'An android with a heart full of love.')"
-              >
-                <img src="Assets/support/select-Angela.jpg" alt="Angela " />
-                <p>Angela</p>
+
+              <div class="hero" onclick="selectHero(
+                'The Bunnylove', 
+                'Angela', 
+                'Assets/support/Angela.jpg', 
+                'An android with a heart full of love.',
+                [
+                    { name: 'Dove&Love', image: 'Assets/Skin/angelaskin1.jpg' },
+                    { name: 'Shanghai Maiden', image: 'Assets/Skin/angelaskin2.jpg' },
+                    { name: 'V.E.N.O.M. Vespid', image: 'Assets/Skin/angelaskin3.jpg' },
+                    { name: 'Scream Doll', image: 'Assets/Skin/angelaskin4.jpg' },
+                    { name: 'Summer Vibes', image: 'Assets/Skin/angelaskin5.jpg' },
+                    { name: 'Floral Elf', image: 'Assets/Skin/angelaskin6.jpg' },
+                    { name: 'Heartstring', image: 'Assets/Skin/angelaskin7.jpg' },
+                    { name: 'Cyber Cherubin', image: 'Assets/Skin/angelaskin8.jpg' },
+                    { name: 'Avatar of Time', image: 'Assets/Skin/angelaskin9.jpg' },
+                ],
+                [
+  { 
+    name: 'Passive: Smart Heart',
+    image: 'Assets/Skills/angelaskill1.webp',
+    description: 'Angela gains extra movement speed each time she casts a skill, transferring the bonus to an allied hero when attached.'
+  },
+  { 
+    name: 'Skill 1: Love Wave',
+    image: 'Assets/Skills/angelaskill1.1.webp',
+    description: 'Angela releases a wave of love energy, dealing magic damage, revealing enemies, and healing allies while applying Lover\'s Mark.'
+  },
+  { 
+    name: 'Skill 2: Puppet-on-a-String',
+    image: 'Assets/Skills/angelaskill2.webp',
+    description: 'Angela targets an enemy with a string, dealing magic damage, slowing them, and immobilizing them if connected for long enough.'
+  },
+  { 
+    name: 'Ultimate: Heartguard',
+    image: 'Assets/Skills/angelaskill3.webp',
+    description: 'Angela shields an ally and attaches herself to them, allowing her to cast skills at no Mana cost while linked.'
+  }
+],
+                [
+                    'https://www.youtube.com/embed/ISMMnzGCsTs',
+                    'https://www.youtube.com/embed/eM6SWvfJfEo'
+                ]
+              )">
+                  <img src="Assets/support/select-Angela.jpg" alt="Angela" />
+                  <p>Angela</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Timekeeper', 'Diggie', 'Assets/support/Diggie.jpg', 'A little owl with a penchant for timepieces.')"
-              >
-                <img src="Assets/support/select-Diggie.jpg" alt="Diggie" />
-                <p>Diggie</p>
+              
+
+              <div class="hero" onclick="selectHero(
+                'The Timekeeper', 
+                'Diggie', 
+                'Assets/support/Diggie.jpg', 
+                'A little owl with a penchant for timepieces.',
+                [
+                    { name: 'Pigeoneer', image: 'Assets/Skin/diggieskin1.jpg' },
+                    { name: 'Constellation', image: 'Assets/Skin/diggieskin2.jpg' },
+                    { name: 'Circus Clown', image: 'Assets/Skin/diggieskin3.jpg' },
+                    { name: 'Fairytaler', image: 'Assets/Skin/diggieskin4.jpg' },
+                    { name: 'Underwood Steward', image: 'Assets/Skin/diggieskin5.jpg' }
+                    
+                ],
+                [
+                  { 
+                    name: 'Passive: Young Again',
+                    image: 'Assets/Skills/diggieskill1.webp',
+                    description: 'Upon death, Diggie transforms into egg form, becoming untargetable and gaining unique abilities until revival.'
+                  },
+                  { 
+                    name: 'Skill 1: Auto Alarm Bomb',
+                    image: 'Assets/Skills/diggieskill1.1.webp',
+                    description: 'Diggie throws an alarm bomb that chases enemies, exploding to deal magic damage and slow them.'
+                  },
+                  { 
+                    name: 'Skill 1 Egg Form: Disdain',
+                    image: 'Assets/Skills/diggieskill1.2.webp',
+                    description: 'In egg form, Diggie vents anger, dealing small true damage to nearby enemies.'
+                  },
+                  { 
+                    name: 'Skill 2: Reverse Time',
+                    image: 'Assets/Skills/diggieskill2.webp',
+                    description: 'Diggie marks an enemy, pulling them back to their position after a delay, dealing magic damage and applying a strong slow.'
+                  },
+                  { 
+                    name: 'Skill 2 Egg Form: Egg Dance',
+                    image: 'Assets/Skills/diggieskill2.1.webp',
+                    description: 'Diggie performs a hometown jig in egg form, dealing small true damage to nearby enemies.'
+                  },
+                  { 
+                    name: 'Ultimate: Time Journey',
+                    image: 'Assets/Skills/diggieskill3.webp',
+                    description: 'Diggie grants nearby allies a shield, removes debuffs, and provides control immunity for a short duration.'
+                  },
+                  { 
+                    name: 'Ultimate Egg Form: Victory Prayer',
+                    image: 'Assets/Skills/diggieskill3.1.webp',
+                    description: 'In egg form, Diggie humorously prays for victory, performing a harmless animation.'
+                  }
+                ],
+                [
+                    'https://www.youtube.com/embed/YEzSwRHli3A',
+                    'https://www.youtube.com/embed/fmuTyKZGAgA'
+                ]
+              )">
+                  <img src="Assets/support/select-Diggie.jpg" alt="Diggie" />
+                  <p>Diggie</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Moon Elf King', 'Estes', 'Assets/support/Estes.jpg', 'The Elf Guardian.')"
-              >
-                <img src="Assets/support/select-Estes.jpg" alt="Estes" />
-                <p>Estes</p>
+              
+
+              <div class="hero" onclick="selectHero(
+                'The Moon Elf King', 
+                'Estes', 
+                'Assets/support/Estes.jpg', 
+                'The Elf Guardian.',
+                [
+                    { name: 'Holy Priest', image: 'Assets/Skin/estesskin1.jpg' },
+                    { name: 'Galaxy Dominator', image: 'Assets/Skin/estesskin2.jpg' },
+                    { name: 'White Crane', image: 'Assets/Skin/estesskin3.jpg' },
+                    { name: 'Crow Bishop', image: 'Assets/Skin/estesskin4.jpg' },
+                    { name: 'Rattan Dragon', image: 'Assets/Skin/estesskin5.jpg' },
+                    { name: 'Blacklist International', image: 'Assets/Skin/estesskin6.jpg' },
+                    { name: 'SPARKLE Estes', image: 'Assets/Skin/estesskin7.jpg' }
+                ],
+                [
+                { 
+                  name: 'Passive: Scripture of the Moon Elf', 
+                  image: 'Assets/Skills/estesskill1.webp', 
+                  description: 'Estes charges energy over time, enhancing his next Basic Attack to deal magic damage and slow enemies.'
+                },
+                { 
+                  name: 'Skill 1: Moonlight Immersion', 
+                  image: 'Assets/Skills/estesskill1.1.webp', 
+                  description: 'Heals a target ally and links with them, providing sustained healing and increasing movement speed and defense.'
+                },
+                { 
+                  name: 'Skill 1: Moonlight Immersion Enhance', 
+                  image: 'Assets/Skills/estesskill1.2.webp', 
+                  description: 'Greatly enhances healing and sustained effects for a target ally during the ultimate’s duration.'
+                },
+                { 
+                  name: 'Skill 2: Domain of Moon Goddess', 
+                  image: 'Assets/Skills/estesskill2.webp', 
+                  description: 'Creates a magic domain that damages enemies and slows them significantly at the edges.'
+                },
+                { 
+                  name: 'Ultimate: Blessing of Moon Goddess', 
+                  image: 'Assets/Skills/estesskill3.webp', 
+                  description: 'Heals all nearby allies over time and enhances Moonlight Immersion for the duration.'
+                }
+              ],
+
+                [
+                    'https://www.youtube.com/embed/efUwPey6TFo',
+                    'https://www.youtube.com/embed/oZyG2J_9RYk'
+                ]
+              )">
+                  <img src="Assets/support/select-Estes.jpg" alt="Estes" />
+                  <p>Estes</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Nazar King', 'Kaja', 'Assets/support/Kaja.jpg', 'Leader of Nazar.')"
-              >
+              
+
+                          <div class="hero" onclick="selectHero(
+              'The Nazar King', 
+              'Kaja', 
+              'Assets/support/Kaja.jpg', 
+              'Leader of Nazar.',
+              [
+                  { name: 'Commandment', image: 'Assets/Skin/kajaskin1.jpg' },
+                  { name: 'Kaminari', image: 'Assets/Skin/kajaskin2.jpg' },
+                  { name: 'Horror Whiplash', image: 'Assets/Skin/kajaskin3.jpg' },
+                  { name: 'Skyblocker', image: 'Assets/Skin/kajaskin4.jpg' },
+                  { name: 'Crow Magician', image: 'Assets/Skin/kajaskin5.jpg' },
+                  { name: 'Inferno Taskmaster', image: 'Assets/Skin/kajaskin6.jpg' }
+              ],
+              [
+                { 
+                  name: 'Passive: Wrath Sanction', 
+                  image: 'Assets/Skills/kajaskill1.webp', 
+                  description: 'Kaja stores lightning charges over time, releasing them in basic attacks to deal additional damage.'
+                },
+                { 
+                  name: 'Skill 1: Ring of Order', 
+                  image: 'Assets/Skills/kajaskill1.1.webp', 
+                  description: 'Kaja releases a ring of lightning, dealing damage and slowing enemies while marking them for additional magic damage.'
+                },
+                { 
+                  name: 'Skill 2: Lightning Bomb', 
+                  image: 'Assets/Skills/kajaskill2.webp', 
+                  description: 'Kaja leaves behind energy bombs in his wake, dealing damage to enemies who step on them.'
+                },
+                { 
+                  name: 'Ultimate: Divine Judgement', 
+                  image: 'Assets/Skills/kajaskill3.webp', 
+                  description: 'Kaja suppresses a target and pulls them towards him while dealing magic damage over the duration.'
+                }
+              ],
+              [
+                  'https://www.youtube.com/embed/Kyef0nKvyiI',
+                  'https://www.youtube.com/embed/KKtEhdDpVAw'
+              ]
+            )">
                 <img src="Assets/support/select-Kaja.jpg" alt="Kaja" />
                 <p>Kaja</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Prophetess of the Night', 'Mathilda', 'Assets/support/Mathilda.jpg', 'The unpredictable shadow predator.')"
-              >
+            </div>
+
+
+            <div class="hero" onclick="selectHero(
+              'The Prophetess of the Night', 
+              'Mathilda', 
+              'Assets/support/Mathilda.jpg', 
+              'The unpredictable shadow predator.',
+              [
+                  { name: 'Unrestrained Delight', image: 'Assets/Skin/mathildaskin1.jpg' },
+                  { name: 'Floral Crown', image: 'Assets/Skin/mathildaskin2.jpg' },
+                  { name: 'Dream Groove', image: 'Assets/Skin/mathildaskin3.jpg' }
+              ],
+              [
+              { 
+                name: 'Passive: Ancestral Guidance', 
+                image: 'Assets/Skills/mathildaskill1.webp', 
+                description: 'Mathilda gains stacks while moving. When fully charged, her next Basic Attack deals bonus magic damage and increases her movement speed briefly.'
+              },
+              { 
+                name: 'Skill 1: Soul Bloom', 
+                image: 'Assets/Skills/mathildaskill1.1.webp', 
+                description: 'Mathilda gathers up to 6 wisps over time that orbit her. The wisps automatically attack nearby enemies, dealing magic damage.'
+              },
+              { 
+                name: 'Skill 1: Soul Bloom (Second Phase)', 
+                image: 'Assets/Skills/mathildaskill1.2.webp', 
+                description: 'Mathilda can reactivate Soul Bloom to release all remaining wisps at once, dealing magic damage to nearby enemies.'
+              },
+              { 
+                name: 'Skill 2: Guiding Wind', 
+                image: 'Assets/Skills/mathildaskill2.webp', 
+                description: 'Mathilda leaps, creating a field that grants her a shield and movement speed. Allies entering the field also gain a shield and are guided to her with a movement speed boost.'
+              },
+              { 
+                name: 'Ultimate: Circling Eagle', 
+                image: 'Assets/Skills/mathildaskill3.webp', 
+                description: 'Mathilda marks an enemy hero and circles them for up to 3.5 seconds, summoning wisps that deal damage to nearby enemies.'
+              },
+              { 
+                name: 'Ultimate: Circling Eagle (Second Phase)', 
+                image: 'Assets/Skills/mathildaskill3.1.webp', 
+                description: 'Mathilda can reactivate Circling Eagle to dash to the marked target, dealing magic damage, knocking back enemies, and transferring the mark to the first enemy hit.'
+              }
+            ],
+              [
+                  'https://www.youtube.com/embed/Lx0R3v4lyNA',
+                  'https://www.youtube.com/embed/BV_c3xANk8Q'
+              ]
+            )">
                 <img src="Assets/support/select-Mathilda.jpg" alt="Mathilda" />
                 <p>Mathilda</p>
-              </div>
-            </div>
+            </div>  
+          </div>
+
             <div class="hero-column right">
               <div><h3>Ferdinand's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Shadow of Twilight', 'Carmilla', 'Assets/support/Carmilla.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
-              >
-                <img src="Assets/support/select-Carmilla.jpg" alt="Carmilla" />
-                <p>Carmilla</p>
+
+              <div class="hero" onclick="selectHero(
+                'The Shadow of Twilight', 
+                'Carmilla', 
+                'Assets/support/Carmilla.jpg', 
+                'A Blood Demon who can pass the damage to multiple enemies via the link of curse.',
+                [
+                    { name: 'Wisteria Countess', image: 'Assets/Skin/carmillaskin1.jpg' },
+                    { name: 'Magician Girl', image: 'Assets/Skin/carmillaskin2.jpg' },
+                    { name: 'Phantom Countess', image: 'Assets/Skin/carmillaskin3.jpg' },
+                    { name: 'Astral Arcana', image: 'Assets/Skin/carmillaskin4.jpg' }
+                ],
+                [
+                { 
+                  name: 'Passive: Vampire Pact', 
+                  image: 'Assets/Skills/carmillaskill1.webp', 
+                  description: 'Each time Carmilla deals damage to an enemy hero, she steals 7–11 Physical Defense & Magic Defense (scales with level) from them. The stolen defense can stack up to 5 times and lasts for 5 seconds. Carmilla can only steal defense from the same enemy every 5 seconds.'
+                },
+                { 
+                  name: 'Skill 1: Crimson Flower', 
+                  image: 'Assets/Skills/carmillaskill1.1.webp', 
+                  description: 'Carmilla summons two Crimson Flowers that circle around her, dealing magic damage and slowing enemies. The flowers also heal Carmilla each time they deal damage.'
+                },
+                { 
+                  name: 'Skill 2: Bloodbath', 
+                  image: 'Assets/Skills/carmillaskill2.webp', 
+                  description: 'Carmilla gains 70% movement speed that decays over 4.5 seconds. Upon reactivation, she unleashes the accumulated energy on a target, dealing magic damage and stunning them. The damage and stun scale with the accumulation time.'
+                },
+                { 
+                  name: 'Skill 2: Bloodbath (Second Phase)', 
+                  image: 'Assets/Skills/carmillaskill2.1.webp', 
+                  description: 'Carmilla can re-trigger Bloodbath to release the accumulated energy. The damage and stun duration increase with the time Carmilla spends charging the skill.'
+                },
+                { 
+                  name: 'Ultimate: Curse of Blood', 
+                  image: 'Assets/Skills/carmillaskill3.webp', 
+                  description: 'Carmilla casts a curse on a target location, slowing enemies by 50%. After 0.8 seconds, enemies within the area take magic damage and are immobilized for 1 second. Linked enemies take 50% of the damage and share the same control duration.'
+                },
+                { 
+                  name: 'Other: Vermeil Shadow', 
+                  image: 'Assets/Skills/carmillaskill4.webp', 
+                  description: 'Cecilion summons Carmilla to become a Vermil Shadow, granting him a shield. Carmilla then charges at a target location, dealing magic damage and slowing enemies. The cooldowns of her Crimson Flower and Bloodbath skills reset.'
+                }
+              ],
+
+                [
+                    'https://www.youtube.com/embed/RNaWcWZbmiw',
+                    'https://www.youtube.com/embed/oI-g0ylShuE'
+                ]
+              )">
+                  <img src="Assets/support/select-Carmilla.jpg" alt="Carmilla" />
+                  <p>Carmilla</p>
               </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Phase Technician', 'Chip', 'Assets/support/Chip.jpg', 'A carefree, genetically enhanced fox that wields advanced portal technology.')"
-              >
-                <img src="Assets/support/select-Chip.jpg" alt="Chip" />
-                <p>Chip</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Soul Binder', 'Faramis', 'Assets/support/Faramis.jpg', 'A fallen imperial mage.')"
-              >
-                <img src="Assets/support/select-Faramis.jpg" alt="Faramis" />
-                <p>Faramis</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Budding Hope', 'Floryn', 'Assets/support/Floryn.jpg', 'A kind-hearted girl who is determined to spread greenery throughout the world.')"
-              >
-                <img src="Assets/support/select-Floryn.jpg" alt="Floryn" />
-                <p>Floryn</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Wings of Holiness', 'Rafaela', 'Assets/support/Rafaela.jpg', 'The angel who heals everything.')"
-              >
-                <img src="Assets/support/select-Rafaela.jpg" alt="Rafaela" />
-                <p>Rafaela</p>
-              </div>
+              
+
+                              <div class="hero" onclick="selectHero(
+                  'The Phase Technician', 
+                  'Chip', 
+                  'Assets/support/Chip.jpg', 
+                  'A carefree, genetically enhanced fox that wields advanced portal technology.',
+                  [
+                      { name: 'Nexus Engineer', image: 'Assets/Skin/chipskin1.jpg' },
+                      { name: 'Badlands Hiatus', image: 'Assets/Skin/chipskin2.jpg' }
+                  ],
+                  [
+                  { 
+                    name: 'Passive 1: Snack Time!', 
+                    image: 'Assets/Skills/chipskill1.webp', 
+                    description: 'Chip regenerates HP equal to 150 plus 45% of his HP after finishing a whole bag of chips (requires 5 bites). After eating a bag, Chip cannot eat again for 5 seconds. This happens when Chip is out of combat.'
+                  },
+                  { 
+                    name: 'Passive 2: Yummy...Yummy...', 
+                    image: 'Assets/Skills/chipskill1.1.webp', 
+                    description: 'Each time Chip deals damage to an enemy hero, he gains a small amount of bonus movement speed for 2 seconds. This effect can stack up to 3 times.'
+                  },
+                  { 
+                    name: 'Skill 1: Crash Course', 
+                    image: 'Assets/Skills/chipskill1.2.webp', 
+                    description: 'Chip rams his hovercraft into the ground, dealing magic damage equal to 220–370 plus the target\'s Max HP. Chip gains a shield that scales with the number of enemy heroes hit. His next basic attack becomes ranged and detonates a mark on enemies, dealing magic damage and stunning them for 0.6 seconds.'
+                  },
+                  { 
+                    name: 'Skill 2: Overtime', 
+                    image: 'Assets/Skills/chipskill2.webp', 
+                    description: 'Chip rushes forward for 2 seconds, gaining up to 65% extra movement speed. After reaching max speed, Chip maintains it for 2 seconds. His next basic attack charges at an enemy, dealing magic damage and knocking them back slightly.'
+                  },
+                  { 
+                    name: 'Ultimate: Shortcut', 
+                    image: 'Assets/Skills/chipskill3.webp', 
+                    description: 'Chip creates a Main Portal on an enemy hero, dealing magic damage and slowing them. He also creates Connecting Portals near allied heroes and behind the allied base. Heroes can teleport from Connecting Portals to the Main Portal or return to their starting portal. The Main Portal deals additional magic damage after a delay and knocks enemies airborne for 0.8 seconds.'
+                  },
+                  { 
+                    name: 'Special: Why Walk?', 
+                    image: 'Assets/Skills/chipskill4.webp', 
+                    description: 'Chip can teleport to any of the 4 Beacons on the map by standing on one and activating the teleport skill.'
+                  }
+                ],
+                  [
+                      'https://www.youtube.com/embed/vBn6rj1p6Fk',
+                      'https://www.youtube.com/embed/UD4ev6VE5eA'
+                  ]
+                )">
+                    <img src="Assets/support/select-Chip.jpg" alt="Chip" />
+                    <p>Chip</p>
+                </div>
+
+
+                <div class="hero" onclick="selectHero(
+                  'The Soul Binder', 
+                  'Faramis', 
+                  'Assets/support/Faramis.jpg', 
+                  'A fallen imperial mage.',
+                  [
+                      { name: 'Dark Necro', image: 'Assets/Skin/faramisskin1.jpg' },
+                      { name: 'Royal Magus', image: 'Assets/Skin/faramisskin2.jpg' },
+                      { name: 'Summer Sparks', image: 'Assets/Skin/faramisskin3.jpg' },
+                      { name: 'Infernal Magister', image: 'Assets/Skin/faramisskin4.jpg' }
+                  ],
+                                        [
+                                          { 
+                                            name: 'Passive: Vicious Retrieval', 
+                                            image: 'Assets/Skills/faramisskill1.webp', 
+                                            description: 'Every 4 seconds, Faramis\'s next skill generates a soul fragment, restoring 100 HP and gaining 2 Magic Power (up to 40 stacks). Upon death, he consumes these fragments to reduce his respawn timer by 3% per fragment (up to 90%). Enemies killed around Faramis also drop soul fragments.'
+                                          },
+                                          { 
+                                            name: 'Skill 1: Shadow Stampede', 
+                                            image: 'Assets/Skills/faramisskill1.1.webp', 
+                                            description: 'Faramis enters the Shadow state, gaining increased movement speed, defense, and the ability to move through terrain. Enemies hit by him take Magic Damage and are marked. On leaving the Shadow state, marked enemies are pulled toward him and take additional damage.'
+                                          },
+                                          { 
+                                            name: 'Skill 2: Ghost Bursters', 
+                                            image: 'Assets/Skills/faramisskill2.webp', 
+                                            description: 'Faramis releases Nether energy in a fan-shaped area, dealing Magic Damage to enemies. The energy then splits, bouncing to nearby enemies and dealing reduced damage with each bounce.'
+                                          },
+                                          { 
+                                            name: 'Ultimate: Cult Altar', 
+                                            image: 'Assets/Skills/faramisskill3.webp', 
+                                            description: 'Faramis creates the Nether Realm, granting allies extra HP, Movement Speed, and a brief Resurrection state when their HP is depleted, making them immune to damage for 1.3 seconds.'
+                                          }
+                                        ],
+
+                  [
+                      'https://www.youtube.com/embed/K4EiZ5rvCjI',
+                      'https://www.youtube.com/embed/eIGmXwA5ODc'
+                  ]
+                )">
+                    <img src="Assets/support/select-Faramis.jpg" alt="Faramis" />
+                    <p>Faramis</p>
+                </div>
+                
+
+                <div class="hero" onclick="selectHero(
+                  'The Budding Hope', 
+                  'Floryn', 
+                  'Assets/support/Floryn.jpg', 
+                  'A kind-hearted girl who is determined to spread greenery throughout the world.',
+                  [
+                      { name: 'Springtide', image: 'Assets/Skin/florynskin1.jpg' },
+                      { name: 'Fluffy Dream', image: 'Assets/Skin/florynskin2.jpg' },
+                      { name: 'Paw Power', image: 'Assets/Skin/florynskin3.jpg' },
+                      { name: 'Yatai Waitress', image: 'Assets/Skin/florynskin4.jpg' }
+                  ],
+                  [
+                  { 
+                    name: 'Passive: Dew', 
+                    image: 'Assets/Skills/florynskill1.webp', 
+                    description: 'Floryn gains a small permanent increase in attributes from Dew. After leaving combat for 5 seconds, Floryn can share the Flower of Hope with an ally (30s cooldown), granting them a shield of 150 (+80% Total Magic Power) when healed by Floryn. The Lantern cannot be sold.'
+                  },
+                  { 
+                    name: 'Passive: Flower of Hope', 
+                    image: 'Assets/Skills/florynskill1.1.webp', 
+                    description: 'Floryn can share the Flower of Hope with an ally, granting them a 150 (+80% Total Magic Power) shield whenever Floryn heals them. This effect can be triggered once every 30 seconds.'
+                  },
+                  { 
+                    name: 'Passive: Lantern of Hope', 
+                    image: 'Assets/Skills/florynskill1.2.webp', 
+                    description: 'Floryn’s Lantern will permanently increase Floryn’s attributes by a small amount. Floryn cannot sell the Lantern.'
+                  },
+                  { 
+                    name: 'Skill 1: Sow', 
+                    image: 'Assets/Skills/florynskill1.3.webp', 
+                    description: 'Floryn tosses an Energy Seed at a target enemy, dealing 180–330 (+100% Total Magic Power) Magic Damage. Healing Fruits spawn and bounce to nearby allies, restoring 175–225 (+90% Total Magic Power) HP.'
+                  },
+                  { 
+                    name: 'Skill 2: Sprout', 
+                    image: 'Assets/Skills/florynskill2.webp', 
+                    description: 'Floryn throws a blob of energy ahead, which explodes upon hitting an enemy, dealing 175–350 (+90% Total Magic Power) Magic Damage and stunning enemies for 0.7 seconds, briefly revealing their positions.'
+                  },
+                  { 
+                    name: 'Ultimate: Bloom', 
+                    image: 'Assets/Skills/florynskill3.webp', 
+                    description: 'Floryn unleashes Dew’s power, healing all nearby allies twice, restoring 250–450 (+100% Total Magic Power) HP, removing Healing and Shield Reduction effects, and making allies immune to them for 2 seconds.'
+                  },
+                  { 
+                    name: 'Other: Share', 
+                    image: 'Assets/Skills/florynskill4.webp', 
+                    description: 'Floryn shares the Lantern’s power with an allied hero, slightly increasing their attributes.'
+                  }
+                ],
+
+                  [
+                      'https://www.youtube.com/embed/QT5BtCGCG_4',
+                      'https://www.youtube.com/embed/YskP7f3aW8s'
+                  ]
+                )">   
+                    <img src="Assets/support/select-Floryn.jpg" alt="Floryn" />
+                    <p>Floryn</p>
+                </div>
+                
+
+                <div class="hero" onclick="selectHero(
+                  'The Wings of Holiness', 
+                  'Rafaela', 
+                  'Assets/support/Rafaela.jpg', 
+                  'The angel who heals everything.',
+                  [
+                      { name: 'Fertility Goddess', image: 'Assets/Skin/rafaelaskin1.jpg' },
+                      { name: 'Flower Fairy', image: 'Assets/Skin/rafaelaskin2.jpg' },
+                      { name: 'Biomedic', image: 'Assets/Skin/rafaelaskin3.jpg' },
+                      { name: 'S.A.B.E.R Savior', image: 'Assets/Skin/rafaelaskin4.jpg' },
+                      { name: 'Star Chaser', image: 'Assets/Skin/rafaelaskin5.jpg' },
+                      { name: 'Angelic Sonata', image: 'Assets/Skin/rafaelaskin6.jpg' },
+                      { name: 'Seraphic Selfie', image: 'Assets/Skin/rafaelaskin7.jpg' }
+                  ],
+                  [
+                  { 
+                    name: 'Passive: Deity Penalization', 
+                    image: 'Assets/Skills/rafaelaskill1.webp', 
+                    description: 'When Rafaela is killed, she transforms into a beam of Holy Light and launches herself at her killer after a 2-second delay. This attack deals True Damage equal to 20% of the target\'s Max HP. The attack can be blocked by enemy heroes, dealing damage to them instead. This effect will not trigger if the killer is a non-hero enemy or if they are too far away.'
+                  },
+                  { 
+                    name: 'Skill 1: Light of Retribution', 
+                    image: 'Assets/Skills/rafaelaskill1.1.webp', 
+                    description: 'Rafaela strikes the three nearest enemies with Light of Retribution, dealing 225–500 (+120% Total Magic Power) Magic Damage, briefly revealing their positions, and slowing them by 40% for 1.5 seconds. Enemies hit by Light of Retribution within 5 seconds will take 20% extra damage (this effect stacks up to 3 times).'
+                  },
+                  { 
+                    name: 'Skill 2: Holy Healing', 
+                    image: 'Assets/Skills/rafaelaskill2.webp', 
+                    description: 'Rafaela calls upon Holy Light, restoring 100–125 (+35% Total Magic Power) HP to nearby allies, plus an additional 150–250 (+45% Total Magic Power) HP to herself and the most injured ally in range. This skill also increases the Movement Speed of nearby allies by 30% and grants Slow Immunity for 1 second.'
+                  },
+                  { 
+                    name: 'Ultimate: Holy Baptism', 
+                    image: 'Assets/Skills/rafaelaskill3.webp', 
+                    description: 'Rafaela unleashes the true power of Holy Light in the target direction, dealing 460–660 (+120% Total Magic Power) Magic Damage to enemies in a line and stunning them for 1.5 seconds.'
+                  }
+                ],
+
+                  [
+                      'https://www.youtube.com/embed/xdDIYmlkQiU', 
+                      'https://www.youtube.com/embed/bMyVRcAgIUE'
+                  ]
+                )">
+                    <img src="Assets/support/select-Rafaela.jpg" alt="Rafaela" />
+                    <p>Rafaela</p>
+                </div>
+        
             </div>
           </div>
         </div>
+
         <div id="tank" class="hero-category" style="display: none">
           <div class="hero-category-title">Tank Heroes</div>
           <div class="hero-container">
             <div class="hero-column left">
               <div><h3>Denloyd's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Panda Warrior', 'Akai', 'Assets/tank/Akai.jpg', 'A panda warrior who likes rolling around.')"
-              >
-                <img src="Assets/tank/select-Akai.jpg" alt="Akai" />
-                <p>Akai</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Guard of Nature', 'Belerick', 'Assets/tank/Belerick.jpg', 'A friendly creature of nature.')"
-              >
-                <img src="Assets/tank/select-Belerick.jpg" alt="Belerick" />
-                <p>Belerick</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Grand Warden', 'Hylos', 'Assets/tank/Hylos.jpg', 'A Centaur Hero with the ability of convert natural magic into life force.')"
-              >
-                <img src="Assets/tank/select-Hylos.jpg" alt="Hylos" />
-                <p>Hylos</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Wild Engine', 'Johnson', 'Assets/tank/Johnson.jpg', 'A super cyborg who can transform into a car and lead his teammates into battle.')"
-              >
-                <img src="Assets/tank/select-Johnson.jpg" alt="Johnson" />
-                <p>Johnson</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Shadow of Twilight', 'Uranus', 'Assets/tank/Uranus.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
-              >
-                <img src="Assets/tank/select-Uranus.jpg" alt="Uranus" />
-                <p>Uranus</p>
-              </div>
-            </div>
+
+              <div class="hero" onclick="selectHero(
+  'The Panda Warrior', 
+  'Akai', 
+  'Assets/tank/Akai.jpg', 
+  'A panda warrior who likes rolling around.',
+  [
+      { name: 'Summer Party', image: 'Assets/Skin/akaiSkin1.jpg' },
+      { name: 'Monk', image: 'Assets/Skin/akaiSkin2.jpg' },
+      { name: 'Akazonae Samurai', image: 'Assets/Skin/akaiSkin3.jpg' },
+      { name: 'Imperial Assassin', image: 'Assets/Skin/akaiSkin4.jpg' },
+      { name: 'Steam Recluse', image: 'Assets/Skin/akaiSkin5.jpg' },
+      { name: 'Street Enforcer', image: 'Assets/Skin/akaiSkin6.jpg' },
+      { name: 'Kung Fu Panda', image: 'Assets/Skin/akaiSkin7.jpg' },
+      { name: 'Pumpkin Brawler', image: 'Assets/Skin/akaiSkin8.jpg' },
+      { name: 'Marvelous Maestro', image: 'Assets/Skin/akaiSkin9.jpg' },
+  ],
+  [
+  { 
+    name: 'Passive: Tai Chi', 
+    image: 'Assets/Skills/akaiSkill1.webp', 
+    description: 'Akai gains a 25 (+5% Total HP) shield for 4 seconds after each skill cast and marks enemies and creeps hit by his skills. Akai\'s Basic Attacks deal 25 (+5% Total HP) extra Physical Damage to marked enemies. The shield duration and absorption are refreshed with each skill cast but cannot be stacked.'
+  },
+  { 
+    name: 'Skill 1: Headbutt', 
+    image: 'Assets/Skills/akaiSkill1.1.webp', 
+    description: 'Akai charges in the target direction, dealing 300–400 (+50% Total Physical Attack) Physical Damage to enemies along the way. If Akai hits an enemy hero, they are knocked airborne for 0.5 seconds. Akai can also roll in the Joystick\'s direction after hitting an enemy hero. Additionally, Akai can cast Headbutt during his Ultimate Heavy Spin to quickly reposition.'
+  },
+  { 
+    name: 'Skill 2: Body Slam', 
+    image: 'Assets/Skills/akaiSkill2.webp', 
+    description: 'Akai smashes the ground, dealing 270–420 (+6% Total HP) Physical Damage to nearby enemies and slowing them by 45% for 2 seconds.'
+  },
+  { 
+    name: 'Ultimate: Heavy Spin', 
+    image: 'Assets/Skills/akaiSkill3.webp', 
+    description: 'Akai spins for 4 seconds, removing all debuffs and gaining Slow Immunity. During this time, he continuously deals 200–450 (+100% Extra Physical Attack) Physical Damage to nearby enemies, knocking them back. Enemy heroes knocked back will then knock back other heroes they collide with. Akai gradually increases his Movement Speed to 70% over the duration. This skill can only be interrupted by Suppression or Morph effects.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/7__otHOXxCE',
+      'https://www.youtube.com/embed/BIYdT2olRnc'
+  ]
+)">
+    <img src="Assets/tank/select-Akai.jpg" alt="Akai" />
+    <p>Akai</p>
+</div>
+
+
+
+
+
+
+<div class="hero" onclick="selectHero(
+  'The Guard of Nature', 
+  'Belerick', 
+  'Assets/tank/Belerick.jpg', 
+  'A friendly creature of nature.',
+  [
+      { name: 'Tiger Claw', image: 'Assets/Skin/belerickSkin1.jpg' },
+      { name: 'Torch Guardian', image: 'Assets/Skin/belerickSkin2.jpg' },
+      { name: 'The Deep One', image: 'Assets/Skin/belerickSkin3.jpg' },
+      { name: 'Emerald Guardian', image: 'Assets/Skin/belerickSkin4.jpg' }
+  ],
+  [
+  { 
+    name: 'Passive: Deadly Thorns', 
+    image: 'Assets/Skills/belerickSkill1.webp', 
+    description: 'For every 50 damage inflicted upon Belerick, he has a 25% chance to shoot the nearest enemy unit, dealing Magic Damage equal to 55 (+5 × Hero Level) plus 1.8% of his Max HP (scales with level). This attack can trigger once every 0.4 seconds. Additionally, Belerick\'s HP from Equipment and Emblems is increased by 30%.'
+  },
+  { 
+    name: 'Skill 1: Ancient Seed', 
+    image: 'Assets/Skills/belerickSkill1.1.webp', 
+    description: 'Belerick releases vines in a designated direction, dealing 200 (+50% Total Magic Power) Magic Damage and slowing enemies by 25%. He also leaves an Ancient Seed on the path, which after 1 second deals 200 (+50% Total Magic Power) Magic Damage and taunts enemies for 1.2 seconds. Minions take 80% extra damage.'
+  },
+  { 
+    name: 'Skill 2: Nature\'s Strike', 
+    image: 'Assets/Skills/belerickSkill2.webp', 
+    description: 'Belerick increases his Movement Speed by 80% and strengthens his next Basic Attack. The Movement Speed gain decays over 2 seconds. The enhanced Basic Attack deals 300 (+60% Total Magic Power) Magic Damage and slows the target by 60% for 1.4 seconds. Belerick also regenerates HP equal to 240 plus 10% of his lost HP. Each time Deadly Thorns is triggered, the cooldown of this skill is reduced by 1 second.'
+  },
+  { 
+    name: 'Ultimate: Wrath of Dryad', 
+    image: 'Assets/Skills/belerickSkill3.webp', 
+    description: 'Belerick conjures spreading vines around him, dealing 100 (+30% Total Magic Power) Magic Damage to enemies in the area four times and taunting them for 1.5 seconds.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/eMw56vP4oJo',
+      'https://www.youtube.com/embed/QPPctrOO9Dc'
+  ]
+)">
+    <img src="Assets/tank/select-Belerick.jpg" alt="Belerick" />
+    <p>Belerick</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Grand Warden', 
+  'Hylos', 
+  'Assets/tank/Hylos.jpg', 
+  'A Centaur Hero with the ability to convert natural magic into life force.',
+  [
+      { name: 'Abyssal Shaman', image: 'Assets/Skin/hylosSkin1.jpg' },
+      { name: 'Phantom Seer', image: 'Assets/Skin/hylosSkin2.jpg' },
+      { name: 'Jungle Watcher', image: 'Assets/Skin/hylosSkin3.jpg' },
+      { name: 'Iron Steed', image: 'Assets/Skin/hylosSkin4.jpg' }
+      
+  ],
+  [
+  { 
+    name: 'Passive: Thickened Blood', 
+    image: 'Assets/Skills/hylosSkill1.webp', 
+    description: 'Hylos gains 1.5 extra Max HP for every 1 extra Max Mana he possesses. When out of Mana, Hylos can use his HP for skill casts.'
+  },
+  { 
+    name: 'Skill 1: Law and Order', 
+    image: 'Assets/Skills/hylosSkill1.1.webp', 
+    description: 'Hylos gains 50% Movement Speed and causes his next Basic Attack within 3 seconds to deal 300–550 (+80% Total Magic Power) Magic Damage to the target. This attack knocks back and stuns them for 1 second. The extra Movement Speed rapidly decays over the duration and ends after the next Basic Attack.'
+  },
+  { 
+    name: 'Skill 2: Ring of Punishment', 
+    image: 'Assets/Skills/hylosSkill2.webp', 
+    description: 'Hylos releases the Ring of Punishment, dealing 100–300 (+20% Total Magic Power) Magic Damage to nearby enemies per second while slowing them by 4%–6% and reducing their Attack Speed by 7.5%–15% for 2.5 seconds (up to 8 stacks). Each stack also increases the enemy\'s damage taken from the Ring of Punishment by 5–20%. The Ring of Punishment consumes 30–150 Mana per second when active. The skill can be canceled by using it again.'
+  },
+  { 
+    name: 'Ultimate: Glorious Pathway', 
+    image: 'Assets/Skills/hylosSkill3.webp', 
+    description: 'Hylos creates a huge pathway in the target direction, reducing enemies\' Movement Speed by 75% for 1 second. The pathway lasts 6 seconds. While on the pathway, Hylos gains Slow Immunity and recovers 3% of his Max HP per second. Allied heroes moving along the pathway gain 60% extra Movement Speed, while enemy heroes are slowed by 25%.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/N1n60Fhoc3s',
+      'https://www.youtube.com/embed/1_2Mh4V0aZY'
+  ]
+)">
+    <img src="Assets/tank/select-Hylos.jpg" alt="Hylos" />
+    <p>Hylos</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Wild Engine', 
+  'Johnson', 
+  'Assets/tank/Johnson.jpg', 
+  'A super cyborg who can transform into a car and lead his teammates into battle.',
+  [
+      { name: 'Fire Chief', image: 'Assets/Skin/johnsonSkin1.jpg' },
+      { name: 'S.A.B.E.R. Automata', image: 'Assets/Skin/johnsonSkin2.jpg' },
+      { name: 'Jeepney Racerr', image: 'Assets/Skin/johnsonSkin3.jpg' },
+      { name: 'Wreck King', image: 'Assets/Skin/johnsonSkin4.jpg' },
+      { name: 'Death Ride', image: 'Assets/Skin/johnsonSkin5.jpg' },
+      { name: 'Optimus Prime', image: 'Assets/Skin/johnsonSkin6.jpg' },
+      { name: 'Starblazer', image: 'Assets/Skin/johnsonSkin7.jpg' }
+  ],
+  
+  
+
+  [
+  { 
+    name: 'Passive: Electro Airbag', 
+    image: 'Assets/Skills/johnsonSkill1.webp', 
+    description: 'When Johnson\'s HP drops below 30%, he gains a shield that absorbs 300 (+700% Total Physical Defense) damage for 10 seconds. Cooldown: 100 seconds.'
+  },
+  { 
+    name: 'Skill 1: Impact Wrench', 
+    image: 'Assets/Skills/johnsonSkill1.1.webp', 
+    description: 'Johnson throws his wrench toward the target location, dealing 120–220 (+220% Total Physical Defense) Magic Damage to enemies in its path. Enemies around the landing point are stunned for 0.8 seconds. This skill is disabled when Johnson transforms into a car.'
+  },
+  { 
+    name: 'Skill 2: Electromagnetic Waves', 
+    image: 'Assets/Skills/johnsonSkill2.webp', 
+    description: 'Johnson raises his shield and continuously deals 80–180 (+60% Total Magic Power) Magic Damage to enemies in a fan-shaped area, slowing them by 20%. Each instance of damage increases the enemy’s damage taken from this skill by 15% (up to 45%). The damage is increased by 60% against creeps. Johnson can use Basic Attacks and other skills during this duration.'
+  },
+  { 
+    name: 'Skill 2 (Phase 2): Nitrous', 
+    image: 'Assets/Skills/johnsonSkill2.1.webp', 
+    description: 'Hold the Nitrous skill to increase Johnson’s speed for up to 5 seconds, with acceleration stopping immediately once released.'
+  },
+  { 
+    name: 'Ultimate: Full Throttle', 
+    image: 'Assets/Skills/johnsonSkill3.webp', 
+    description: 'Johnson transforms into a car and accelerates over time. An allied hero can board the car when near Johnson. The car will explode upon hitting an enemy hero or obstacle, dealing 300–400 (+160% Total Magic Power) Magic Damage to 450–600 (+280% Total Magic Power) Magic Damage to nearby enemies, stunning them for 0.5–1 second based on the car\'s speed. The explosion creates an electrified zone that continuously deals 60–80 (+20% Total Magic Power) Magic Damage and slows enemies within it. While in car form, tap Brake to stop immediately or hold Nitrous to speed up for 5 seconds.'
+  },
+  { 
+    name: 'Ultimate (Phase 2): Brake', 
+    image: 'Assets/Skills/johnsonSkill3.1.webp', 
+    description: 'Johnson can activate Brake to immediately stop the car, canceling any crowd control effects. This skill is a continuation of Full Throttle.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/TQUzTEzWOVw',
+      'https://www.youtube.com/embed/WwP9djQCi7w'
+  ]
+)">
+    <img src="Assets/tank/select-Johnson.jpg" alt="Johnson" />
+    <p>Johnson</p>
+</div>
+
+
+
+<div class="hero" onclick="selectHero(
+  'The Shadow of Twilight', 
+  'Uranus', 
+  'Assets/tank/Uranus.jpg', 
+  'A Blood Demon who can pass the damage to multiple enemies via the link of curse.',
+  [
+      { name: 'Ancient Soul', image: 'Assets/Skin/uranusSkin1.jpg' },
+      { name: 'Mech Protector', image: 'Assets/Skin/uranusSkin2.jpg' },
+      { name: 'Video-Game Dominator', image: 'Assets/Skin/uranusSkin3.jpg' },
+      { name: 'Pinball Machine', image: 'Assets/Skin/uranusSkin4.jpg' },
+      { name: 'Celestial Bastion', image: 'Assets/Skin/uranusSkin5.jpg' },
+      { name: 'Earthen Relic', image: 'Assets/Skin/uranusSkin6.jpg' }
+  ],
+  [
+  { 
+    name: 'Passive: Radiance', 
+    image: 'Assets/Skills/uranusSkill1.webp', 
+    description: 'Uranus absorbs energy from incoming attacks to strengthen himself, regenerating a certain amount of HP every 0.8 seconds. Each stack lasts for 10 seconds. At maximum stacks (20), Uranus regenerates 48–224 HP (scales with level).'
+  },
+  { 
+    name: 'Skill 1: Ionic Edge', 
+    image: 'Assets/Skills/uranusSkill1.1.webp', 
+    description: 'Uranus releases two energy blades that orbit around him, dealing 155–255 (+30% Total Magic Power) Magic Damage to enemies and slowing them by 30% for 2 seconds. Each time this skill deals damage to a target, they will be marked with a stack for 6 seconds (max 1 stack per target per cast). Each stack increases the damage of this skill by 40%, up to a maximum of 320%. Each energy blade will only deal damage to the same target once.'
+  },
+  { 
+    name: 'Skill 2: Transcendent Ward', 
+    image: 'Assets/Skills/uranusSkill2.webp', 
+    description: 'Uranus charges to the target location, dealing 80–200 (+20% Total Magic Power) Magic Damage to enemies along the way, and 160–400 (+80% Total Magic Power) Magic Damage to enemies at the target location, while slowing them by 25%. Uranus also generates a shield (300–750 (+200% Total Magic Power)) for 4 seconds. The shield explodes at the end of its duration or when destroyed, dealing 300–750 (+150% Total Magic Power) Magic Damage to nearby enemies.'
+  },
+  { 
+    name: 'Ultimate: Consecration', 
+    image: 'Assets/Skills/uranusSkill3.webp', 
+    description: 'Uranus unleashes the energy stored within his body, removing slow effects on himself, recovering 200–400 HP, and gaining 60% Movement Speed for 8 seconds (decaying over time). He directly gains 5–15 stacks of Radiance, increasing shields received and HP regeneration by 20% for 8 seconds.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/t1opSrz5oBo',
+      'https://www.youtube.com/embed/7GcKv0MLuV4'
+  ]
+)">
+    <img src="Assets/tank/select-Uranus.jpg" alt="Uranus" />
+    <p>Uranus</p>
+</div>
+       </div>
+
             <div class="hero-column right">
               <div><h3>Ferdinand's Pick</h3></div>
-              <div
-                class="hero"
-                onclick="selectHero('The Ocean Gladiator', 'Atlas', 'Assets/tank/Atlas.jpg', 'An ancient creature that pilots a mecha.')"
-              >
-                <img src="Assets/tank/select-Atlas.jpg" alt="Atlas" />
-                <p>Atlas</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Frozen Warrior', 'Franco', 'Assets/tank/Franco.jpg', 'A Blood Demon who can pass the damage to multiple enemies via the link of curse.')"
-              >
-                <img src="Assets/tank/select-Franco.jpg" alt="Franco" />
-                <p>Franco</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Rogue Appraiser', 'Fredrinn', 'Assets/tank/Fredrinn.jpg', 'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.')"
-              >
-                <img src="Assets/tank/select-Fredrinn.jpg" alt="Fredrinn" />
-                <p>Fredrinn</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Desert Tyrant', 'Khufra', 'Assets/tank/Khufra.jpg', 'A cruel and greedy tyrant of the desert.')"
-              >
-                <img src="Assets/tank/select-Khufra.jpg" alt="Khufra" />
-                <p>Khufra</p>
-              </div>
-              <div
-                class="hero"
-                onclick="selectHero('The Warrior of Dawn', 'Tigreal', 'Assets/tank/Tigreal.jpg', 'The holy knight loyal to the Lord of Light.')"
-              >
-                <img src="Assets/tank/select-Tigreal.jpg" alt="Tigreal" />
-                <p>Tigreal</p>
-              </div>
+              
+              <div class="hero" onclick="selectHero(
+  'The Ocean Gladiator', 
+  'Atlas', 
+  'Assets/tank/Atlas.jpg', 
+  'An ancient creature that pilots a mecha.',
+  [
+      { name: 'Reactor Core', image: 'Assets/Skin/atlasSkin1.jpg' },
+      { name: 'Fuel Turbine', image: 'Assets/Skin/atlasSkin2.jpg' },
+      { name: 'Space Mech', image: 'Assets/Skin/atlasSkin3.jpg' },
+      { name: 'Rune Sentinel', image: 'Assets/Skin/atlasSkin4.jpg' },
+      { name: 'Mecha Infernus', image: 'Assets/Skin/atlasSkin5.jpg' }
+  ],
+  [
+  { 
+    name: 'Passive: Frigid Breath', 
+    image: 'Assets/Skills/atlasSkill1.webp', 
+    description: 'Atlas generates Frigid Breath around him for 5 seconds each time he casts a skill. Enemies who stay in the area for over 1.5 seconds will have their Movement Speed gradually reduced until they are frozen for 0.5 seconds. Atlas also gains 16–30 extra Physical and Magic Defense when Frigid Breath is present.'
+  },
+  { 
+    name: 'Skill 1: Annihilate', 
+    image: 'Assets/Skills/atlasSkill1.1.webp', 
+    description: 'Atlas smashes the ground, causing 3 explosions. Each explosion deals 230–430 (+60% Total Magic Power) Magic Damage to enemies. If Atlas has ejected from his Mecha Sentry, both himself and his Mecha will cast Annihilate.'
+  },
+  { 
+    name: 'Skill 2: Perfect Match', 
+    image: 'Assets/Skills/atlasSkill2.webp', 
+    description: 'Atlas enters Ejected State, gaining 40% Movement Speed and immunity to slow effects. In this state, the Mecha Sentry will follow Atlas at an increasing speed (can only be controlled by Suppression). Once they meet, Atlas will return to the Mecha, dealing 320–420 (+80% Total Magic Power) Magic Damage to nearby enemies and stunning them for 1 second. While in Ejected State, Atlas and his Mecha share the same HP bar, reducing 50% of the damage taken.'
+  },
+  { 
+    name: 'Ultimate: Fatal Links', 
+    image: 'Assets/Skills/atlasSkill3.webp', 
+    description: 'Atlas hurls chains around, starting to channel and dealing 225–475 (+75% Total Magic Power) Magic Damage to enemy heroes hit while slowing them by 40% for 3 seconds. Use this skill again while channeling: Atlas will drag the targets toward him and plunk them down at a designated location, dealing 360–760 (+180% Total Magic Power) Magic Damage. In Ejected State, the Mecha Sentry will return to Atlas immediately, and the stun effect will be replaced by a 40% slow effect.'
+  }
+],
+
+  [
+      'https://www.youtube.com/embed/6UDD5pSC_OU',
+      'https://www.youtube.com/embed/JszAmpA8hOw'
+  ]
+)">
+    <img src="Assets/tank/select-Atlas.jpg" alt="Atlas" />
+    <p>Atlas</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Frozen Warrior', 
+  'Franco', 
+  'Assets/tank/Franco.jpg', 
+  'A Blood Demon who can pass the damage to multiple enemies via the link of curse.',
+  [
+    { name: 'Masterchef', image: 'Assets/Skin/francoSkin1.jpg' },
+    { name: 'Apocalypse', image: 'Assets/Skin/francoSkin2.jpg' },
+    { name: 'Locomotive', image: 'Assets/Skin/francoSkin3.jpg' },
+    { name: 'Wheatfield Nightmare', image: 'Assets/Skin/francoSkin4.jpg' },
+    { name: 'Valhalla Ruler', image: 'Assets/Skin/francoSkin5.jpg' },
+    { name: 'Blazing Axe', image: 'Assets/Skin/francoSkin6.jpg' },
+    { name: 'Bone Crusher', image: 'Assets/Skin/francoSkin7.jpg' },
+    { name: 'King of Hell', image: 'Assets/Skin/francoSkin8.jpg' }
+  ],
+  [
+    { 
+      name: 'Passive: Wasteland Force', 
+      image: 'Assets/Skills/francoSkill1.webp', 
+      description: 'If no damage is taken within 5 seconds, Franco gains 10% Movement Speed, recovers 1% Max HP per second, and begins accumulating Wasteland Force (up to 10 stacks).'
+    },
+    { 
+      name: 'Skill 1: Iron Hook', 
+      image: 'Assets/Skills/francoSkill1.1.webp', 
+      description: 'Franco throws out a hook that latches onto the first enemy hero it hits and pulls them toward him.' 
+    },
+    { 
+      name: 'Skill 2: Fury Shock', 
+      image: 'Assets/Skills/francoSkill2.webp', 
+      description: 'Franco enters Fury mode, increasing his attack speed and damage.' 
+    },
+    { 
+      name: 'Ultimate: Bloody Hunt', 
+      image: 'Assets/Skills/francoSkill3.webp', 
+      description: 'Franco grabs a target enemy, dealing damage and pulling them toward him.' 
+    }
+  ],
+  [
+    'https://www.youtube.com/embed/t6Q26fbIeRw', 
+    'https://www.youtube.com/embed/h5NwQpNBnIw'
+  ]
+)">
+  <img src="Assets/tank/select-Franco.jpg" alt="Franco" />
+  <p>Franco</p>
+</div>
+
+
+<div class="hero" onclick="selectHero(
+  'The Rogue Appraiser', 
+  'Fredrinn', 
+  'Assets/tank/Fredrinn.jpg', 
+  'A master treasure appraiser in Los Pecados who accumulates wealth for his best friend.',
+  [
+    { name: 'Regal Renegade', image: 'Assets/Skin/fredrinnSkin1.jpg' },
+    { name: 'Jewel Connoisseur', image: 'Assets/Skin/fredrinnSkin2.jpg' },
+    { name: 'Neobeast Fredrinn', image: 'Assets/Skin/fredrinnSkin3.jpg' },
+    { name: 'SPARKLE Fredrinn', image: 'Assets/Skin/fredrinnSkin4.jpg' }
+  ],
+  [
+    { 
+      name: 'Passive: Crystalline Armor', 
+      image: 'Assets/Skills/fredrinnSkill1.webp', 
+      description: 'Fredrinn gains 1 Combo Point each time his skill hits a non-minion enemy, up to 4 Combo Points. He stores Crystal Energy from damage received, which decays after 5 seconds. Fredrinn can convert Crystal Energy into HP based on damage dealt.' 
+    },
+    { 
+      name: 'Skill 1: Piercing Strike', 
+      image: 'Assets/Skills/fredrinnSkill1.1.webp', 
+      description: 'Fredrinn thrusts his sword in the target direction, dealing 125 (+7% Total HP) Physical Damage and slowing enemies by 30% for 2 seconds. His next Basic Attack gains extra range and deals 85 (+100% Total Physical Attack) Physical Damage.' 
+    },
+    { 
+      name: 'Skill 2: Brave Assault', 
+      image: 'Assets/Skills/fredrinnSkill2.webp', 
+      description: 'Fredrinn dashes in the target direction, dealing 200 (+80% Extra Physical Attack) Physical Damage to the first non-minion enemy hit. His next Basic Attack knocks the target airborne for 0.3 seconds.' 
+    },
+    { 
+      name: 'Ultimate 1: Energy Eruption', 
+      image: 'Assets/Skills/fredrinnSkill3.webp', 
+      description: 'Fredrinn deals 300 (+100% Extra Physical Attack) Physical Damage to nearby enemies and taunts them for 1 second. He gains Physical and Magic Defense for 3 seconds and reduces cooldowns of Piercing Strike and Brave Assault by 75%.' 
+    },
+    { 
+      name: 'Ultimate 2: Appraiser\'s Wrath', 
+      image: 'Assets/Skills/fredrinnSkill3.1.webp', 
+      description: 'Fredrinn slams his sword in the target direction, dealing 600–1000 (+35% of Crystal Energy) Physical Damage to enemies in a fan-shaped area after a short delay. Enemies in the center take 175% critical damage.' 
+    }
+],
+
+  [
+    'https://www.youtube.com/embed/Hp-fbKcI2Qk',
+    'https://www.youtube.com/embed/_y-IbIyP6VU'
+  ]
+)">
+  <img src="Assets/tank/select-Fredrinn.jpg" alt="Fredrinn" />
+  <p>Fredrinn</p>
+</div>
+
+
+
+
+<div class="hero" onclick="selectHero(
+  'The Desert Tyrant', 
+  'Khufra', 
+  'Assets/tank/Khufra.jpg', 
+  'A cruel and greedy tyrant of the desert.',
+  [
+    { name: 'Desert Owl', image: 'Assets/Skin/khufraSkin1.jpg' },
+    { name: 'Apophis', image: 'Assets/Skin/khufraSkin2.jpg' },
+    { name: 'Gentleman Thief', image: 'Assets/Skin/khufraSkin3.jpg' },
+    { name: 'Volcanic Overlord', image: 'Assets/Skin/khufraSkin4.jpg' },
+    { name: 'Dreadful Clown', image: 'Assets/Skin/khufraSkin5.jpg' },
+    { name: 'Iron Hook', image: 'Assets/Skin/khufraSkin6.jpg' }
+  ],
+  [
+    { 
+      name: 'Passive: Spell Curse', 
+      image: 'Assets/Skills/khufraSkill1.webp', 
+      description: 'Khufra activates Spell Curse every 12 seconds, enhancing his next Basic Attack. The enhanced attack gains extra range and deals (+120% Total Physical Attack) and (+target\'s 6% Max HP) as Magic Damage. It also slows the target by 30% for 1.5 seconds and heals Khufra by 8% of his Max HP. Applying a control effect reduces the cooldown by 4 seconds.' 
+    },
+    { 
+      name: 'Skill 1: Tyrant\'s Revenge', 
+      image: 'Assets/Skills/khufraSkill1.1.webp', 
+      description: 'Khufra pulls the bandage on his arms and launches himself in a direction, dealing Physical Damage equal to 50–100 plus 7% of his Max HP to enemies on the path. If he encounters an enemy hero or reaches max distance, he stops, dealing additional Physical Damage and knocking enemies airborne for up to 1.1 seconds.' 
+    },
+    { 
+      name: 'Skill 2: Bouncing Ball', 
+      image: 'Assets/Skills/khufraSkill2.webp', 
+      description: 'Khufra transforms into a magic bouncing ball, increasing his Physical and Magic Defense by 30%-100%. Enemies using blink skills near him are knocked airborne. Each bounce deals Magic Damage equal to 50–100 plus 3% of his Max HP and slows enemies by 80% for 0.2 seconds.' 
+    },
+    { 
+      name: 'Ultimate: Tyrant\'s Rage', 
+      image: 'Assets/Skills/khufraSkill3.webp', 
+      description: 'Khufra pulls all enemies around him to his front, dealing 300–600 (+100% Total Physical Attack) Physical Damage and slowing them for 1.25–1.75 seconds. Enemies knocked against walls take 150% extra damage and are stunned instead of slowed.' 
+    }
+],
+
+  [
+    'https://www.youtube.com/embed/OzLAArlV5os',
+    'https://www.youtube.com/embed/GhWPkbPlHwU'
+  ]
+)">
+  <img src="Assets/tank/select-Khufra.jpg" alt="Khufra" />
+  <p>Khufra</p>
+</div>
+
+
+             
+
+
+<div class="hero" onclick="selectHero(
+  'The Warrior of Dawn', 
+  'Tigreal', 
+  'Assets/tank/Tigreal.jpg', 
+  'The holy knight loyal to the Lord of Light.',
+  [
+    { name: 'Dark Guardian', image: 'Assets/Skin/tigrealSkin1.jpg' },
+    { name: 'Fallen Guard', image: 'Assets/Skin/tigrealSkin2.jpg' },
+    { name: 'Wyrmslayer', image: 'Assets/Skin/tigrealSkin3.jpg' },
+    { name: 'Lightborn - Defender', image: 'Assets/Skin/tigrealSkin4.jpg' },
+    { name: 'Gold Baron', image: 'Assets/Skin/tigrealSkin5.jpg' },
+    { name: 'Galactic Marshal', image: 'Assets/Skin/tigrealSkin6.jpg' },
+  ],
+  [
+  { 
+    name: 'Passive: Fearless', 
+    image: 'Assets/Skills/tigrealSkill1.webp', 
+    description: 'Tigreal gains a stack of Fearless each time he casts a skill or is hit by a Basic Attack. Upon reaching 4 stacks, he consumes them to block the next Basic Attack, including turret shots. Minion attacks do not grant Fearless stacks or trigger this effect. Stacks deplete after 6 seconds if unused.'
+  },
+  { 
+    name: 'Skill 1: Attack Wave', 
+    image: 'Assets/Skills/tigrealSkill1.1.webp', 
+    description: 'Tigreal smashes the ground with his hammer, sending a shockwave forward that erupts three times. Each eruption deals 270–520 (+70% Total Physical Attack) Physical Damage to enemies in a fan-shaped area and slows them by 20%, 40%, and 60% successively for 1.5 seconds.'
+  },
+  { 
+    name: 'Skill 2: Sacred Hammer Phase 1', 
+    image: 'Assets/Skills/tigrealSkill2.webp', 
+    description: 'Tigreal charges in the target direction, dealing Physical Damage equal to (+100% Total Physical Attack) to enemies along the way and pushing them to the end of the charge.'
+  },
+  { 
+    name: 'Skill 2: Sacred Hammer Phase 2', 
+    image: 'Assets/Skills/tigrealSkill2.1.webp', 
+    description: 'Tigreal can recast the skill within 4 seconds, dealing 280–380 (+60% Total Physical Attack) Physical Damage to enemies in front of him and knocking them airborne for 1 second.'
+  },
+  { 
+    name: 'Ultimate: Implosion', 
+    image: 'Assets/Skills/tigrealSkill3.webp', 
+    description: 'Tigreal slams his hammer into the ground, pulling in all nearby enemies and stunning them for 2 seconds while dealing 270–430 (+130% Total Physical Attack) Physical Damage. The first half of the channeling can be interrupted by crowd control effects, but the second half can only be interrupted by Suppression.'
+  }
+],
+
+  [
+    'https://www.youtube.com/embed/B4Fyy-YsPOo',
+    'https://www.youtube.com/embed/Y-f8PREVKnk'
+  ]
+)">
+  <img src="Assets/tank/select-Tigreal.jpg" alt="Tigreal" />
+  <p>Tigreal</p>
+</div>
+
             </div>
           </div>
         </div>
       </div>
-      <div class="back-button-container">
+      <div class="button-container">
         <button
           id="back-button"
           class="back-btn"
@@ -1735,9 +3169,9 @@
     <div class="last-container" id="selected-hero" style="display: none">
       <!-- Hero Info Section -->
       <div class="hero-overview">
-        <h2 id="hero-name"></h2>
+        <h2 id="hero-name" class="hero-name"></h2>
         <img id="hero-image" src="" alt="Hero Image"  class="hero-image"/>
-        <p id="hero-info"></p>
+        <p id="hero-info" class="hero-info"></p>
         <div class="hero-buttons">
           <button class="btn" onclick="showSection('skins-section')">
             Skins
@@ -1763,7 +3197,7 @@
           </button>
           <div class="slider-content">
             <img id="skin-image" src="" alt="Skin Image" />
-            <p id="skin-name"></p>
+            <p id="skin-name" ></p>
           </div>
           <button class="slider-btn next" onclick="changeSkin(1)">
             &#10095;
@@ -1787,6 +3221,6 @@
         <div id="gameplay-video-container" class="video-gallery"></div>
       </section>
       
-    <script src="backupjs.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

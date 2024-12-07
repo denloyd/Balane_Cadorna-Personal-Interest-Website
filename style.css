@@ -195,29 +195,139 @@
     }
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .start-container h1 {
-      font-size: 2.5rem;
-      padding: 0 1rem;
-    }
-    
-    .start-btn {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-    }
-  }
+ /* Updated Select Container */
+.select-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(13, 13, 48, 0.9), rgba(26, 26, 77, 0.50)),
+              url('Assets/bg_last\ container.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  animation: fadeIn 1s ease-out;
+  transition: background 0.5s ease;
   
-  @media (max-width: 480px) {
-    .start-container h1 {
-      font-size: 2rem;
-    }
-    
-    .start-btn {
-      padding: 0.8rem 1.8rem;
-      font-size: 1rem;
-    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Header */
+.select-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.button-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align buttons horizontally */
+    gap: 2rem; /* Space between buttons */
+}
+
+/* Category Buttons */
+.button-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.category-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 200px;
+  position: relative;
+  
+}
+.category-btn h3{
+  color: #f9f9f9;
+}
+.category-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  animation: buttonBounce 0.5s;
+}
+
+.category-btn:hover .button-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}
+
+/* Tooltip */
+.tooltip {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position tooltip above */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.category-btn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+/* Active Button */
+.category-btn.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Role-specific color accents */
+.category-btn[onclick*="fighter"] { border-color: rgba(255, 87, 87, 0.3); }
+.category-btn[onclick*="mage"] { border-color: rgba(87, 213, 255, 0.3); }
+.category-btn[onclick*="assassin"] { border-color: rgba(151, 87, 255, 0.3); }
+.category-btn[onclick*="marksman"] { border-color: rgba(205, 255, 87, 0.3); }
+.category-btn[onclick*="tank"] { border-color: rgba(244, 116, 47, 0.3); }
+.category-btn[onclick*="support"] { border-color: rgba(42, 251, 84, 0.3); }
+
+/* Role-specific hover effects */
+.category-btn[onclick*="fighter"]:hover { border-color: rgba(255, 87, 87, 0.8); }
+.category-btn[onclick*="mage"]:hover { border-color: rgba(44, 152, 240, 0.8); }
+.category-btn[onclick*="assassin"]:hover { border-color: rgba(161, 25, 207, 0.8); }
+.category-btn[onclick*="marksman"]:hover { border-color: rgba(238, 246, 21, 0.8); }
+.category-btn[onclick*="tank"]:hover { border-color: rgba(220, 123, 5, 0.8); }
+.category-btn[onclick*="support"]:hover { border-color: rgba(6, 215, 27, 0.8); }
+
+
+
+
+
 
 
 .hero-container {
@@ -226,38 +336,37 @@
     justify-content: center;
     gap: 20px;
 }
-/* Select Container */
-.select-container {
-    display: block;
-    margin: 20px;
-}
-/* Section Header */
-.select-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    text-align: center;
-}
 
 .hero {
     display: inline-block;
     text-align: center;
     margin: 10px;
+    gap: 2rem;
 }
 .hero-column{
     margin: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background for better contrast */
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+ border-radius: 20px;
+ transition: all .3s;
     color: #FFFFFF; /* White text for clarity */
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     
 }
 
+.hero-column:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
 
+
+.hero-column:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+.hero-column h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
 .hero-category-title {
     font-size: 25px;
     font-weight: bold;
@@ -280,12 +389,7 @@
     border-radius: 15px;
     border-style: double;
 }
-.category-btn {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
+
 
 button {
     padding: 10px 20px;
@@ -341,6 +445,8 @@ button:hover {
     margin-top: 20px;
     padding: 15px;
     border-top: 1px solid #ddd;
+    background: linear-gradient(135deg, rgba(13, 13, 48, 0.9), rgba(26, 26, 77, 0.50)),
+    url('Assets/bg_last\ container.jpg') center/cover no-repeat fixed;
 }
 .skins-gallery img {
     max-width: 150px;
@@ -351,13 +457,17 @@ button:hover {
 
 /* Base styles for the last-container */
 .last-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: white;
-    color: #333;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(13, 13, 48, 0.9), rgba(26, 26, 77, 0.50)),
+              url('Assets/bg_last\ container.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  animation: fadeIn 1s ease-out;
+  transition: background 0.5s ease;
+  
 }
 
 /* Hero overview section */
@@ -404,12 +514,12 @@ button:hover {
     justify-content: center;
     text-align: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, rgba(13, 13, 48, 0.7), rgba(26, 26, 77, 0.7));
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     max-width: 1200px;
-}
+};
 
   
   .gameplay-header {
@@ -481,7 +591,7 @@ button:hover {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 30%;
     width: 40px;
     height: 40px;
     display: flex;
@@ -509,11 +619,12 @@ button:hover {
     gap: 20px; /* Increased for better spacing */
     max-width: 600px;
     width: 100%; /* Ensures consistent width */
-    background: #f9f9f9;
+    background: #333;
     padding: 20px; /* Slightly increased padding */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-align: center;
 }
 
 .skill-item:hover {
@@ -542,6 +653,7 @@ button:hover {
     font-size: 14px;
     color: #666;
     line-height: 1.5;
+    text-align: center;
 }
 
 
