@@ -25,6 +25,11 @@ adjust the media queries for skills, skins (not final)
 
 almost done, will do testing anf finalizing the design 
 
+12-08 
+added stories section 
+90% done for media qureries and style 
+added pictures for stories 
+make the image slider for stories  
 
 
 # Ferdinand Cadorna 
