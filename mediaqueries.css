@@ -1,4 +1,4 @@
- /* Responsive Design */
+
  @media (max-width: 768px) {
     .start-container h1 {
       font-size: 2.5rem;
@@ -25,17 +25,17 @@
 
     }
     #video-intro {
-        /* Ensure it remains fullscreen */
+        
         width: 100vw;
         height: 100vh;
     }
 
     #intro-video {
-        /* Maintain center alignment and full cover behavior */
+        
         object-fit: cover;
     }
     .container {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden; 
         width: 90%;
         height: 450px;
     }
@@ -130,10 +130,10 @@
     }
     .hero-buttons {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
-        gap: 10px; /* Space between buttons */
-        max-width: 200px; /* Adjust as needed */
-        margin: 0 auto; /* Center the grid */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        max-width: 200px; 
+        margin: 0 auto; 
     }
     
     .hero-buttons .btn {
@@ -167,9 +167,9 @@
     }
     .skill-item {
         display: flex;
-        flex-direction: column; /* Stacks items vertically */
-        align-items: center; /* Centers the content horizontally */
-        text-align: center; /* Aligns text in the center */
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
         margin-bottom: 20px;
     }
     
@@ -178,7 +178,7 @@
         height: 60px;
         border-radius: 50%;
         object-fit: cover;
-        margin-bottom: 10px; /* Adds spacing between the image and text */
+        margin-bottom: 10px; 
     }
     
     .skill-item h5 {
@@ -195,7 +195,7 @@
     }
     .tooltip {
         font-size: 0.6rem;
-        bottom: 110%; /* Position tooltip above */
+        bottom: 110%; 
     }
     #video-intro {
         display: flex;
@@ -205,13 +205,13 @@
     }
 
     #intro-video {
-        width: 80%; /* Adjust width to make it smaller */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 60%; /* Limit height to avoid too much space */
-        object-fit: contain; /* Ensure the video scales properly */
+        width: 80%; 
+        height: auto; 
+        max-height: 60%; 
+        object-fit: contain; 
     }
     .container {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden; 
         width: 90%;
         height: 400px;
     }
@@ -271,6 +271,6 @@
   }
   @media (min-width: 1024px) and (max-width: 1440px) {
     .container {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden; 
     }
 }
