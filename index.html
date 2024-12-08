@@ -65,13 +65,14 @@
     </button>
   </div>
 
-  <!-- Arrow Up button -->
-  <div id="arrow-button" class="arrow-button" onclick="toggleStories()">
-    <span id="arrow-icon" class="arrow-up">&#8593;</span> <!-- Arrow Up -->
-  </div>
-  
 
-  <!-- Story Section (Initially Hidden) -->
+  <button class="arrow-button arrow-up" id="arrow-button" onclick="toggleStories()">
+    <div class="arrow-container" id="arrow-icon">
+      <span class="arrow"></span>
+    </div>
+    <span class="button-text">Scroll to Top</span>
+  </button>
+
   <div id="stories-section" class="stories-section" style="display: none;">
     <h2>Mobile Legends Stories</h2>
     <div class="container">
@@ -81,8 +82,7 @@
           
           <div class="item" style="background-image: url(Assets/stories/1.jpg);">
               <div class="content">
-                  <div class="name">Legends Arise</div>
-                  <div class="des">The Legends Arise trailer for Rise of Necrokeep unveils revamped heroes and dark lore, featuring stunning visuals and epic battles in Mobile Legends: Bang Bang.</div>
+                  <div class="name1">Legends Arise</div>
                   <a href="https://youtu.be/hobpDrungfc?si=poXh-NTHmtaVQSvU" target="_blank">
                     <button>See More</button>
                   </a>
@@ -90,8 +90,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/4.jpg);">
               <div class="content">
-                  <div class="name">Awakening</div>
-                  <div class="des">The Awakening cinematic trailer for Project NEXT 2021 in Mobile Legends: Bang Bang unveils hero revamps, enhanced visuals, and captivating lore, showcasing the evolution of the game's iconic characters.</div>
+                  <div class="name2">Awakening</div>
                   <a href="https://youtu.be/4U_cddexg2k?si=9ziiN9jKoJCRjwzS" target="_blank">
                     <button>See More</button>
                   </a>
@@ -100,8 +99,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/3.jpg);">
               <div class="content">
-                  <div class="name">The Bloom</div>
-                  <div class="des">The Bloom cinematic for Project NEXT in Mobile Legends: Bang Bang highlights revamped heroes and their evolving lore, featuring stunning visuals and immersive storytelling.</div>
+                  <div class="name3">The Bloom</div>
                   <a href="https://youtu.be/zbtEZz0KnI0?si=Ngxy7L924YG-0Blv" target="_blank">
                     <button>See More</button>
                   </a>
@@ -109,8 +107,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/12.jpg);">
               <div class="content">
-                  <div class="name">The Awakening</div>
-                  <div class="des">Truth animated trailer for Forsaken Light in Mobile Legends: Bang Bang reveals Julian's backstory and transformation, showcasing his new abilities and enhanced gameplay mechanics in a visually striking narrative.</div>
+                  <div class="name4">The Awakening</div>
                   <a href="https://youtu.be/zbtEZz0KnI0?si=Ngxy7L924YG-0Blv" target="_blank">
                     <button>See More</button>
                   </a>    
@@ -118,8 +115,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/5.jpg);">
               <div class="content">
-                  <div class="name">Bloom Anew </div>
-                  <div class="des">Bloom Anew showcases Hanabi's revamp in Mobile Legends: Bang Bang, highlighting her enhanced abilities, updated visuals, and refined gameplay mechanics for a fresh and dynamic experience.</div>
+                  <div class="name5">Bloom Anew </div>
                   <a href="https://youtu.be/YeHoMd-hfow?si=DeTdxJixO01Ej1Yl" target="_blank">
                     <button>See More</button>
                   </a>    
@@ -127,8 +123,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/6.jpg);">
               <div class="content">
-                  <div class="name">The Host</div>
-                  <div class="des">A Tug of War cinematic trailer for Forsaken Light introduces a new hero in Mobile Legends: Bang Bang, featuring intense battles, stunning visuals, and a gripping storyline as the hero's fate unfolds.</div>
+                  <div class="name6">The Host</div>
                   <a href="https://youtu.be/cgDAV7_zrtc?si=7FzqrKSpJP29kRdB" target="_blank">
                     <button>See More</button>
                   </a>    
@@ -136,8 +131,7 @@
           </div>
           <div class="item" style="background-image: url(Assets/stories/7.jpg);">
             <div class="content">
-                <div class="name">S30 Cinematic Trailer</div>
-                <div class="des">Eruditio Rescue in Mobile Legends: Bang Bang features an intense rescue mission, showcasing thrilling action, strategy, and new character developments within the game's evolving storyline.</div>
+                <div class="name7">S30 Cinematic Trailer</div>
                 <a href="https://youtu.be/DgHEGZ_ocaQ?si=NO7Ocf3ezxaeMYYh" target="_blank">
                   <button>See More</button>
                 </a>    
@@ -145,8 +139,7 @@
         </div>
         <div class="item" style="background-image: url(Assets/stories/8.jpg);">
           <div class="content">
-              <div class="name">Terminus</div>
-              <div class="des">Introduces Nolan, a new hero in Mobile Legends: Bang Bang, showcasing his powerful abilities and stunning visuals in an epic cinematic trailer.</div>
+              <div class="name8">Terminus</div>
               <a href="https://youtu.be/pw3N3Uv1OLk?si=mRiqIGt1b8m5q9gv" target="_blank">
                 <button>See More</button>
               </a>    
@@ -154,8 +147,7 @@
       </div>
       <div class="item" style="background-image: url(Assets/stories/19.jpg);">
         <div class="content">
-            <div class="name">Strike to Fate</div>
-            <div class="des">Showcases Gusion’s revamped abilities and enhanced visuals in Mobile Legends: Bang Bang, highlighting his deadly skills in an action-packed animated trailer.</div>
+            <div class="name9">Strike to Fate</div>
             <a href="https://youtu.be/R_G2bQ8s730?si=nF4yHCZuKSm8ifaz" target="_blank">
               <button>See More</button>
             </a>    
@@ -163,8 +155,7 @@
     </div>
     <div class="item" style="background-image: url(Assets/stories/11.jpg);">
       <div class="content">
-          <div class="name">The Knight</div>
-          <div class="des"> Reveals Xavier’s story and powers in Mobile Legends: Bang Bang, featuring an epic clash with stunning visuals and intense action.</div>
+          <div class="name10">The Knight</div>
           <a href="https://youtu.be/OK6oA5rl3uM?si=Ov0g6Kt5qnaFz8d9" target="_blank">
             <button>See More</button>
           </a>    

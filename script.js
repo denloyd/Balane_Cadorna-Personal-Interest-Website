@@ -61,6 +61,7 @@ function showCategory(category) {
     if (arrowButton) {
         arrowButton.classList.add('hide-arrow');
     }
+     
 }
 
 // Toggle the visibility of the story section
@@ -269,7 +270,7 @@ prev.addEventListener('click', function(){
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
 })
 
-/*const button = document.querySelector('.arrow-button');
+const button = document.querySelector('.arrow-button');
     button.addEventListener('click', () => {
       if (button.classList.contains('arrow-up')) {
         button.classList.remove('arrow-up');
@@ -280,4 +281,6 @@ prev.addEventListener('click', function(){
         button.classList.add('arrow-up');
         button.innerHTML = '<span class="arrow"></span>Scroll to Top';
       }
-    }); */
+    }); 
+
+    

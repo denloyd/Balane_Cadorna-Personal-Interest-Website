@@ -35,7 +35,8 @@
         object-fit: cover;
     }
     .container {
-        width: 80%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        width: 100%;
         height: 500px;
     }
     .item {
@@ -46,20 +47,43 @@
         left: 50px;
         width: 250px;
     }
-    .content .name {
-        font-size: 24px;
-    }
-    .content .des {
-        font-size: 12px;
+    .content .name1,
+    .content .name2,
+    .content .name3, 
+    .content .name4,
+    .content .name5,
+    .content .name6,
+    .content .name7,
+    .content .name8,
+    .content .name9,
+    .content .name10 {
+         font-size: 22px;
     }
     .content button {
         padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     .item .content{
         left: 15px;
     }
-     
+    .hero-category-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        margin-top: -4rem;
+    }
+    .arrow-button{
+        padding: 13px 26px;
+        font-size: 15px;
+    }
+    .slide .item:nth-child(3){
+        left: 80%;
+      }
+      .slide .item:nth-child(4){
+        display: none;
+      }
+      .slide .item:nth-child(5){
+        display: none;
+      }
   }
   
   @media (max-width: 480px) {
@@ -182,6 +206,7 @@
         object-fit: contain; /* Ensure the video scales properly */
     }
     .container {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
         width: 95%;
         height: 450px;
     }
@@ -193,23 +218,55 @@
         left: 20px;
         width: 200px;
     }
-    .content .name {
-        font-size: 15px;
-    }
-    .content .des {
-        font-size: 0.5rem;
-        text-align: justify;
+    .content .name1,
+    .content .name2,
+    .content .name3, 
+    .content .name4,
+    .content .name5,
+    .content .name6,
+    .content .name7,
+    .content .name8,
+    .content .name9,
+    .content .name10 {
+         font-size: 18px;
     }
     .content button {
-        padding: 5px 10px;
-        font-size: 0.6rem;
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
     .button button {
         width: 30px;
         height: 30px;
     }
+    .slide .item:nth-child(3){
+        left: 90%;
+      }
+      .slide .item:nth-child(4){
+        display: none;
+      }
+      .slide .item:nth-child(5){
+        display: none;
+      }
     .item .content{
         left: 10px;
     }
-   
+    .stories-section h2{
+        margin-top: 3rem;
+        font-size: 2rem;
+        
+      }
+    .hero-category-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: -4rem;
+    }
+    .arrow-button{
+        padding: 10px 20px;
+        font-size: 10px;
+    }
   }
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+}

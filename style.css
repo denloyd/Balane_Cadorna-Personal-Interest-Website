@@ -11,6 +11,7 @@
     color: #ffffff;
     overflow-x: hidden;
     text-align: center;
+ 
   }
   
   /* Video Intro Section */
@@ -373,10 +374,10 @@
   margin-bottom: 1rem;
 }
 .hero-category-title {
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 3rem;
-    margin-top: 1rem;
+    margin-top: -2rem;
 }
 .hero img {
     width: 80px;
@@ -604,6 +605,7 @@ button:hover {
 }
 
 .slider-content img {
+  border: 2px solid rgb(175, 152, 21); /* Set border width and color */
     width: 300px;
     height: 500px;
     border-radius: 8px;
@@ -652,7 +654,7 @@ button:hover {
       gap: 20px; /* Increased for better spacing */
     max-width: 600px;
     width: 100%; /* Ensures consistent width */
-    background: #333;
+    background-image: linear-gradient(163deg, #2e3364 0%, #479ee6 100%);
     padding: 20px; /* Slightly increased padding */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -693,39 +695,97 @@ button:hover {
 
 
 
-
-/* Styling for the arrow button */
 .arrow-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  
-  padding: 10px;
+  padding: 16px 32px;
   cursor: pointer;
-  display: block;
-  z-index: 1000;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
   color: white;
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+  z-index: 1000;
 }
 
 .arrow-button:hover {
- background-color: #0056b3;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+  background: linear-gradient(135deg, #34495e, #2980b9);
 }
 
-.arrow-up {
-  font-size: 24px;
+.arrow-button:active {
+  transform: translateX(-50%) translateY(0);
 }
 
-.arrow-down {
-  font-size: 24px;
+.arrow-container {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.arrow {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-right: 2.5px solid white;
+  border-bottom: 2.5px solid white;
+  transition: transform 0.3s ease;
+}
+
+.arrow-up .arrow {
+  transform: rotate(225deg);
+}
+
+.arrow-down .arrow {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-right: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2.5px solid rgba(255, 255, 255, 0.3);
+  right: -4px;
+  bottom: -4px;
+  transition: all 0.3s ease;
+}
+
+.arrow-button:hover .arrow::after {
+  right: -2px;
+  bottom: -2px;
+  opacity: 0;
+}
+
+.button-text {
+  transition: transform 0.3s ease;
+}
+
+.arrow-button:hover .button-text {
+  transform: translateY(-1px);
+}
+
+/* Smooth pulse animation on hover */
+@keyframes pulse {
+  0% { box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2); }
+  50% { box-shadow: 0 4px 25px rgba(52, 152, 219, 0.4); }
+  100% { box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2); }
+}
+
 
 /* Styling for the stories section */
 .stories-section {
@@ -743,9 +803,10 @@ button:hover {
 }
 .stories-section h2{
   margin-top: 5rem;
-  font-size: xx-large;
+  font-size: 3rem;
+  color:#24aad3;
+  font-style:italic;
   font-weight: bold;
-  color:#9ed324;
 }
 
 /* When category buttons are clicked, hide the arrow button */
@@ -762,6 +823,7 @@ button:hover {
   height: 600px;
   background: #f5f5f5;
   box-shadow: 0 30px 50px #dbdbdb;
+  
 }
 
 .container .slide .item{
@@ -776,6 +838,7 @@ button:hover {
   background-size: cover;
   display: inline-block;
   transition: 0.5s;
+
 }
 
 .slide .item:nth-child(1),
@@ -790,13 +853,13 @@ button:hover {
 
 
 .slide .item:nth-child(3){
-  left: 50%;
+  left: 70%;
 }
 .slide .item:nth-child(4){
-  left: calc(50% + 220px);
+  left: calc(70% + 220px);
 }
 .slide .item:nth-child(5){
-  left: calc(50% + 440px);
+  left: calc(70% + 440px);
 }
 
 /* here n = 0, 1, 2, 3,... */
@@ -817,6 +880,7 @@ button:hover {
   transform: translate(0, -50%);
   font-family: system-ui;
   display: none;
+  
 }
 
 
@@ -825,23 +889,50 @@ button:hover {
 }
 
 
-.content .name{
+.content .name1{
   font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
   opacity: 0;
   animation: animate 1s ease-in-out 1 forwards;
-  color: #111;
+  color: rgb(235, 212, 87);
+  margin-bottom: 0.9rem;
+}
+.content .name2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  animation: animate 1s ease-in-out 1 forwards;
+  color: black;
+  margin-bottom: 0.9rem;
+}
+.content .name3, 
+.content .name4,
+.content .name5,
+.content .name6,
+.content .name8,
+.content .name9{
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  animation: animate 1s ease-in-out 1 forwards;
+  color: whitesmoke;
+  margin-bottom: 0.9rem;
 }
 
-.content .des{
-  margin-top: 10px;
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: animate 1s ease-in-out 0.3s 1 forwards;
-  color: #111;
+.content .name7,
+.content .name10{
+  font-size: 2.3rem;
+  text-transform: uppercase;
   font-weight: bold;
+  opacity: 0;
+  animation: animate 1s ease-in-out 1 forwards;
+  color: rgb(14, 12, 1);
+  margin-bottom: 0.9rem;
 }
+
 
 .content button{
   padding: 10px 20px;
@@ -849,6 +940,9 @@ button:hover {
   cursor: pointer;
   opacity: 0;
   animation: animate 1s ease-in-out 0.6s 1 forwards;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  font-weight: 500;
 }
 
 
@@ -868,23 +962,32 @@ button:hover {
 
 
 
-.button{
-  width: 100%;
-  text-align: center;
+.button {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  bottom: 20px;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* You don't need 100% width anymore */
 }
 
-.button button{
+.button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 35px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   margin: 0 5px;
-  border: 1px solid #000;
+  border: 3px solid #000;
   transition: 0.3s;
+  text-align: center;
 }
+
+
 
 .button button:hover{
   background: #ababab;
